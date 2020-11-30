@@ -1,74 +1,48 @@
-# jspsych-vislexdec-vp
-Visual [lexical decision](https://en.wikipedia.org/wiki/Lexical_decision_task) experiment with _Visual Prime_ (template)
+# jspsych-uil-template-docs
+A collection of generic background information on UiL OTS template/boilerplates for [jsPsych](https://www.jspsych.org) experiments (paradigms) and some additional tools.
 
-# Connected templates
+# Background and Rationale
+This is a fist start to provide a broader scope to using some in-house developed templates for certain time critical reaction time paradigms and the tools needed to make your own experiment. The current goals are:
 
-### Visual Templates
-1. [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
-2. [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp)
-3. [vislexdec-vp-mp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp-vm)
+- Keep documentation on a selection of code bases in one place.
+- Separate generic documentation from specific documentation.
+- Give some background information that may help Students, Researchers & Developers work together.
 
-### Audio and/or visual Templates
-4. [audlexdec](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
-5. [audlexdec-vp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
-6. [audlexdec-vp-mp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-mp)
+# Template repositories
 
-# Task Description
+### Visual Lexical Decision Templates
 
-## Short description
-The participant first sees a fixation cross, then a prime is presented, followed by the test stimulus. Particpants are instructed to respond as quickly as possible to make the decision if both strings in the pair are words --or not--, using the keyboard.
+- [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
+- [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp)
+- [vislexdec-vp-mp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp-vm)
 
-- The _prime_ is a string of letters and can be a real word or a nonword.
-- The _'test stimulus'_ is a string of letters and can also be a real word or a nonword.
+### Audio and/or Visual Lexcial Decision Templates
 
-## Longer description
-There are many (slightly) different variations of a lexical decision task. In this version, a trial consists of subsequently presenting _two_ words or nonwords. The participant needs to make a swift decision whether the _pair_ of presented sets of letters - the test stimuli - are _both_ acutal words or not. 
+- [audlexdec](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
+- [audlexdec-vp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
+- [audlexdec-vp-mp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-mp)
 
-The naming conventions for this pair can be slightly confusing. The general convention will be to differentiate between a 'prime' and the 'test stimulus', even though in a way, the _pair_ _is_ the test stimulus, both in what defines a single trial, and in the way to prepare the stimuli.js structure (the code).
+### Self-Paced Reading with Moving window Template
+- [jspsych-spr-mw](https://github.com/UiL-OTS-labs/jspsych-spr-mw)
 
-The idea behind this _primed_ variant is that there may be semantic (or visual or grammatical) associations that influence reaction time in the last decision stage. For instance, after presenting the word 'snow' as a _prime_, there might be a speedup in the reaction time (RT) to the test stimulus if it were 'white', as opposed to --for instance-- 'potato', due to <i>semantic association</i>.
+# Generic jspsych utility repository (used in most templates)
+A tool that may help with things like restrained randomisation, detecting mobile phone/tablets and other reusable functionality.
+- [jspsych-uil-utils](https://github.com/UiL-OTS-labs/jspsych-uil-utils)
 
-It is up to the researcher to balance the stimulus design according to the categorial speedup or slowdown effects that are hypothesised, amongst others. So-called _Latin Square Designs_ and things like _Pseudo-Randomisation_ are often needed, or have at least by tradition been used as solutions to certain problems. Think of: maximizing statistical power, keeping participants unbiased and naive with regards to the purpose of the experiment, general experiment look and feel, task elicited enticingness versus boredom, data management considerations, categorial data-reduction heuristics, etc...  
 
-The essential sub trial phases for _one_ trial for this boilerplate experiment are:
+# Miscallenous jspsych related repositories (to sift through)
 
-1. Fixation cross presentation (fixed time, no responses are recorded) 
-2. Prime presentation (fixed time, no responses are recorded)
-3. Test stimulus presentation (the last string of letters of the presented pair, lexical decision phase). 
+Some documentation on the concessions we have/had to make related to using the world wide web instead of the lab. 
+- [jspsych-concessions](https://github.com/UiL-OTS-labs/jspsych-concessions)
 
-Only in this _last phase_, as soon as the "test item" is being presented, the participant can respond with the keyboard.
+This contains some (python) tools to enable csv/json conversions.
+- [jspsych-boilerplates](https://github.com/UiL-OTS-labs/jspsych-boilerplates)
 
-The reaction time, response and correctness of the response are usually the important variables for analysis. By default, the data of all sub trial phases are logged in the data, but the output data can quite easily be filtered after data collection.
+Some simple survey examples
+https://github.com/jcvanelst/jspsych-survey-tests
 
-# Getting started (the easy way, working internet connection required)
-For now, the easiest way to test these templates, is:
 
-1. Download this repository by clicking the green code button above and Download zip.
-2. Unzip the jspsych-vislexdec-vp-main.zip at a location of your choosing.
-3. Inside the folder is a file called index.html, double click it in order to open it
-   in a browser.
-
-# Getting started (the harder way, local and/or custom setup)
-
-You need this github repository and to download the jsPsych library version 6.1
-complete the following steps. When downloading and extracting folders please
-keep in mind that once working on the server, filenames are case sensitive and
-"jsPsych.js" and "jspsych.js" are two distinct filenames. It might work on your
-machine, but it might not work on the server hosting your experiment.
-
-You will need to adapt your own directory structure/naming convention in the 
-top ```<script>``` tags as defined in index.html, if you want your own local jsPsych setup.
-
-1. Download this repository by clicking the green code button above and Download zip.
-2. Unzip the jspsych-vislexdec-vp.zip at a location of your choosing.
-3. Download jsPsych-6.1.0 (-6.1.0 is the version) from the jsPsych releases website
-   https://github.com/jspsych/jsPsych/releases. You might need to scroll down a little.
-4. Extract the jsPsych folder into the jspsych-vislexdec-vp folder you extracted earlier.
-5. Inside the folder is a file called index.html, double click it in order to open it
-   in a browser.
-   
-
-# Generic overview (draft, should be moved from here after some time)
+# Generic overview (draft)
 Lab support and teachers are in the process of creating template/boilerplate experiments for you to easily set up certain types of experiments. The idea behind this, is that within certain boundaries, it should be easy to get an experiment running without (too much) programming skills, by just editing the default stimulus files. Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the UiL OTS labs for time critical experimentation and there are many templates to start with using ZEP. ZEP was designed in house and has been designed to accurately sync sound, visuals/text and/or other hardware (eye tracking, EEG, EMG, etc) in a 'traditional' research lab setup. By that we mean:
 
 - A quite controlled/controllable environment in terms of hardware, software, possible distractions.
@@ -119,7 +93,6 @@ Some generic instruction and test flows (like audio tests) will also be prepared
 
 ## Optional checks
 - Check if the audio works (and system sound loudness setting flows).
-
 
 ## Always start an experiment with a html-button-response interaction part
 Browsers will often disallow auto-playing sound/video if there is no user activity related to a _mouse click_. It would be a shame to start of the experiment with errors of this type. An _instruction_ (plugin) with a mouse button response (or a multi-page instuction) will also fix this potential error.
