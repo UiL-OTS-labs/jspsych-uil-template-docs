@@ -8,6 +8,32 @@ This is a fist start to provide a broader scope to using some in-house developed
 - Separate generic documentation from specific documentation.
 - Give some background information that may help Students, Researchers & Developers work together.
 
+# Documentation that should be in _every template_
+Certain information should be in every template. This is a first go at what should be in every repository's README.md:
+
+```
+# Template name
+
+# Generic documentation
+Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context and scope.
+
+# Task Description
+Some scope information about the paradigm or shared organisation, if relevant.
+
+### Short description
+A short description of what _this specific template_ does and what output is given.
+
+### Longer Description
+A longer description that reflects on, for instance a paradigm's variations.
+
+# Getting started
+How to use/start the experiment.
+
+# Data store
+How to use an experiment in our specific html-server setup and data store application.
+
+```
+
 # Template repositories
 
 ### Visual Lexical Decision Templates
