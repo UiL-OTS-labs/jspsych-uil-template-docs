@@ -1,8 +1,8 @@
 # jspsych-uil-template-docs
-A collection of generic background information on UiL OTS template/boilerplates for [jsPsych](https://www.jspsych.org) experiments (paradigms) and some additional tools.
+A collection of generic background information on UiL OTS templates (or boilerplates) for [jsPsych](https://www.jspsych.org) experiments (paradigms) and some additional tools.
 
 # Background and Rationale
-This is a fist start to provide a broader scope to using some in-house developed templates for certain time critical reaction time paradigms and the tools needed to make your own experiment. The current goals are:
+This is a first start to provide a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own experiment. The current goals are:
 
 - Keep documentation on a selection of code bases in one place.
 - Separate generic documentation from specific documentation.
