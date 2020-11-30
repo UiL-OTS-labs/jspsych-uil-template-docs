@@ -38,15 +38,16 @@ How to use an experiment in our specific html-server setup and data store applic
 
 ### Visual Lexical Decision Templates
 
-- [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
-- [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp)
-- [vislexdec-vp-mp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp-vm)
+- Visual Lexical Decision basic version: [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
+- Visual Lexical Decision with Visual Prime: [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp)
+- Visual Lexical Decision with Visual Masked Prime: [vislexdec-vp-vm](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp-vm)
 
 ### Audio and/or Visual Lexcial Decision Templates
 
-- [audlexdec](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
-- [audlexdec-vp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
-- [audlexdec-vp-mp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-mp)
+- Auditory Lexical Decison basic version: [audlexdec](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
+- Auditory Lexical Decison with Visual Prime: [audlexdec-vp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
+- Auditory Lexical Decison with Visual Masked Prime: [audlexdec-vp-vm](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-vm)
+- Auditory Lexical Decison with Auditory Prime: [audlexdec-ap](https://github.com/UiL-OTS-labs/jspsych-audlexdec-ap)
 
 ### Self-Paced Reading with Moving window Template
 - [jspsych-spr-mw](https://github.com/UiL-OTS-labs/jspsych-spr-mw)
