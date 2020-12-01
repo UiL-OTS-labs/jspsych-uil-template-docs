@@ -5,48 +5,55 @@ A collection of generic background information on UiL OTS 'templates' (or 'boile
 # Background and Rationale
 This is a first start to provide a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own experiment. The current goals are:
 
-- Keep documentation on a selection of code bases in one place.
-- Separate generic documentation from specific documentation.
-- Give some background information that may help Students, Researchers & Developers work together.
+- Keep documentation on a selection of code bases in _one place_.
+- Separate _generic_ documentation from _specific_ documentation.
+- Give some _background information_ that may help Students, Researchers & Developers & Managers plan better.
 
 Of course, new insights will probably lead to better and probably more complex organisation.
 
-# Context of development
+# Context and scope of current developments
 The first templates are developed for the liguistics master course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similar to the traditional, lab-bound way that was used before, using [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision). However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same and some concessions have been made that may be changed over time. Just a few of them are worth mentioning at this point:
 
-- Every Lexical Decision template has a basic questionnaire (or survey) included. This makes the code less 'clean', but for the education context it is now considered as necessary.
-- The Lexical Decision Templates currently have a routine to set keyboard keys interactively, also based upon survey/questionnaire input. This makes the code more complex, but it was deemed necessary to miltigate potential Reaction Time (RT) interaction effects due to hand preference.
-- Every template currently imports a utility library we've created to enable, for instance Mobile/Tablet detection (not the type of devices we can use), but also restrained randomisation. This utility library --too-- makes the template code more complex and may obfuscate certain types of errors.
+- Every Lexical Decision template has a sinmple _questionnaire_ (or survey) included. This makes the code less 'clean', but for the education context it is now considered as necessary.
+- The Lexical Decision Templates currently have a routine to set _keyboard response keys_ interactively (based upon survey/questionnaire input). This makes the code more complex, but it was deemed necessary to miltigate potential Reaction Time (RT) interaction effects due to hand preference.
+- Every template currently imports a _utility library_ we've created to enable, for instance, Mobile/Tablet detection (not the type of devices we want participants to use), but also _restrained (or pseudo-) randomisation_. This utility library also makes the template code more complex and may obfuscate certain types of errors.
 
-In short: eventually, it's a delicate balance between wanting 'lean and clean' templates, versus ones that are good enough to use for the EDDA course purposes. In time, we will probably figure out a more modular approach and optimize for both aspects.  
+In short: eventually, it's a delicate balance between wanting 'lean and clean' templates, versus ones that are good enough to use for the EDDA course purposes. In time, we will probably figure out a more modular approach and optimize for both aspects.
 
-# Documentation that should be in _every template_
-Certain information should be in every template. This is a first go at what should be in every repository's README.md:
+# How and where to edit templates
+The general rationale for using templates, has always been to enable students/researchers without a background in programming to get started with a certain paradigm without having to do a lot of coding, but by just editing the so called 'stimulus file' and possibly some other files with globals for item types. The extent to which we can currently offer a jspsych, web based alternative within those requirements is debatable. Hopefully, this year's EDDA course can --to some extent-- serve as a test case for how easy or difficult this is, compared to ZEP. Ideally, there would be requirements to test this, but at this point, they are not very explicit.
 
+# How to debug and edit templates
+A similar question arises related to the above problem. Web-based debugging requires quite a different approach from 'local' debugging, and many students/laymen are probably unaware of how debugging in a browser works. At which level and to what extend we will need to document and help students and researchers be independent?  
+
+# Documentation that should minimally be in _every template_ (developer requirements)
+Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
+The text within ```< >``` are 'placeholder text', the ones without them should be _'as is'_.
 ```
-# Template name
+# <Template name>
+<A human redadable intuitive description related to the template name.>
 
 # Generic documentation
 Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context and scope.
 
 # Task Description
-Some scope information about the paradigm or shared organisation, if relevant.
+<Optionllay, some scope information about the paradigm or shared organisation, if relevant.>
 
 ### Short description
-A short description of what _this specific template_ does and what output is given.
+<A short description of what _this specific template_ does and what output is given.>
 
 ### Longer Description
-A longer description that reflects on, for instance a paradigm's variations.
+<A longer description that reflects on, for instance a paradigm's variations.>
 
 # Getting started
-How to use/start the experiment.
+<How to use/start the experiment.>
 
 # Data store
-How to use an experiment in our specific html-server setup and data store application.
+<How to use an experiment in our specific html-server setup and data store application.>
 
 ```
 
-# Template repositories
+# List of jspsych based template repositories
 
 ### Visual Lexical Decision Templates
 - Visual Lexical Decision basic version: [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
@@ -66,7 +73,6 @@ How to use an experiment in our specific html-server setup and data store applic
 A tool that may help with things like restrained randomisation, detecting mobile phone/tablets and other reusable functionality.
 - [jspsych-uil-utils](https://github.com/UiL-OTS-labs/jspsych-uil-utils)
 
-
 # Miscallenous jspsych related repositories (to sift through)
 
 Some documentation on the concessions we have/had to make related to using the world wide web instead of the lab. 
@@ -78,6 +84,7 @@ This contains some (python) tools to enable csv/json conversions.
 Some simple survey examples
 https://github.com/jcvanelst/jspsych-survey-tests
 
+(todo from here on)
 
 # Generic overview (draft)
 Lab support and teachers are in the process of creating template/boilerplate experiments for you to easily set up certain types of experiments. The idea behind this, is that within certain boundaries, it should be easy to get an experiment running without (too much) programming skills, by just editing the default stimulus files. Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the UiL OTS labs for time critical experimentation and there are many templates to start with using ZEP. ZEP was designed in house and has been designed to accurately sync sound, visuals/text and/or other hardware (eye tracking, EEG, EMG, etc) in a 'traditional' research lab setup. By that we mean:
