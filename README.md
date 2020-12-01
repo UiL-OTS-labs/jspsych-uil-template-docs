@@ -1,5 +1,6 @@
 # jspsych-uil-template-docs
-A collection of generic background information on UiL OTS templates (or boilerplates) for [jsPsych](https://www.jspsych.org) experiments (paradigms) and some additional tools.
+A collection of generic background information on UiL OTS 'templates' (or 'boilerplates', preference for templates here) for [jsPsych](https://www.jspsych.org) experiments (mostly linguistic experimental paradigms) and some additional tools that can be reused. Ideally, any new template links to this overview in its README.md, so that we can keep core documentation in one place.
+
 
 # Background and Rationale
 This is a first start to provide a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own experiment. The current goals are:
@@ -7,6 +8,17 @@ This is a first start to provide a broader scope to using some in-house develope
 - Keep documentation on a selection of code bases in one place.
 - Separate generic documentation from specific documentation.
 - Give some background information that may help Students, Researchers & Developers work together.
+
+Of course, new insights will probably lead to better and probably more complex organisation.
+
+# Context of development
+The first templates are developed for the liguistics master course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similar to the traditional, lab-bound way that was used before, using [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision). However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same and some concessions have been made that may be changed over time. Just a few of them are worth mentioning at this point:
+
+- Every Lexical Decision template has a basic questionnaire (or survey) included. This makes the code less 'clean', but for the education context it is now considered as necessary.
+- The Lexical Decision Templates currently have a routine to set keyboard keys interactively, also based upon survey/questionnaire input. This makes the code more complex, but it was deemed necessary to miltigate potential Reaction Time (RT) interaction effects due to hand preference.
+- Every template currently imports a utility library we've created to enable, for instance Mobile/Tablet detection (not the type of devices we can use), but also restrained randomisation. This utility library --too-- makes the template code more complex and may obfuscate certain types of errors.
+
+In short: eventually, it's a delicate balance between wanting 'lean and clean' templates, versus ones that are good enough to use for the EDDA course purposes. In time, we will probably figure out a more modular approach and optimize for both aspects.  
 
 # Documentation that should be in _every template_
 Certain information should be in every template. This is a first go at what should be in every repository's README.md:
@@ -86,7 +98,7 @@ On the other hand:
 - You can find a lot of code snippets and examples online, there is a huge user base for jsPsych and many plugins for certain paradigms can be used or adapted to certain needs.
 
 # Mini-overview of a jsPsych experiment
-It's a good idea to really read the documentation on https://www.jspsych.org. The basic things like how some 'experiment.html' file imports from the jspsych library, where and how plugins can be used are good to start with.
+It's a good idea to really read the documentation on https://www.jspsych.org. The basic things like how some 'index.html' file imports from the jspsych library, where and how plugins can be used are good to start with.
 
 It gets a bit more complicated when you discover that there are two modes in which all can be run:
 
