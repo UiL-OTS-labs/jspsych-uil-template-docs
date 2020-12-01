@@ -84,6 +84,18 @@ This contains some (python) tools to enable csv/json conversions.
 Some simple survey examples
 https://github.com/jcvanelst/jspsych-survey-tests
 
+# Current test cases as available on experiment data store (served by ICT&Media)
+
+__Name__                                          | __weblink__                                                  |
+--------------------------------------------------|--------------------------------------------------------------|
+Visual Lexical Decision                           | https://web-experiments.lab.hum.uu.nl/vislexdec/             |
+Visual Lexical Decision w/ Visual Prime           | https://web-experiments.lab.hum.uu.nl/vislexdec-vp/          |
+Visual Lexical Decision w/ Visual Masked Prime    | https://web-experiments.lab.hum.uu.nl/vislexdec-vp-vm/       |
+Auditory Lexical Decision                         | https://web-experiments.lab.hum.uu.nl/audlexdec/             |
+Auditory Lexical Decision w/ Auditory Prime       | https://web-experiments.lab.hum.uu.nl/audlexdec-ap/          |
+Auditory Lexical Decision w/ Visual Prime         | https://web-experiments.lab.hum.uu.nl/audlexdec-vp/          |
+Auditory Lexical Decision w/ Visual Masked Prime  | https://web-experiments.lab.hum.uu.nl/audlexdec-vp-vm/       |
+
 (todo from here on)
 
 # Generic overview (draft)
