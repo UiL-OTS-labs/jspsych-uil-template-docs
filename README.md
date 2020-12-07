@@ -150,7 +150,7 @@ In fact, let's just have a look at one of the current templates, the Auditory Le
  
 In order for your experiment to use jsPsych, even if you don't want any real work done:
 
-<pre><code>```
+<pre>
     
     <title>Auditory Lexical Decision Experiment with Visual Prime</title>
 
@@ -178,7 +178,7 @@ In order for your experiment to use jsPsych, even if you don't want any real wor
     <script src="globals.js"></script>
     <script src="instructions.js"></script>
     
-</pre></code>```
+</pre>
 
 (todo from here on)
 
