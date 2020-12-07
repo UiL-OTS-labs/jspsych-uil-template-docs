@@ -111,7 +111,17 @@ Configuring your own local paths to jsPsych's core scripts like in the latter ex
 
 In fact, let's just have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of the file, just until the end of the head section looks like and walk through that step by step:
 
-```{r, attr.source='.numberLines'}
+```
+<pre>
+<code>line 1</code>
+<code>line 2</code>
+<code>line 3</code>
+<code>line 4</code>
+<code>line 5</code>
+</pre>
+```
+
+```
 <!DOCTYPE html>
 <html>
     <head>
