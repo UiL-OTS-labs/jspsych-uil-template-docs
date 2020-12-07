@@ -74,7 +74,6 @@ A tool that may help with things like restrained randomisation, detecting mobile
 - [jspsych-uil-utils](https://github.com/UiL-OTS-labs/jspsych-uil-utils)
 
 # Miscallenous jspsych related repositories (to sift through)
-
 Some documentation on the concessions we have/had to make related to using the world wide web instead of the lab. 
 - [jspsych-concessions](https://github.com/UiL-OTS-labs/jspsych-concessions)
 
@@ -95,6 +94,115 @@ Auditory Lexical Decision                         | https://web-experiments.lab.
 Auditory Lexical Decision w/ Auditory Prime       | https://web-experiments.lab.hum.uu.nl/audlexdec-ap/          |
 Auditory Lexical Decision w/ Visual Prime         | https://web-experiments.lab.hum.uu.nl/audlexdec-vp/          |
 Auditory Lexical Decision w/ Visual Masked Prime  | https://web-experiments.lab.hum.uu.nl/audlexdec-vp-vm/       |
+
+# What libraries always need to be imported in a jsPscyh-based experiment's index.html 
+Javascript libraries --among other things-- are imported in the index.html's so-called _head section_ (somewhere in between the ```<head>``` & ```</head>``` tags, you will find import lines that may look like this:
+
+```<script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>```
+
+In the above case, the import is in fact an example using the custom [Datastore](TODO: <New ICT&Media name/refs/link>) path as can be used with our current server path to the general jsPsych JavaScript library. If you should want to use your own, _relative path_ to a different version of jsPsych, it could look like this, for example:
+
+```<script src="jspsych/6.1.2/jspsych.js"></script>```
+or 
+
+```<script src="./myjspsuchCustomFolderName/6.1.2/jspsych.js"></script>```
+
+Configuring your own local paths to jsPsych's core scripts like in the latter examples is generally discouraged, because it may lead to difficult problems if you are not a web developer and things go wrong. If making an exception to this solves an actual problem, lab support may be able to help you out. For instance, maybe a a newer version of jsPysch would add a crucial new feature that you want to use).
+
+In fact, let's just have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of the file, just until the end of the head section looks like and walk through that step by step:
+
+```
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    
+    <title>Auditory Lexical Decision Experiment with Visual Prime</title>
+
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-button-response.js"></script>
+    
+    <!-- Audio playback &response libraries (audio) -->
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-button-response.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-keyboard-response.js"></script>
+    
+    <!-- Generic check/ask libraries (instructions & surveys) -->
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
+    
+    <!-- Generic jspsych style sheet -->
+    <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Uil OTS libraries -->
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
+
+    <!-- Uil OTS scripts -->
+    <script src="stimuli.js"></script>
+    <script src="globals.js"></script>
+    <script src="instructions.js"></script>
+
+    <style>
+
+    .stimulus { 
+        font-size: 30px; 
+        font-family: monospace;
+        font-weight: normal;
+    }
+
+    .instruction {
+        text-align: left;
+        margin: 5% 10% 5% 10%;
+    }
+
+    .survey {
+        text-align: left;
+        margin: 5% 5% 5% 5%;
+    }
+
+    .jspsych-survey-multi-choice-question {
+        text-align: left !important;
+    }
+
+    .jspsych-survey-multi-choice-text {
+        text-align: left !important;
+    }
+
+    .jspsych-survey-multi-choice-option {
+        text-align: left !important;
+    }
+
+    kbd {
+        border-radius: 2px;
+        padding: 2px;
+        border: 1px solid black;
+    }
+    
+    input,
+    label {
+        margin: .4rem 0;
+    }
+
+    span::after {
+        padding-left: 5%;
+    }
+
+    input:invalid + span::after {
+        content: '✖';
+    }
+
+    input:valid+span::after {
+          content: '✓';
+    }
+
+    </style>
+    </head>
+    (other parts below the head section are left out...)
+ ```
+
+
+In order for your experiment to use jsPsych, even if you don't start from on of the 8 templates:
 
 (todo from here on)
 
