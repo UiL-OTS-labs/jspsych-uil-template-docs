@@ -151,39 +151,37 @@ In fact, let's just have a look at one of the current templates, the Auditory Le
 In order for your experiment to use jsPsych, even if you don't want any real work done:
 
 <pre><code>
-1.  <!DOCTYPE html>
-2.  <html>
-3.     <head>
-4.     <meta charset="UTF-8">
-5.    
-6.     <title>Auditory Lexical Decision Experiment with Visual Prime</title>
-7.
-8.     <b><script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script></b>
-9.     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
-10.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-button-response.js"></script>
-11.    
-12.    <!-- Audio playback &response libraries (audio) -->
-13.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-button-response.js"></script>
-14.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-keyboard-response.js"></script>
-15.    
-16.    <!-- Generic check/ask libraries (instructions & surveys) -->
-17.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
-18.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
-19.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
-20.    
-21.    <!-- Generic jspsych style sheet -->
-22.    <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
-23.
-24.    <!-- Uil OTS libraries -->
-25.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
-26.
-27.    <!-- Uil OTS scripts -->
-28.    <script src="stimuli.js"></script>
-29.    <script src="globals.js"></script>
-30.    <script src="instructions.js"></script>
-31.    
-...   
-...    </head>
+<!DOCTYPE html>
+<html>
+    <head>
+    <meta charset="UTF-8">
+    
+    <title>Auditory Lexical Decision Experiment with Visual Prime</title>
+
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-button-response.js"></script>
+    
+    <!-- Audio playback &response libraries (audio) -->
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-button-response.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-keyboard-response.js"></script>
+    
+    <!-- Generic check/ask libraries (instructions & surveys) -->
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
+    
+    <!-- Generic jspsych style sheet -->
+    <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
+
+    <!-- Uil OTS libraries -->
+    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
+
+    <!-- Uil OTS scripts -->
+    <script src="stimuli.js"></script>
+    <script src="globals.js"></script>
+    <script src="instructions.js"></script>
+    
 </pre></code>
 
 (todo from here on)
