@@ -105,13 +105,13 @@ In the above case, the import is in fact an example using the custom [Datastore]
 ```<script src="jspsych/6.1.2/jspsych.js"></script>```
 or 
 
-```<script src="./myjspsuchCustomFolderName/6.1.2/jspsych.js"></script>```
+```<script src="./myjspsychCustomFolderName/6.1.2/jspsych.js"></script>```
 
-Configuring your own local paths to jsPsych's core scripts like in the latter examples is generally discouraged, because it may lead to difficult problems if you are not a web developer and things go wrong. If making an exception to this solves an actual problem, lab support may be able to help you out. For instance, maybe a a newer version of jsPysch would add a crucial new feature that you want to use).
+Configuring your own local paths to jsPsych's core scripts like in the latter examples is generally discouraged, because it may lead to difficult problems if you are not a web developer and things go wrong. If making an exception to this solves an actual problem, lab support may be able to help you out. For instance, maybe a a newer version of jsPysch would add a crucial new feature that you want to use.
 
 In fact, let's just have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of the file, just until the end of the head section looks like and walk through that step by step:
 
-```
+```{r, attr.source='.numberLines'}
 <!DOCTYPE html>
 <html>
     <head>
