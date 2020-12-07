@@ -148,39 +148,35 @@ In fact, let's just have a look at one of the current templates, the Auditory Le
 ...    </head>
  ```
  
-In order for your experiment to use jsPsych, even if you don't want any real work done:
+In order for your experiment to use jsPsych's core library, let's start on line 8 from the previous example:
 
 <pre>
-    
-    <title>Auditory Lexical Decision Experiment with Visual Prime</title>
+      <b><script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script></b>
+      <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
+      <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-button-response.js"></script>
+      
+      <!-- Audio playback &response libraries (audio) -->
+      <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-button-response.js"></script>
+      <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-keyboard-response.js"></script>
 
-    <b><script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script></b>
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-button-response.js"></script>
-    
-    <!-- Audio playback &response libraries (audio) -->
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-button-response.js"></script>
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-keyboard-response.js"></script>
-    
-    <!-- Generic check/ask libraries (instructions & surveys) -->
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
-    
-    <!-- Generic jspsych style sheet -->
-    <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
+      <!-- Generic check/ask libraries (instructions & surveys) -->
+      <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
+      <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
+      <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
 
-    <!-- Uil OTS libraries -->
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
+      <!-- Generic jspsych style sheet -->
+      <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
 
-    <!-- Uil OTS scripts -->
-    <script src="stimuli.js"></script>
-    <script src="globals.js"></script>
-    <script src="instructions.js"></script>
-    
+      <!-- Uil OTS libraries -->
+      <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
+
+      <!-- Uil OTS scripts -->
+      <script src="stimuli.js"></script>
+      <script src="globals.js"></script>
+      <script src="instructions.js"></script>  
 </pre>
 
-(todo from here on)
+Todo
 
 # Generic overview (draft)
 Lab support and teachers are in the process of creating template/boilerplate experiments for you to easily set up certain types of experiments. The idea behind this, is that within certain boundaries, it should be easy to get an experiment running without (too much) programming skills, by just editing the default stimulus files. Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the UiL OTS labs for time critical experimentation and there are many templates to start with using ZEP. ZEP was designed in house and has been designed to accurately sync sound, visuals/text and/or other hardware (eye tracking, EEG, EMG, etc) in a 'traditional' research lab setup. By that we mean:
