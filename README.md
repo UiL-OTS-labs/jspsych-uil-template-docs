@@ -37,7 +37,7 @@ The text within ```< >``` are 'placeholder text', the ones without them should b
 Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context and scope.
 
 # Task Description
-<Optionllay, some scope information about the paradigm or shared organisation, if relevant.>
+<Optionally, some scope information about the paradigm or shared organisation, if relevant.>
 
 ### Short description
 <A short description of what _this specific template_ does and what output is given.>
