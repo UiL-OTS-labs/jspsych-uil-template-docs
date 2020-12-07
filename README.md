@@ -184,7 +184,7 @@ In order for your experiment to use jsPsych, even if you don't want any real wor
 31.    
 ...   
 ...    </head>
-</pre></code>```
+</pre></code>
 
 (todo from here on)
 
