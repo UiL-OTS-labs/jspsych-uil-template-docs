@@ -151,14 +151,10 @@ In fact, let's just have a look at one of the current templates, the Auditory Le
 In order for your experiment to use jsPsych, even if you don't want any real work done:
 
 <pre><code>
-<!DOCTYPE html>
-<html>
-    <head>
-    <meta charset="UTF-8">
     
     <title>Auditory Lexical Decision Experiment with Visual Prime</title>
 
-    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
+    <b><script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script></b>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-button-response.js"></script>
     
