@@ -27,7 +27,7 @@ The Lexical Decison Templates use a custom keyboard setting procedure. This is t
 This utility library was created to enable:
 
 - Mobile/Tablet detection (not the type of devices we want participants to use).
--_Restrained (or pseudo-) randomisation_ functionality.
+- Restrained (or pseudo-) randomisation.
 
 # Documentation that should minimally be in _every template_ (developer requirements)
 Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
