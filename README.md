@@ -23,8 +23,11 @@ You can adapt the survey questions to your onw needs, but it is not as easy as i
 ### 3. Keyboard procedure
 The Lexical Decison Templates use a custom keyboard setting procedure. This is to miltigate potential Reaction Time (RT) (interaction) effects due to hand preference.
 
-### UiL _utility library_
-This utility library was created to enable, for instance, Mobile/Tablet detection (not the type of devices we want participants to use), additional _restrained (or pseudo-) randomisation_ and will contain more functionality in the future.
+### 4. UiL _utility library_
+This utility library was created to enable:
+
+- Mobile/Tablet detection (not the type of devices we want participants to use).
+-_Restrained (or pseudo-) randomisation_ functionality.
 
 # Documentation that should minimally be in _every template_ (developer requirements)
 Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
@@ -67,19 +70,19 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 ### Self-Paced Reading with Moving window Template
 - [jspsych-spr-mw](https://github.com/UiL-OTS-labs/jspsych-spr-mw)
 
-# Generic jspsych utility repository (used in most templates)
+# Generic 'UiL' utility library (used in most templates)
 A tool that may help with things like restrained randomisation, detecting mobile phone/tablets and other reusable functionality.
 - [jspsych-uil-utils](https://github.com/UiL-OTS-labs/jspsych-uil-utils)
 
-# Miscallenous jspsych related repositories (to sift through)
+# Miscallenous jspsych related repositories
 
-### Some documentation on the concessions we have/had to make related to using the world wide web instead of the lab. 
+### Documentation on the concessions we have/had to make
 - [jspsych-concessions](https://github.com/UiL-OTS-labs/jspsych-concessions)
 
-### This repository contains some (Python) tools to help you with csv/json conversions.
+### Tools to help with csv/json conversions
 - [jspsych-boilerplates](https://github.com/UiL-OTS-labs/jspsych-boilerplates)
 
-# Current test cases as available on experiment data store (served by ICT&Media)
+# Test cases as available on experiment data store (click to start online experiment demo)
 
 __Name__                                          | __weblink__                                                  |
 --------------------------------------------------|--------------------------------------------------------------|
@@ -91,7 +94,7 @@ Auditory Lexical Decision w/ Auditory Prime       | https://web-experiments.lab.
 Auditory Lexical Decision w/ Visual Prime         | https://web-experiments.lab.hum.uu.nl/audlexdec-vp/          |
 Auditory Lexical Decision w/ Visual Masked Prime  | https://web-experiments.lab.hum.uu.nl/audlexdec-vp-vm/       |
 
-# Generic overview (draft)
+# Overview (draft)
 
 ## jsPsych is _not_ a 'programming language'
 
@@ -117,18 +120,18 @@ On the other hand:
 We encourage anyone to get a gist of the 'simple' (but powerful!) way of doing things by following the recommendations given at jsPsych's (site)https://www.jspsych.org/ and to follow a tutorial or two. The basic things like how some 'index.html' file imports from the jspsych library, where and how plugins can be used are very relevant organisation choices to understand.
 
 ## Templates in a 'jsPsych' perspective
-Like always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledge online experiment, you need to invest a lot more time to make things work, which is why we chose to equip this selection of templates with the aforemetioned 'components' (consent, survey, a shared common utilities library). Also, by default, the templates implement stimulus lists with so-called _'timelineVariable'_ implementations, which is what most real studies typically need to be usable for 'production' experiments with real participants.
+Like always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledge online experiment, you need to invest a lot more time to make things work, which is why we chose to equip this selection of templates with the aforemetioned 'standard components' (consent, survey, a shared common utilities library). Also, by default, the templates implement stimulus lists with so-called _'timelineVariable'_ implementations, which is what most real studies typically need to be usable for 'production' experiments with real participants.
 
 Typically, the following is true for how these templates have evolved
 
-- More complex experiment requirents require more and/or more complex code.
+- More complex experiment requirements require more and/or more complex code.
 - More code requires better organisation of code.
 - Better organisation of code leads to more places to edit your template experiment to serve your own needs.
 
 We have aimed to find a balance between template code organisation and still follow the typical 'jsPsych' way of doing things with one index.html file where all things come together.
 
 ## Modes of using jsPsych (and our templates)
-It gets a bit more complicated when you discover that there are two modes in which all can be run:
+As you may have noticed, there are multiple ways to test, run and configure jsPsych-based experiments:
 
 - Locally on your PC, by double clicking the html file.
 - Full web server implementation (getting a link to the experiment, served by ICT&Media).
@@ -145,7 +148,8 @@ In this stage, we will limit things to running the templates __locally__, which 
 The general rationale for using templates, has always been to enable students/researchers without a background in programming to get started with a certain paradigm without having to do a lot of coding, but by just editing the so called 'stimulus file' and possibly some other files with globals for item types. The extent to which we can currently offer a jspsych, web based alternative within those requirements is debatable. Hopefully, this year's EDDA course can --to some extent-- serve as a test case for how easy or difficult this is, compared to ZEP.
 
 # How to debug your experiment
-A similar question arises related to the above problem. Web-based debugging requires quite a different approach from 'local' debugging, and many students/laymen are probably unaware of how debugging in a browser works. At which level and to what extend we will need to document and help students and researchers be independent? 
+todo
+
 
 # Imports in 'index.html'
 Javascript libraries --among other things-- are imported in the index.html's so-called _head section_ (somewhere in between the ```<head>``` & ```</head>``` tags, you will find import lines that may look like this:
