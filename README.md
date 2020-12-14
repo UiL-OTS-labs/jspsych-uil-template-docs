@@ -14,9 +14,19 @@ Of course, new insights will probably lead to better and probably more complex o
 # Context and scope of current developments
 The first templates are developed for the liguistics master course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similar to the traditional, lab-bound way that was used before, using [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision). However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same and some concessions have been made that may be changed over time. Just a few of them are worth mentioning at this point:
 
-- Every Lexical Decision template has a simple _questionnaire_ (or survey) included. This makes the code less 'clean', but for the education context it is now considered as necessary.
-- The Lexical Decision Templates currently have a routine to set _keyboard response keys_ interactively (based upon survey/questionnaire input). This makes the code more complex, but it was deemed necessary to miltigate potential Reaction Time (RT) interaction effects due to hand preference.
-- Every template currently imports a _utility library_ we've created to enable, for instance, Mobile/Tablet detection (not the type of devices we want participants to use), but also _restrained (or pseudo-) randomisation_. This utility library also makes the template code more complex and may obfuscate certain types of errors.
+### Every template has included a (placeholder) _consent page_. 
+This is is quite minimally implemented using the `jspych-external-page` plugin. The idea with this is that --before a participant can proceed with survey, keyboard and audio configurations or the real experimental parts-- the participant is forced to check a field at the end of this file. It is up to the specifics of your own goals (and organisation) what should be in that page. A simple look and feel for a consent page (just 'heading' style in this case) is included in that consent page's `<style>` section. In case of Utrecht University, this could better be done by inserting a link to the default UU House style .css files. We'll put up a link for that soon and update. (Todo)
+
+### Every Lexical Decision template has a simple _survey_ included. 
+This makes the code less 'clean', but for the education context it is now considered as necessary. Of course, these are only some examples of typical questions that have a history, you can adapt the survey questions to your onw needs too, but it is not as easy as it may seem, especially since you usually want some form of (_input (or data) validation_)[https://en.wikipedia.org/wiki/Data_validation]. For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. It would be a shame to have a lot of data from your survey that you cannot use in your analysis, examples of (minimal) input validation can be found in the code of your templates. Input validation is best practice with regard to data quality, but also with regard to application safety, from a more general software viewpoint (bots may find your link and pollute your data, or even worse).
+
+### The Lexical Decision Templates currently have a routine to set _keyboard response keys_ interactively (based upon survey/questionnaire input).
+This makes the code more complex, but it was deemed necessary to miltigate potential Reaction Time (RT) interaction effects due to hand preference.
+
+### Every template currently imports a _utility library_ we've created for online experiments.
+This utility library was created to enable, for instance, Mobile/Tablet detection (not the type of devices we want participants to use), additional _restrained (or pseudo-) randomisation_ and will contain more functionality in the future. This utility library also makes the template code more complex and may obfuscate certain types of errors.
+
+
 
 In short: eventually, it's a delicate balance between wanting 'lean and clean' templates, versus ones that are good enough to use for the EDDA course purposes. In time, we will probably figure out a more modular approach and optimize for both aspects.
 
