@@ -3,7 +3,7 @@ A collection of generic background information on UiL OTS 'templates' (or 'boile
 
 
 # Background and Rationale
-This is a first start to provide a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own experiment. The current goals are:
+This is a first start to provide a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own experiment. The current goals with this repository are:
 
 - Keep documentation on a selection of code bases in _one place_.
 - Separate _generic_ documentation from _specific_ documentation.
@@ -27,12 +27,6 @@ This makes the code more complex, but it was deemed necessary to miltigate poten
 This utility library was created to enable, for instance, Mobile/Tablet detection (not the type of devices we want participants to use), additional _restrained (or pseudo-) randomisation_ and will contain more functionality in the future. This utility library also makes the template code more complex and may obfuscate certain types of errors.
 
 In short: it's a delicate balance between wanting 'lean and clean' templates, versus ones that are good enough to use for the EDDA course purposes. In time, we will probably figure out a more modular approach and optimize for both aspects.
-
-# How and where to edit templates
-The general rationale for using templates, has always been to enable students/researchers without a background in programming to get started with a certain paradigm without having to do a lot of coding, but by just editing the so called 'stimulus file' and possibly some other files with globals for item types. The extent to which we can currently offer a jspsych, web based alternative within those requirements is debatable. Hopefully, this year's EDDA course can --to some extent-- serve as a test case for how easy or difficult this is, compared to ZEP.
-
-# How to debug and edit templates
-A similar question arises related to the above problem. Web-based debugging requires quite a different approach from 'local' debugging, and many students/laymen are probably unaware of how debugging in a browser works. At which level and to what extend we will need to document and help students and researchers be independent? 
 
 # Documentation that should minimally be in _every template_ (developer requirements)
 Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
@@ -100,6 +94,12 @@ Auditory Lexical Decision                         | https://web-experiments.lab.
 Auditory Lexical Decision w/ Auditory Prime       | https://web-experiments.lab.hum.uu.nl/audlexdec-ap/          |
 Auditory Lexical Decision w/ Visual Prime         | https://web-experiments.lab.hum.uu.nl/audlexdec-vp/          |
 Auditory Lexical Decision w/ Visual Masked Prime  | https://web-experiments.lab.hum.uu.nl/audlexdec-vp-vm/       |
+
+# How and where to edit templates
+The general rationale for using templates, has always been to enable students/researchers without a background in programming to get started with a certain paradigm without having to do a lot of coding, but by just editing the so called 'stimulus file' and possibly some other files with globals for item types. The extent to which we can currently offer a jspsych, web based alternative within those requirements is debatable. Hopefully, this year's EDDA course can --to some extent-- serve as a test case for how easy or difficult this is, compared to ZEP.
+
+# How to debug your experiment
+A similar question arises related to the above problem. Web-based debugging requires quite a different approach from 'local' debugging, and many students/laymen are probably unaware of how debugging in a browser works. At which level and to what extend we will need to document and help students and researchers be independent? 
 
 # Imports in 'index.html'
 Javascript libraries --among other things-- are imported in the index.html's so-called _head section_ (somewhere in between the ```<head>``` & ```</head>``` tags, you will find import lines that may look like this:
@@ -186,17 +186,19 @@ From lines 12-14, we may gather:
 3. (Line 14) There is also a __mouse button-based audio interaction__ jsPsych _plugin_ that is used in this template.
 
 # Generic overview (draft)
-Lab support and teachers are in the process of creating _template experiments_ for you to easily set up certain types of experiments. The idea behind this, is that within certain boundaries, it should be easy to get an experiment running without (too much) programming skills, by just editing the default stimulus files. 
 
-Like always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledge online experiment, you need to invest a lot more time to make things work, which is why we chose to equip this selection of templates with the aforemetioned 'components' like consent, survey, utilities and so-called _'timelineVariable'_ implementations for the stimuli. 
+## jsPsych is _not_ a 'programming language'
 
+jsPsych uses a _cominbation_ of a _markup_ language (html), a _styling_ language (css), JavaScript (this _is_ a (programming language)[https://developer.mozilla.org/en-US/docs/Web/JavaScript] _and_ is a 'way of doing things' with that combination, aiming at time critical experimentation using internet browsers. 
+
+
+
+## 'The lab' vs 'The Web'
 Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the UiL OTS labs for time critical experimentation and there are many templates to start with using ZEP. ZEP was designed in house and has been designed to accurately sync sound, visuals/text and/or other hardware (eye tracking, EEG, EMG, etc) in a 'traditional' research lab setup. By that we mean:
 
 - A quite controlled/controllable environment in terms of hardware, software, possible distractions.
 - Physically being bound to the lab.
 - Relatively small samples, optimised for "Wilhelm Wundt" style traditional research.
-
-This type of training is probably going to be problematic for a while, due to COVID-19. So after a period of research & development, we've decided to choose the custom Javascipt library aimed at experimental research using a browser, called [jsPsych](https://jspsych.org) as our alternative for lab-based work. A couple of remarks here:
 
 - 'The web' cannot offer the accuracy and precision needed for certain paradigms.
 - Variations in hardware, software, internet speed, random noise and distraction and many other aspects may cause variations at multiple levels.
@@ -207,9 +209,21 @@ On the other hand:
 - You could potentially get a lot more data, which may to some extent compensate noise and little control.
 - You can find a lot of code snippets and examples online, there is a huge user base for jsPsych and many plugins for certain paradigms can be used or adapted to certain needs.
 
-# Mini-overview of a jsPsych experiment
-It's a good idea to really read the documentation on https://www.jspsych.org. The basic things like how some 'index.html' file imports from the jspsych library, where and how plugins can be used are good to start with. 
+## jsPsych tutorials
+We encourage anyone to get a gist of the 'simple' (but powerful!) way of doing things by following the recommendations given at jsPsych's (site)https://www.jspsych.org/ and to follow a tutorial or two. The basic things like how some 'index.html' file imports from the jspsych library, where and how plugins can be used are very relevant organisation choices to understand.
 
+## Templates in 'jsPsych' perspective
+Like always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledge online experiment, you need to invest a lot more time to make things work, which is why we chose to equip this selection of templates with the aforemetioned 'components' (consent, survey, a shared common utilities library). Also, by default, the templates implement stimulus lists with so-called _'timelineVariable'_ implementations, which is what most real studies typically need to be usable for 'production' experiments with real participants.
+
+Typically, the following is true for how these templates have evolved
+
+- More complex experiment requirents require more and/or more complex code.
+- More code requires better organisation of code.
+- Better organisation of code leads to more places to edit your template experiment to serve your own needs.
+
+We have aimed to find a balance between template code organisation and still follow the typical 'jsPsych' way of doing things with one index.html file where all things come together.
+
+## Modes of using jsPsych
 It gets a bit more complicated when you discover that there are two modes in which all can be run:
 
 - Locally on your PC, by double clicking the html file.
@@ -223,7 +237,7 @@ Many browsers and versions have their own defaults for security like autoplay, a
 
 In this stage, we will limit things to running the templates __locally__, which has implications for the reliability and format of the data. Also: locally does __not__ mean that it can be run without an internet connection in most cases, due to the nature of loading external scripts. Browsers really are optimised for being online.
 
-# Some best practices for jsPsych experiments 
+# Best practices for jsPsych experiments 
 
 ## Audio
 In the case of web server setup, it is as good idea to initialise jsPysch with ```use_webaudio = true```, in case you use audio stimuli. This is typically faster than when set to false. This seems to be be redundant now, since we can do such things using ```jspsych-uil-utils```.
@@ -231,17 +245,7 @@ In the case of web server setup, it is as good idea to initialise jsPysch with `
 ## Preload media, like images, video, audio
 In general, since timing is important, please make sure to [pre-load all media files](https://www.jspsych.org/overview/media-preloading/). This is because, we will typically use trials with a timelineVariables setup. 
 
-## Generic checks 
-Some generic instruction and test flows (like audio tests) will also be prepared in this specific boilerplate. This may seem an odd choice, since the current boilerplate task does not require audio. The reason to define some generic tests and checks here, is to make the process of making some other boilerplates a bit easier to branch off from the same documentation and reuse generic functionality. Things we have in mind to check all the time:
-
-- Check if the participant is using a tablet or phone. (not intended for 'mobile devices')
-- A generic survey asking about dominant hand, age, 'gender-related', etc. (not at this point?)
-- Keyboard layout and user-optimised response keys
-
-## Optional checks
-- Check if the audio works (and system sound loudness setting flows).
-
-## Always start an experiment with a html-button-response interaction part
+## Always start an experiment with a _html-button-response_ interaction part
 Browsers will often disallow auto-playing sound/video if there is no user activity related to a _mouse click_. It would be a shame to start of the experiment with errors of this type. An _instruction_ (plugin) with a mouse button response (or a multi-page instuction) will also fix this potential error.
 
 # HTML, CSS, Javascipt, jsPscyh, jsPsych default plugins
