@@ -164,9 +164,9 @@ On the other hand:
 Before you start editing one of these templates, reading up about jsPsych will usually be a good primer. We encourage anyone to get a gist of the 'simple' (but powerful!) way of doing things by following the recommendations given at jsPsych's (site)https://www.jspsych.org/ and to follow the first two tutorials. The basic things like how some 'index.html' file imports from the jspsych library, where and how plugins can be used are very relevant to understand. 
 
 ## The templates in a 'jsPsych' perspective
-Like always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledge online experiment, you need to invest a lot more time to make things work, which is why we chose to equip this selection of templates with the aforemetioned 'standard components' (consent, survey, a shared common utilities library). Also, by default, the templates implement stimulus lists with so-called _'timelineVariable'_ implementations, which is what most real studies typically need to be usable for 'production' experiments with real participants.
+Like always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledge online experiment, you need to invest a lot more time to make things work, which is why we chose to equip this selection of templates with the aforemetioned 'standard components' (consent, survey, a shared common utilities library). Also, by default, the templates implement stimulus lists with a so-called _'timelineVariable'_ implementation.
 
-Typically, the following is true for how these templates have evolved
+The following is true with regard to how these templates have evolved:
 
 - More complex experiment requirements requires more and/or more complex code.
 - More code requires better organisation of code.
@@ -174,13 +174,15 @@ Typically, the following is true for how these templates have evolved
 
 We have aimed to find a balance between template code organisation and following the typical _'jsPsych way of doing things'_.
 
-A 'bare bones' jsPsych experiment can consist of _only one specialised html file_ and a folder with the jsPysch library --or a link to an online version with the jsPsych javascript library given its fixed organisation. With out temlates, we typically deliver the following extra files by default:
+A 'bare bones' jsPsych experiment can consist of _only one specialised html file_ and a folder with the jsPysch library --or a link to an online version with the jsPsych javascript library given its fixed organisation. With our templates, we usually ship the following files by default:
 
 - An ```index.html``` file which is the 'landing page' for each jsPsych experiment template folder (minimal jsPsych). 
 - A ```consent_page.html``` 'placeholder', an external html file for informed consent.
 - A ```stimuli.js``` file where you can conmfigure stimulus lists and timelinVariable fields.
 - A ```instruction.js``` file where you are tempted to think about specific instructions.
 - A ```globals.js``` file where some defaults for relevant variables and 'constants' for the template experiment's index.html are defined.
+
+In some cases, plugins and/or other files can also be found, for instance in the case of the self-paced reading template.
 
 ## Modes of using jsPsych (and our templates)
 There are multiple ways to test, run and configure jsPsych-based experiments:
