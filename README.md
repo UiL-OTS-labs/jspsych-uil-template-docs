@@ -3,31 +3,35 @@ A collection of generic background information on UiL OTS 'templates' (or 'boile
 
 
 # Background and Rationale
-This is a first start to provide a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own experiment. The current goals with this repository are:
+This is a first start to provide a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own online experiment using (jsPsych)[https://www.jspsych.org/]. The current goals with this repository are:
 
 - Keep documentation on a selection of code bases in _one place_.
 - Separate _generic_ documentation from _specific_ documentation.
-- Give some _background information_ that may help Students, Researchers & Developers & Managers plan better.
+- Give some _background information_ that may help Students, Researchers & Developers & Managers plan online experimenting better.
 
 Of course, new insights will probably lead to better and probably more complex organisation.
 
 # Context and scope of current developments
-The first templates are developed for the liguistics master course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similar to the traditional, lab-bound way that was used before, using [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision). However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same and some concessions have been made that may be changed over time. Just a few of them are worth mentioning at this point, __every__ template comes with the following 'exra's'.
+The first templates are developed for the liguistics master course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similar to the traditional, lab-bound way that was used before, using [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision). However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same and some concessions have been made. 
 
-### 1. Consent 
+At this point, __every__ jspsych template comes with the following 'default' components included: 
+
+### 1. Consent page
 A consent page placeholder is included before the experiment starts. It is up to the specifics of your own goals (and organisation) what should be in that file, called `consent_page.html`. A simple look and feel for a consent page (just 'heading' style in this case) is included in that consent page's `<style>` section. In case of Utrecht University, this could better be done by inserting a link to the default UU House style .css files. We'll put up a link for that soon and update. (Todo).
 
-### 2. Survey
+### 2. Survey querstions
 You can adapt the survey questions to your onw needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about (_input (or data) validation_)[https://en.wikipedia.org/wiki/Data_validation]. For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is importantn for quality research online, think about (your) data management.
 
 ### 3. Keyboard procedure
 The Lexical Decison Templates use a custom keyboard setting procedure. This is to miltigate potential Reaction Time (RT) (interaction) effects due to hand preference.
 
-### 4. UiL _utility library_
+### 4. Generic UiL utility library
 This utility library was created to enable:
 
 - Mobile/Tablet detection (not the type of devices we want participants to use).
 - Restrained (or pseudo-) randomisation.
+
+The consquence of including all this, is that these templates contain quite a lot of more (and more complex) code than a basic jsPsych experiment. On the other hand, they automatically contain all components needed for 'professional' online research.   
 
 # Documentation that should minimally be in _every template_ (developer requirements)
 Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
@@ -54,7 +58,7 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 
 ```
 
-# List of jsPsych-based template repositories
+# List of jsPsych-based template repositories (developers: keep this list _updated_)
 
 ### Visual Lexical Decision Templates
 - Visual Lexical Decision basic version: [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
@@ -70,11 +74,11 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 ### Self-Paced Reading with Moving window Template
 - [jspsych-spr-mw](https://github.com/UiL-OTS-labs/jspsych-spr-mw)
 
-# Generic 'UiL' utility library (used in most templates)
+## Generic 'UiL' utility library (used in most templates)
 A tool that may help with things like restrained randomisation, detecting mobile phone/tablets and other reusable functionality.
 - [jspsych-uil-utils](https://github.com/UiL-OTS-labs/jspsych-uil-utils)
 
-# Miscallenous jspsych related repositories
+## Miscallenous jspsych related repositories
 
 ### Documentation on the concessions we have/had to make
 - [jspsych-concessions](https://github.com/UiL-OTS-labs/jspsych-concessions)
@@ -82,7 +86,7 @@ A tool that may help with things like restrained randomisation, detecting mobile
 ### Tools to help with csv/json conversions
 - [jspsych-boilerplates](https://github.com/UiL-OTS-labs/jspsych-boilerplates)
 
-# Test cases as available on experiment data store (click to start online experiment demo)
+# Online demo's as available on Experiment Data Store\*
 
 __Name__                                          | __weblink__                                                  |
 --------------------------------------------------|--------------------------------------------------------------|
@@ -94,18 +98,57 @@ Auditory Lexical Decision w/ Auditory Prime       | https://web-experiments.lab.
 Auditory Lexical Decision w/ Visual Prime         | https://web-experiments.lab.hum.uu.nl/audlexdec-vp/          |
 Auditory Lexical Decision w/ Visual Masked Prime  | https://web-experiments.lab.hum.uu.nl/audlexdec-vp-vm/       |
 
-# Overview (draft)
+(\*) These demo's may _not reflect the most recent states_ of the Github repositories. Typically, they are not often updated to do so.
+
+# General Overview (draft)
 
 ## jsPsych is _not_ a 'programming language'
 
 jsPsych uses a _cominbation_ of a _markup_ language (html), a _styling_ language (css), JavaScript (this _is_ a (programming language)[https://developer.mozilla.org/en-US/docs/Web/JavaScript] _and_ is a 'way of doing things' with that combination, aiming at time critical experimentation using internet browsers. 
 
+How some concepts relate to each other:
+
+### HTML
+- HTML is a markup language, not a programming language
+- All HTML files have a similar structure
+- With the ```<script>somescipt.js</scipt>``` tags, you can use Javascript in HTML
+
+### Javascript
+- Javascipt is a (web) _programming language_.
+- You can use functions, create custom code with interaction! 
+- There is no "official standard" for coding Javascipt, but it is very powerful  
+
+### CSS
+- CSS deals with mainly styling, like layouts, fonts, colors, backgrounds.
+- CSS evolved from being primarily a styling language, but is also becoming a bit more like a 'programming language', in a way.
+
+### jsPsych
+- jspsych _uses_ Javascript code for a specific experimental purpose and the functions from this library need to be imported in the top op your html file before you can use them.
+- You _could_ run an experiment in your browser while being offline, if you only refer to local sources that are imported in the relative path.
+- If you would need or want to load scripts from an online location in your experiment, you _could_. 
+  - But then, do make sure that the locally run code *does* have a working internet connection!
+
+## You will become a 'web developer' 
+jsPsych was developed with scientists in mind, not developers. In essence, the jsPsych library tries to let you focus on mainly writing a html file and (re-)use simple JavaScript-style code blocks for trials or trial parts. However, once you get started with jsPsych, you will become a bit of a 'web developer' anyway, in the sense that:
+
+- You will need _tools_ for editing html files, JavaScript code blocks and stylesheets).
+- You will need to learn about _debugging_ and the debugging capabilities of (most) web-browsers.
+- You will be _confused_ when things 'don't work'.
+- You will need to _accept_ that you cannot _control everything_.
+
+### You need _at least_ a _plain text editor_
+- Windows users may want to download Notepad++, or try out the free Visual Studio Code IDE (todo)
+- Mac users can use TextEdit in plain text mode (preferences) or try out Visual Studio Code, use XCode, Sublime Text, etc.
+- (Linux users will usually find their way with this step.)
+
 ## 'The lab' vs 'The Web'
 Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the UiL OTS labs for time critical experimentation and there are many templates to start with using ZEP. ZEP was designed in house and has been designed to accurately sync sound, visuals/text and/or other hardware (eye tracking, EEG, EMG, etc) in a 'traditional' research lab setup. By that we mean:
 
-- A quite controlled/controllable environment in terms of hardware, software, possible distractions.
+- A quite controlled/controllable environment in terms of hardware, software and possible distractions for participants.
 - Physically being bound to the lab.
 - Relatively small samples, optimised for "Wilhelm Wundt" style traditional research.
+
+The lab-based situation is expected to be limited due to the COVID-19 pandemic, which is why we've started working on web-based alternatives. Some general remarks about this:
 
 - 'The web' cannot offer the accuracy and precision needed for certain paradigms.
 - Variations in hardware, software, internet speed, random noise and distraction and many other aspects may cause variations at multiple levels.
@@ -116,22 +159,31 @@ On the other hand:
 - You could potentially get a lot more data, which may to some extent compensate noise and little control.
 - You can find a lot of code snippets and examples online, there is a huge user base for jsPsych and many plugins for certain paradigms can be used or adapted to certain needs.
 
-## jsPsych tutorials
-We encourage anyone to get a gist of the 'simple' (but powerful!) way of doing things by following the recommendations given at jsPsych's (site)https://www.jspsych.org/ and to follow a tutorial or two. The basic things like how some 'index.html' file imports from the jspsych library, where and how plugins can be used are very relevant organisation choices to understand.
+## General jsPsych info and tutorials
+Before you start editing one of these templates, reading up about jsPsych will usually be a good primer. We encourage anyone to get a gist of the 'simple' (but powerful!) way of doing things by following the recommendations given at jsPsych's (site)https://www.jspsych.org/ and to follow the first two tutorials. The basic things like how some 'index.html' file imports from the jspsych library, where and how plugins can be used are very relevant to understand. 
 
-## Templates in a 'jsPsych' perspective
+## The templates in a 'jsPsych' perspective
 Like always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledge online experiment, you need to invest a lot more time to make things work, which is why we chose to equip this selection of templates with the aforemetioned 'standard components' (consent, survey, a shared common utilities library). Also, by default, the templates implement stimulus lists with so-called _'timelineVariable'_ implementations, which is what most real studies typically need to be usable for 'production' experiments with real participants.
 
 Typically, the following is true for how these templates have evolved
 
-- More complex experiment requirements require more and/or more complex code.
+- More complex experiment requirements requires more and/or more complex code.
 - More code requires better organisation of code.
-- Better organisation of code leads to more places to edit your template experiment to serve your own needs.
+- Better organisation of code leads to more files to edit in order to adapt a template.
 
-We have aimed to find a balance between template code organisation and still follow the typical 'jsPsych' way of doing things with one index.html file where all things come together.
+We have aimed to find a balance between template code organisation and following the typical _'jsPsych way of doing things'_.
+
+A 'bare bones' jsPsych experiment can consist of _only one specialised html file_ and a folder with the jsPysch library --or a link to an online version with the jsPsych javascript library given its fixed organisation. With out temlates, we typically deliver the following extra files by default:
+
+- An ```index.html``` file which is the 'landing page' for each jsPsych experiment template folder (minimal jsPsych). 
+- A ```consent_page.html``` 'placeholder', an external html file for informed consent.
+- A ```stimuli.js``` file where you can conmfigure stimulus lists and timelinVariable fields.
+- A ```instruction.js``` file where you are tempted to think about specific instructions.
+- A ```globals.js``` file where some defaults for relevant variables and 'constants' for the template experiment's index.html are defined.
+
 
 ## Modes of using jsPsych (and our templates)
-As you may have noticed, there are multiple ways to test, run and configure jsPsych-based experiments:
+There are multiple ways to test, run and configure jsPsych-based experiments:
 
 - Locally on your PC, by double clicking the html file.
 - Full web server implementation (getting a link to the experiment, served by ICT&Media).
@@ -140,12 +192,35 @@ These two modes will likely confuse those who are not web developers, but the bo
 
 - A locally developed experiment will not guarantee that the same experiment will run in a server setup, or vice versa. 
 
-Many browsers and versions have their own defaults for security like autoplay, allowing sounds, pop-ups, importing images from local sources, etc. It is impossible to know 100% sure if things will work in your browser in advance, so be prepared to deal with some confusion.
+Many browsers and versions have their own defaults for security like 'autoplay', allowing sounds, pop-ups and alerts, importing images from local sources, etc. It is impossible to know 100% sure if things will work in your browser in advance, so be prepared to deal with some confusion.
 
-In this stage, we will limit things to running the templates __locally__, which has implications for the reliability and format of the data. Also: locally does __not__ mean that it can be run without an internet connection in most cases, due to the nature of loading external scripts. Browsers really are optimised for being online.
+# From template to your own online experiment
 
-# How and where to edit templates
-The general rationale for using templates, has always been to enable students/researchers without a background in programming to get started with a certain paradigm without having to do a lot of coding, but by just editing the so called 'stimulus file' and possibly some other files with globals for item types. The extent to which we can currently offer a jspsych, web based alternative within those requirements is debatable. Hopefully, this year's EDDA course can --to some extent-- serve as a test case for how easy or difficult this is, compared to ZEP.
+## Prerequisites and scope limitation
+This documentation is primarily aimed at people _affiliated to the UiL OTS labs_ (Utrecht University: RMA Linguistics students and researchers). The infrastructure and support for doing online experiments is _only availble for those people_. 
+
+Of course, there are many rules and regulations and procedures that need to be followed before conducting an online study. We will _not_ describe the organisational regulations in detail here, but please do keep in mind that, _generally_, the _same steps_ as mentioned on our (lab website)[https://uilots-labs.wp.hum.uu.nl/experiments/planning-an-experiment/] need to be followed, even though some details may be different.
+
+With the above scope limitations, the bigger picture overview is:
+
+Step                                                          | Comments
+--------------------------------------------------------------|---------------------------------------------------
+1. Choose a template to base your experiment on.              | Think about this well!
+2. Edit the template to your needs and test it _locally_.     | First, focus on the genral flow and look and feel.
+3. Log in to the Experiment data store and _read the docs_.   | [Experiment data store](https://experiment-datastore.acc.lab.hum.uu.nl)
+4. Make your experiment ready for _online_ (web server) usage.| More info on this will follow in _this_ documentation, too.
+5. Upload your experiment and test again.                     | The data output options are a bit easier to use, focus on output.
+6. Open and share the link to your experiment.                | Test well before doing this, nobody likes failing online experiments or unusable research data.
+
+Step 4 and 5 will generally be alternated iteratively, until all is working well.
+
+More detailed descriptions:
+
+# 1. Choosing a template
+There are quite some variations for the Lexical Decision Experiments, read the template's specific documentation te make an informed decision.
+
+# 2. How and where to edit templates
+The general rationale for using templates, has always been to enable students/researchers without a background in programming to get started with a certain paradigm without having to do a lot of coding, but by just editing the so called 'stimulus file' and possibly some other files with globals for item types. We have tried to separate the following types of 
 
 # How to debug your experiment
 todo
@@ -246,32 +321,7 @@ In general, since timing is important, please make sure to [pre-load all media f
 ## Always start an experiment with a _html-button-response_ interaction part
 Browsers will often disallow auto-playing sound/video if there is no user activity related to a _mouse click_. It would be a shame to start of the experiment with errors of this type. An _instruction_ (plugin) with a mouse button response (or a multi-page instuction) will also fix this potential error.
 
-# HTML, CSS, Javascipt, jsPscyh, jsPsych default plugins
 
-How some concepts relate to each other:
-
-## HTML
-- HTML is a markup language, not a programming language
-- All HTML files have a similar structure
-- With the ```<script>somescipt.js</scipt>``` tags, you can use Javascript in HTML
-
-## Javascript
-- Javascipt is a (web) _programming language_.
-- You can use functions, create custom code with interaction! 
-- There is no "official standard" for coding Javascipt, but it is very powerful  
-
-## CSS
-- CSS deals with mainly styling, like layouts, fonts, colors, backgrounds.
-- CSS evolved from being primarily a styling language, but is also becoming a bit more like a 'programming language', in a way.
-
-## jsPsych
-- jspsych _uses_ Javascript code for a specific experimental purpose and the functions from this library need to be imported in the top op your html file before you can use them.
-- You _could_ run an experiment in your browser while being offline, if you only refer to local sources that are imported in the relative path.
-- If you would need or want to load scripts from an online location in your experiment, you _could_. 
-  - But then, do make sure that the locally run code *does* have a working internet connection!
-
-# You need a plain text editor
-Be sure to read up on the lab website and learn about rich text vs plain text and how to be able to edit and inspect your files not using LibreOffice, Microsoft or Apple defaults. (todo)
 
 # CSV, JSON and javascript style 
 
