@@ -58,7 +58,8 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 
 ```
 
-# List of jsPsych-based template repositories (developers: keep this list _updated_)
+# List of jsPsych-based template repositories 
+###### (Developers: keep this list _updated_)
 
 ### Visual Lexical Decision Templates
 - Visual Lexical Decision basic version: [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
