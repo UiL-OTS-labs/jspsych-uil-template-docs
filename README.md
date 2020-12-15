@@ -132,7 +132,7 @@ How some concepts relate to each other:
 ## You will become a 'web developer' 
 jsPsych was developed with scientists in mind, not developers. In essence, the jsPsych library tries to let you focus on mainly writing a html file and (re-)use simple JavaScript-style code blocks for trials or trial parts. However, once you get started with jsPsych, you will become a bit of a 'web developer' anyway, in the sense that:
 
-- You will need _tools_ for editing html files, JavaScript code blocks and stylesheets).
+- You will need _tools_ for editing html files, JavaScript code blocks and stylesheets (not Word, Pages, LibreOffice).
 - You will need to learn about _debugging_ and the debugging capabilities of (most) web-browsers.
 - You will be _confused_ when things 'don't work'.
 - You will need to _accept_ that you cannot _control everything_.
@@ -161,10 +161,10 @@ On the other hand:
 - You can find a lot of code snippets and examples online, there is a huge user base for jsPsych and many plugins for certain paradigms can be used or adapted to certain needs.
 
 ## General jsPsych info and tutorials
-Before you start editing one of these templates, reading up about jsPsych will usually be a good primer. We encourage anyone to get a gist of the 'simple' (but powerful!) way of doing things by following the recommendations given at jsPsych's (site)https://www.jspsych.org/ and to follow the first two tutorials. The basic things like how some 'index.html' file imports from the jspsych library, where and how plugins can be used are very relevant to understand. 
+Before you start editing one of these templates, reading up about jsPsych will usually be a good primer. We encourage anyone to get a gist of the 'simple' (but powerful!) way of doing things by following the recommendations given at jsPsych's [site](https://www.jspsych.org/) and to follow the first two tutorials. The basic things like how some `index.html` file imports from the jspsych library, where and how plugins can be used are very relevant to understand. 
 
 ## The templates in a 'jsPsych' perspective
-Like always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledge online experiment, you need to invest a lot more time to make things work, which is why we chose to equip this selection of templates with the aforemetioned 'standard components' (consent, survey, a shared common utilities library). Also, by default, the templates implement stimulus lists with a so-called _'timelineVariable'_ implementation.
+Like always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledge online experiment, you need to invest a lot more time to make things work. This is why we chose to equip this selection of templates with the aforemetioned 'standard components' (consent, survey, a shared common utilities library). Also, by default, the templates implement stimulus lists with a so-called _'timelineVariable'_ implementation.
 
 The following is true with regard to how these templates have evolved:
 
@@ -204,20 +204,20 @@ While you could -- in principle -- use jsPsych in the traditional lab context, i
 ## Prerequisites and scope limitation
 This documentation is primarily aimed at people _affiliated to the UiL OTS labs_ (Utrecht University: RMA Linguistics students and researchers). The infrastructure and support for doing online experiments is _only availble for those people_. 
 
-Of course, there are many rules and regulations and procedures that need to be followed before conducting an online study. We will _not_ describe the organisational regulations in detail here, but please do keep in mind that, _generally_, the _same steps_ as mentioned on our (lab website)[https://uilots-labs.wp.hum.uu.nl/experiments/planning-an-experiment/] need to be followed, even though some details may be different.
+Of course, there are many rules and regulations and procedures that need to be followed before conducting an online study. We will _not_ describe the organisational regulations in detail here, but please do keep in mind that, _generally_, the _same steps_ as mentioned on our [lab website](https://uilots-labs.wp.hum.uu.nl/experiments/planning-an-experiment/) need to be followed, even though some details may be different at the detail level.
 
 With the above scope limitations, the bigger picture overview is:
 
-Step                                                          | Comments
+Step                                                          | Comment
 --------------------------------------------------------------|---------------------------------------------------
-1. Choose a template to base your experiment on.              | Think about this well!
-2. Edit the template to your needs and test it _locally_.     | First, focus on the genral flow and look and feel.
-3. Log in to the Experiment data store and _read the docs_.   | [Experiment data store](https://experiment-datastore.acc.lab.hum.uu.nl)
-4. Make your experiment ready for _online_ (web server) usage.| More info on this will follow in _this_ documentation, too.
-5. Upload your experiment and test again.                     | The data output options are a bit easier to use, focus on output.
-6. Open and share the link to your experiment.                | Test well before doing this, nobody likes failing online experiments or unusable research data.
+Choose a template to base your experiment on.                 | Think about this well!
+Edit the template to your needs and test it _locally_.        | First, focus on the genral flow and look and feel.
+Log in to the Experiment data store and _read the docs_.      | [Experiment data store](https://experiment-datastore.acc.lab.hum.uu.nl)
+Make your experiment ready for _online_ (web server) usage.   | More info on this will follow in _this_ documentation, too.
+Upload your experiment and test again.                        | The data output options are a bit easier to use, focus on output.
+Open and share the link to your experiment.                   | Test well before doing this, nobody likes failing online experiments or unusable research data.
 
-Step 4 and 5 will generally be alternated iteratively, until all is working well.
+The second and fifth steps will generally be alternated iteratively, until all is working well.
 
 More detailed descriptions:
 
