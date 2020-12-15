@@ -19,11 +19,11 @@ At this point, __every__ jspsych template comes with the following 'default' com
 ### 1. Consent page
 A consent page placeholder is included before the experiment starts. It is up to the specifics of your own goals (and organisation) what should be in that file, called `consent_page.html`. A simple look and feel for a consent page (just 'heading' style in this case) is included in that consent page's `<style>` section. In case of Utrecht University, this could better be done by inserting a link to the default UU House style .css files. We'll put up a link for that soon and update. (Todo).
 
-### 2. Survey querstions
+### 2. Survey questions
 You can adapt the survey questions to your onw needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about (_input (or data) validation_)[https://en.wikipedia.org/wiki/Data_validation]. For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is importantn for quality research online, think about (your) data management.
 
-### 3. Keyboard procedure
-The Lexical Decison Templates use a custom keyboard setting procedure. This is to miltigate potential Reaction Time (RT) (interaction) effects due to hand preference.
+### 3. Keyboard procedure (sometimes also audio procedures).
+The Lexical Decison Templates use a custom keyboard setting procedure. This is to miltigate potential Reaction Time (RT) (interaction) effects due to hand preference. In templates that use audio, there is also a simple testing procedure in the template.
 
 ### 4. Generic UiL utility library
 This utility library was created to enable:
