@@ -3,7 +3,7 @@ A collection of generic background information on UiL OTS 'templates' (or 'boile
 
 
 # Background and Rationale
-This is a first start to provide a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own online experiment using (jsPsych)[https://www.jspsych.org/]. The current goals with this repository are:
+This is a first start to provide a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own online experiment using [jsPsych](https://www.jspsych.org/). The current goals with this repository are:
 
 - Keep documentation on a selection of code bases in _one place_.
 - Separate _generic_ documentation from _specific_ documentation.
@@ -87,7 +87,7 @@ A tool that may help with things like restrained randomisation, detecting mobile
 ### Tools to help with csv/json conversions
 - [jspsych-boilerplates](https://github.com/UiL-OTS-labs/jspsych-boilerplates)
 
-# Online demo's as available on Experiment Data Store\*
+# Online demo's (using the Experiment Data Store)\*
 
 __Name__                                          | __weblink__                                                  |
 --------------------------------------------------|--------------------------------------------------------------|
@@ -142,7 +142,7 @@ jsPsych was developed with scientists in mind, not developers. In essence, the j
 - Mac users can use TextEdit in plain text mode (preferences) or try out Visual Studio Code, use XCode, Sublime Text, etc.
 - (Linux users will usually find their way with this step.)
 
-## 'The lab' vs 'The Web'
+## 'The lab' vs 'The Web: limitations and opportunities
 Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the UiL OTS labs for time critical experimentation and there are many templates to start with using ZEP. ZEP was designed in house and has been designed to accurately sync sound, visuals/text and/or other hardware (eye tracking, EEG, EMG, etc) in a 'traditional' research lab setup. By that we mean:
 
 - A quite controlled/controllable environment in terms of hardware, software and possible distractions for participants.
@@ -182,11 +182,10 @@ A 'bare bones' jsPsych experiment can consist of _only one specialised html file
 - A ```instruction.js``` file where you are tempted to think about specific instructions.
 - A ```globals.js``` file where some defaults for relevant variables and 'constants' for the template experiment's index.html are defined.
 
-
 ## Modes of using jsPsych (and our templates)
 There are multiple ways to test, run and configure jsPsych-based experiments:
 
-- Locally on your PC, by double clicking the html file.
+- Locally on your (or a participant's) PC, by double clicking the html file.
 - Full web server implementation (getting a link to the experiment, served by ICT&Media).
 
 These two modes will likely confuse those who are not web developers, but the bottom line is: 
@@ -194,6 +193,9 @@ These two modes will likely confuse those who are not web developers, but the bo
 - A locally developed experiment will not guarantee that the same experiment will run in a server setup, or vice versa. 
 
 Many browsers and versions have their own defaults for security like 'autoplay', allowing sounds, pop-ups and alerts, importing images from local sources, etc. It is impossible to know 100% sure if things will work in your browser in advance, so be prepared to deal with some confusion.
+
+## For 'real' online data collection, you will need a server-based setup.
+While you could -- in principle -- use jsPsych in the traditional lab context, it will typically not make a lot of sense. Especially if you want to store your research data for an experiment in one place, a web-server setup is the way to go. Read on to find out how this can be done, if some conditions are met.
 
 # From template to your own online experiment
 
