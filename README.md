@@ -217,7 +217,13 @@ Make your experiment ready for _online_ (web server) usage.   | More info on thi
 Upload your experiment and test again.                        | The data output options are a bit easier to use, focus on output.
 Open and share the link to your experiment.                   | Test well before doing this, nobody likes failing online experiments or unusable research data.
 
-The second and fifth steps will generally be alternated iteratively, until all is working well.
+The forth and fifth step will generally be alternated iteratively, until all is working well on all aspects: 
+
+- Flow/look and feel, routing, timing, survey & consent.
+- Data output and usability. 
+- Online specifics for optimising audio presentation, keyboard setting, media and media preloading/.
+
+In short: _everything(!)_ that you consider relevant to solving an actual problem with your experiment.
 
 More detailed descriptions:
 
@@ -225,7 +231,9 @@ More detailed descriptions:
 There are quite some variations for the Lexical Decision Experiments, read the template's specific documentation te make an informed decision.
 
 # 2. How and where to edit templates
-The general rationale for using templates, has always been to enable students/researchers without a background in programming to get started with a certain paradigm without having to do a lot of coding, but by just editing the so called 'stimulus file' and possibly some other files with globals for item types. We have tried to separate the following types of 
+todo
+
+# TODO
 
 # How to debug your experiment
 todo
