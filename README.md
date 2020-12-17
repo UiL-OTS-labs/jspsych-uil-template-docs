@@ -232,10 +232,12 @@ Detailed descriptions:
 There are quite some variations for the Lexical Decision Experiments, read the template's specific documentation te make an informed decision.
 
 # 2. How and where to edit templates
-Editing templates is largely self-explanatory: stimuli are edited in stimuli.js, global settings in globals.js, and instructions in instructions.js. Some hints can be found in the comments in the files themselves (comments are preceded with two forward slashes //). When changing things, make sure to frequently run the experiment again to make sure it still works (and that you haven't messed up the syntax by accidentally deleting brackets, quotes and such). Regardless, we will discuss some more details.
+Editing templates is largely self-explanatory: stimuli are edited in `stimuli.js`, global settings in `globals.js`, and instructions in `instructions.js`. Some hints can be found in the comments in the files themselves (comments are preceded with two forward slashes //). When changing things, make sure to frequently run the experiment again to make sure it still works (and that you haven't messed up the syntax by accidentally deleting brackets, quotes and such). 
+
+_Some_ more details about this.
 
 ## 2.1 Imports in the head section 'index.html' 
-###(Import the jsPsych library, some typically used jsPsych plugins, the jsPsych style sheet and also 'our' custom template libraries & files)
+### (Import the jsPsych library, some typically used jsPsych plugins, the jsPsych style sheet and also 'our' custom template libraries & files)
 
 Javascript libraries --among other things-- are imported in the index.html's so-called _head section_ (somewhere in between the ```<head>``` & ```</head>``` tags, you will find import lines that may look like this:
 
@@ -247,7 +249,7 @@ In the above case, the import is in fact an example using the custom [Experiment
 
 Configuring your own local paths to jsPsych's core scripts like in the latter examples is generally discouraged, because it may lead to difficult problems if you are not a web developer and things go wrong. If making an exception to this solves an actual problem, lab support may be able to help you out. For instance, maybe a a newer version of jsPysch would add a crucial new feature that you want to use.
 
-A typical import section for a template:
+#### A typical _head section_ import structure
 
 Let's have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of that file (just until the end of the head section) looks like and walk through that step by step:
 
@@ -334,7 +336,7 @@ Line 18 imports the `jspsych-instructions` plugin, specialised in (multi-page) c
 Line 19 imports a html plugin for survey questions.
 Line 20 imports a multiple choice plugin, also for survey purposes.
 
-We already mentioned the default css _link_ used by sPsych (line 22). It's not a Javascript library or plugin, but a place where css styling is defined. It's placed _below_ all _standard jsPsych_ plugins, but _before_ our custom template-related scripts. The comments should also make this clear. So we continue with the 'UiL OTS custom template' imports:
+We already mentioned the default css _link_ used by sPsych (line 22). It's not a Javascript library or plugin, but a place where css styling is defined. It's placed _below_ all _standard jsPsych_ plugins, but _before_ our custom template-related scripts. The comments should also make this clear. So, we continue with the 'UiL OTS custom template' imports:
 
 ```
 ...
@@ -351,17 +353,27 @@ We already mentioned the default css _link_ used by sPsych (line 22). It's not a
 ```
 
 Line 26 imports the UiL OTS utility library.
-Lines 29-31 import non-jsPsych default files, they import the aforementioned custom template-related javascript files, they are _relative_ imports. In case you would remove thet stimuli.js file from your template experiment folder, this will result in errors (not always very clear for a user). 
+Lines 29-31 import 'non-jsPsych' _default_ files, they import the aforementioned custom template-related javascript files, they are _relative_ imports. In case you would remove thet stimuli.js file from your template experiment folder, this will result in errors (not always very clear for a user). 
 
-## In general: import only what you really need
-You may have noticed that a standard template already has quite some lines for standard things. This is mainly because they were designed to be 'complete experiments'. If for instance, you would _not_ want to include any survey questions, it's best to delete the imports related to them, and of course also the parts in the index.html that relate to the survey blocks, read on to find out about the next important section in the index.html file for the templates.
+#### In _general_: import only what you really need
+You may have noticed that a standard template already has quite some lines for standard things. This is mainly because they were designed to be 'complete experiments'. If for instance, you would _not_ want to include any survey questions, it's best to delete the imports related to them, and of course also the parts in the index.html that relate to the survey blocks, read on to find out about the next important section of the index.html file.
 
-## javaScripy Code blocks, (sub-)trials, trial procedures and other code organisation in an index.html file.
+## 2.2 The _script section_
+#### javaScripy Code blocks, (sub-)trials, trial procedures and other code organisation in an index.html file
 After looking at what is imported in between the `<head>` tags, let's now look at what is in the next important section for using jsPsych: the part where all these files and libraries are actually used to _do_ things in the participants browser. Note, this will not be very in-depth at this point.
 
+Global structure of the script section:
 
-
-
+section/block | Description
+--------------|-------------------------------------------------------------------------------------------------------
+A             | Stimuli loading, using stimuli.js function(s).
+B             | Experiment logic_ variables (don't touch these, usually).
+C             | Custom (template-related) Javascript _functions_ (if necessary, like with the keyboard setting procedure).
+D             | Data preparation: _jsPsych-specific_ way of defining data that should be added to all trials.
+E             | Trials and trial elements:_jsPsych-specific_ definition for trials/trial phases and other functional block definitions (instructions, survey blocks, consent page).
+F             | Procedures: _jsPsych-specific_ _procedures_ typically use a combination of parts as defined in block E.
+G             | A block with the timeline, where the experiment's building blocks are added to form your experiment flow.
+H             | The _init_-block: witch this part, you actually start the experiment.
 
 # Best practices for jsPsych experiments 
 
