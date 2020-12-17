@@ -209,14 +209,14 @@ Of course, there are many rules and regulations and procedures that need to be f
 
 With the above scope limitations, the bigger picture overview is:
 
-   | Description                                                          | Comment
----|----------------------------------------------------------------------|---------------------------------------------------
-1  | Choose a template to base your experiment on.                        | Read the template docs.
-2  | Edit the template to your needs and test it _locally_.               | First, focus on the general flow and look and feel.
-3  | Log in to the Experiment data store and _read the docs_.             | [Experiment data store](https://experiment-datastore.acc.lab.hum.uu.nl)
-4  | Make your experiment ready for _online_ (web server) usage.          | More info on this will follow in _this_ documentation, too.
-5  | Upload your experiment and test again.                               | The data output options are a bit easier to use, focus on data output is advised in this step.
-6  | 'Open' and share the link to your experiment.                        | Test very well before doing this (nobody likes failing online experiments or unusable research data)!
+step | Description                                                          | Comment
+-----|----------------------------------------------------------------------|----------------------------------------------------------------------------
+1    | Choose a template to base your experiment on.                        | Read the template docs.
+2    | Edit the template to your needs and test it _locally_.               | First, focus on the general flow and look and feel.
+3    | Log in to the Experiment data store and _read the docs_.             | [Experiment data store](https://experiment-datastore.acc.lab.hum.uu.nl)
+4    | Make your experiment ready for _online_ (web server) usage.          | More info on this will follow in _this_ documentation, too.
+5    | Upload your experiment and test again.                               | The data output options are a bit easier to use, focus on data output is advised in this step.
+6    | 'Open' and share the link to your experiment.                        | Test very well before doing this (nobody likes failing online experiments or unusable research data)!
 
 Step 4 and 5 will generally be alternated iteratively, until all is working well on _all_ aspects: 
 
