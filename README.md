@@ -373,7 +373,7 @@ D             | Data preparation: _jsPsych-specific_ way of defining data that s
 E             | Trials and trial elements:_jsPsych-specific_ definition for trials/trial phases and other functional block definitions (instructions, survey blocks, consent page).
 F             | Procedures: _jsPsych-specific_ _procedures_ typically use a combination of parts as defined in block E.
 G             | The timeline, where the experiment's building blocks are added to form your experiment flow.
-H             | The _init_-block: witch this part, you actually start the experiment by executing the timeline.
+H             | The _init_-block: with this part, the experiment starts -for real- by 'executing the timeline'.
 
 # 3. The experiment data store
 Most information about should be availble once you have logged in to the [Experiment Data Store](https://experiment-datastore.acc.lab.hum.uu.nl). 
@@ -392,7 +392,7 @@ const ACCESS_KEY = 'N278123456-%^&&8888*(*7777--090900!#$%1234';
 ```
 Note the _quotes_!
 
-# 5. Finishing up.
+# 5. Sharing your experiment
 Running your experiment _locally_ will usually _also_ still work after editing that value the `globals.js` file, but of course, the data is not saved like on the server, you will just get a bunch of output in your browser window, like while developing locally. Please do make sure to keep track of your edits, once you are sure everything works, you can invite your participants!
 
 # Genral best practices for jsPsych experiments 
