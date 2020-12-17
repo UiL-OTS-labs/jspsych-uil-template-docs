@@ -233,11 +233,10 @@ There are quite some variations for the Lexical Decision Experiments, read the t
 # 2. How and where to edit templates
 Editing templates is largely self-explanatory: stimuli are edited in stimuli.js, global settings in globals.js, and instructions in instructions.js. Some hints can be found in the comments in the files themselves (comments are preceded with two forward slashes //). When changing things, make sure to frequently run the experiment again to make sure it still works (and that you haven't messed up the syntax by accidentally deleting brackets, quotes and such).
 
-# How to debug your experiment
-todo
 
+## Imports in 'index.html' 
+###(Import the jsPsych library, some typically used jsPsych plugins, the jsPsych style sheet and also 'our' custom template libraries & files)
 
-# Imports in 'index.html'
 Javascript libraries --among other things-- are imported in the index.html's so-called _head section_ (somewhere in between the ```<head>``` & ```</head>``` tags, you will find import lines that may look like this:
 
 ```<script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>```
@@ -245,13 +244,11 @@ Javascript libraries --among other things-- are imported in the index.html's so-
 In the above case, the import is in fact an example using the custom [Experiment Datastore](https://experiment-datastore.acc.lab.hum.uu.nl) path as can be used with our current server path to the general jsPsych JavaScript library. If you should want to use your own, _relative path_ to a different version of jsPsych, it could look like this, for example:
 
 ```<script src="jspsych/6.1.2/jspsych.js"></script>```
-or 
-
-```<script src="./myjspsychCustomFolderName/6.1.2/jspsych.js"></script>```
 
 Configuring your own local paths to jsPsych's core scripts like in the latter examples is generally discouraged, because it may lead to difficult problems if you are not a web developer and things go wrong. If making an exception to this solves an actual problem, lab support may be able to help you out. For instance, maybe a a newer version of jsPysch would add a crucial new feature that you want to use.
 
-In fact, let's just have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of the file, just until the end of the head section looks like and walk through that step by step:
+
+Now, let's just have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of the file, just until the end of the head section looks like and walk through that step by step:
 
 
 ```
@@ -270,22 +267,23 @@ In fact, let's just have a look at one of the current templates, the Auditory Le
 13.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-button-response.js"></script>
 14.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-keyboard-response.js"></script>
 15.    
-16.    <!-- Generic check/ask libraries (instructions & surveys) -->
-17.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
-18.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
-19.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
-20.    
-21.    <!-- Generic jspsych style sheet -->
-22.    <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
-23.
-24.    <!-- Uil OTS libraries -->
-25.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
-26.
-27.    <!-- Uil OTS scripts -->
-28.    <script src="stimuli.js"></script>
-29.    <script src="globals.js"></script>
-30.    <script src="instructions.js"></script>
-31.    
+16.    <!-- Generic check/ask libraries (consent, instructions & surveys) -->
+17.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-external-html.js"></script>
+18.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
+19.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
+20.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
+21.    
+22.    <!-- Generic jspsych style sheet -->
+23.    <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
+24.
+25.    <!-- Uil OTS libraries -->
+26.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
+27.
+28.    <!-- Uil OTS scripts -->
+29.    <script src="stimuli.js"></script>
+30.    <script src="globals.js"></script>
+31.    <script src="instructions.js"></script>
+32.    
 ...   
 ...    </head>
  ```
@@ -294,11 +292,11 @@ In order for your experiment to use _only_ jsPsych's core library, the import is
 
 ```<script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>```
 
-Additionally, the default 'look and feel' for common jsPsych experiment layouts is bundled in a 'styling' file, a .css file, this is imported on line 22 in the above line-numbered example, if you don't import it, things will not be layouted like experiments usually 'work', so it should also always be there when you start with your own experiment: 
+Additionally, the default 'look and feel' for common jsPsych experiment layouts is bundled in a 'styling' file, a .css file, this is imported on line 22 in the above line-numbered example, if you don't import it, things will not be layouted like jsPsych experiments usually 'work', so it should also always be there when you start with your own experiment: 
 
 ```<link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>```
 
-Let us have a look at some ```<script>```-```</script>``` imports in between lines 8 and 22 and reflect on what they do to make the jsPsych library actually do things like things that typically define (reaction time) experimental linguistics experiments: key-presses, questions, audio fragments and text presentations, amongst others.
+Let us have a look at some ```<script>```-```</script>``` imports in between lines 8 and 23 and reflect on what they do to make the jsPsych library actually do things like things that typically define (reaction time) experimental linguistics experiments: key-presses, questions, audio fragments and text presentations, amongst others.
 
 On line 9 and 10 we read:
 
@@ -320,6 +318,50 @@ From lines 12-14, we may gather:
 1. (line 12) Certain tags of the lines in "header" code can make it a comment, like ```<!--this is a comment -->```.
 2. (line 13) There is a __keyboard-based audio interaction__ jsPsych _plugin_ that is used in this template.
 3. (Line 14) There is also a __mouse button-based audio interaction__ jsPsych _plugin_ that is used in this template.
+
+Lines 16-20 deal with other plugins used by our templates, they are usually _all_ included:
+
+```
+16.    <!-- Generic check/ask libraries (consent, instructions & surveys) -->
+17.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-external-html.js"></script>
+18.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
+19.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
+20.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
+```
+
+Line 17 imports the `jspsych-external-html` plugin, which is used for the consent page (placeholder html).
+Line 18 imports the `jspsych-instructions` plugin, specialised in (multi-page) clickable navigation instructions.
+Line 19 imports a html plugin for survey questions.
+Line 20 imports a multiple choice plugin, also for survey purposes.
+
+We already mentioned the default css _link_ used by sPsych (line 22). It's not a Javascript library or plugin, but a place where css styling is defined. It's placed _below_ all _standard jsPsych_ plugins, but _before_ our custom template-related scripts. The comments should also make this clear. So we continue with the 'UiL OTS custom template' imports:
+
+```
+...
+25.    <!-- Uil OTS libraries -->
+26.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
+27.
+28.    <!-- Uil OTS scripts -->
+29.    <script src="stimuli.js"></script>
+30.    <script src="globals.js"></script>
+31.    <script src="instructions.js"></script>
+32.    
+...   
+...    </head>
+```
+
+Line 26 imports the UiL OTS utility library.
+Lines 29-31 import non-jsPsych default files, they import the aforementioned custom template-related javascript files, they are _relative_ imports. In case you would remove thet stimuli.js file from your template experiment folder, this will result in errors (not always very clear for a user). 
+
+## In general: import only what you really need
+You may have noticed that a standard template already has quite some lines for standard things. This is mainly because they were designed to be 'complete experiments'. If for instance, you would _not_ want to include any survey questions, it's best to delete the imports related to them, and of course also the parts in the index.html that relate to the survey blocks, read on to find out about the next important section in the index.html file for the templates.
+
+## javaScripy Code blocks, (sub-)trials, trial procedures and other code organisation in an index.html file.
+After looking at what is imported in between the `<head>` tags, let's now look at what is in the next important section for using jsPsych: the part where all these files and libraries are actually used to _do_ things in the participants browser. Note, this will not be very in-depth at this point.
+
+
+
+
 
 # Best practices for jsPsych experiments 
 
