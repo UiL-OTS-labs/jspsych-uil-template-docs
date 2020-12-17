@@ -358,7 +358,7 @@ Cons:
 
 id | condition | string 
 ---|-----------|------- 
-1  | nonword   | clem
+1  | nonword   | clet
 2  | word      | ball
 3  | nonword   | hamp
 
