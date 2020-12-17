@@ -99,7 +99,7 @@ Auditory Lexical Decision w/ Auditory Prime       | https://web-experiments.lab.
 Auditory Lexical Decision w/ Visual Prime         | https://web-experiments.lab.hum.uu.nl/audlexdec-vp/          |
 Auditory Lexical Decision w/ Visual Masked Prime  | https://web-experiments.lab.hum.uu.nl/audlexdec-vp-vm/       |
 
-(\*) These demo's may _not reflect the most recent states_ of the Github repositories. Typically, they are not often updated to do so.
+(\*) These demos may _not reflect the most recent states_ of the Github repositories. Typically, they are not often updated to do so.
 
 # General Overview (draft)
 
@@ -164,7 +164,7 @@ On the other hand:
 Before you start editing one of these templates, reading up about jsPsych will usually be a good primer. We encourage anyone to get a gist of the 'simple' (but powerful!) way of doing things by following the recommendations given at jsPsych's [site](https://www.jspsych.org/) and to follow the first two tutorials. The basic things like how some `index.html` file imports from the jspsych library, where and how plugins can be used are very relevant to understand. 
 
 ## The templates in a 'jsPsych' perspective
-Like always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledge online experiment, you need to invest a lot more time to make things work. This is why we chose to equip this selection of templates with the aforemetioned 'standard components' (consent, survey, a shared common utilities library). Also, by default, the templates implement stimulus lists with a so-called _'timelineVariable'_ implementation.
+As always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledged online experiment, you need to invest a lot more time to make things work. This is why we chose to equip this selection of templates with the aforemetioned 'standard components' (consent, survey, a shared common utilities library). Also, by default, the templates implement stimulus lists with a so-called _'timelineVariable'_ implementation.
 
 The following is true with regard to how these templates have evolved:
 
@@ -202,7 +202,7 @@ While you could -- in principle -- use jsPsych in the traditional lab context, i
 # From template to your own online experiment
 
 ## Prerequisites and scope limitation
-This documentation is primarily aimed at people _affiliated to the UiL OTS labs_ (Utrecht University: RMA Linguistics students and researchers). The infrastructure and support for doing online experiments is _only availble for those people_. 
+This documentation is primarily aimed at people _affiliated to the UiL OTS labs_ (Utrecht University: RMA Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_. While we are still developing, support is limited to students in the EDDA course only!
 
 Of course, there are many rules and regulations and procedures that need to be followed before conducting an online study. We will _not_ describe the organisational regulations in detail here, but please do keep in mind that, _generally_, the _same steps_ as mentioned on our [lab website](https://uilots-labs.wp.hum.uu.nl/experiments/planning-an-experiment/) need to be followed, even though some details may be different at the detail level.
 
@@ -231,9 +231,7 @@ More detailed descriptions:
 There are quite some variations for the Lexical Decision Experiments, read the template's specific documentation te make an informed decision.
 
 # 2. How and where to edit templates
-todo
-
-# TODO
+Editing templates is largely self-explanatory: stimuli are edited in stimuli.js, global settings in globals.js, and instructions in instructions.js. Some hints can be found in the comments in the files themselves (comments are preceded with two forward slashes //). When changing things, make sure to frequently run the experiment again to make sure it still works (and that you haven't messed up the syntax by accidentally deleting brackets, quotes and such).
 
 # How to debug your experiment
 todo
@@ -329,7 +327,7 @@ From lines 12-14, we may gather:
 In the case of web server setup, it is as good idea to initialise jsPysch with ```use_webaudio = true```, in case you use audio stimuli. This is typically faster than when set to false. This seems to be be redundant now, since we can do such things using ```jspsych-uil-utils```.
 
 ## Preload media, like images, video, audio
-In general, since timing is important, please make sure to [pre-load all media files](https://www.jspsych.org/overview/media-preloading/). This is because, we will typically use trials with a timelineVariables setup. 
+In general, since timing is important, please make sure to [pre-load all media files](https://www.jspsych.org/overview/media-preloading/). This is because we will typically use trials with a timelineVariables setup. 
 
 ## Always start an experiment with a _html-button-response_ interaction part
 Browsers will often disallow auto-playing sound/video if there is no user activity related to a _mouse click_. It would be a shame to start of the experiment with errors of this type. An _instruction_ (plugin) with a mouse button response (or a multi-page instuction) will also fix this potential error.
@@ -360,31 +358,31 @@ Cons:
 
 id | condition | string 
 ---|-----------|------- 
-1  | nonword   | brlr
+1  | nonword   | clem
 2  | word      | ball
-3  | nonword   | pjrt
+3  | nonword   | hamp
 
 #### Some variable type is quoted, some is not, but it may be needed to do things way:
 
 id | condition | string 
 ---|-----------|------- 
-1  | "nonword" | brlr
+1  | "nonword" | clet
 2  | "word"    | ball
-3  | "nonword" | pjrt
+3  | "nonword" | hamp
 
 id | condition | string 
 ---|-----------|------- 
-1  | nonword   | "brlr"
+1  | nonword   | "clet"
 2  | word      | "ball"
-3  | nonword   | "pjrt"
+3  | nonword   | "hamp"
 
 #### This will drive most people crazy, but it might just work
 
 id | condition | string 
 ---|-----------|------- 
-1  | "nonword" | "brlr"
+1  | "nonword" | "clet"
 2  | word      | "ball"
-3  | nonword   | pjrt
+3  | nonword   | hamp
 
 #### A valid reason to use quotes can be found here
 id | condition | string 
@@ -414,7 +412,7 @@ id | condition | string
     {
         "id": "1",
         "condition": "nonword",
-        "string": "brlr"
+        "string": "clet"
     },
     {
         "id": "2",
@@ -424,7 +422,7 @@ id | condition | string
     {
         "id": "3",
         "condition": "nonword",
-        "string": "pjrt"
+        "string": "hamp"
     }
 ]
 ```
@@ -436,7 +434,7 @@ var stimuli = [
     {
         id: "1",
         condition: "nonword",
-        string: "brlr"
+        string: "clet"
     },
     {
         id: "2",
@@ -446,7 +444,7 @@ var stimuli = [
     {
         id: "3",
         condition: "nonword",
-        string: "pjrt"
+        string: "hamp"
     }
 ]
 
