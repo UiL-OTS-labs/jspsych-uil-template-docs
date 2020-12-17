@@ -20,10 +20,10 @@ At this point, __every__ jspsych template comes with the following 'default' com
 A consent page placeholder is included before the experiment starts. It is up to the specifics of your own goals (and organisation) what should be in that file, called `consent_page.html`. A simple look and feel for a consent page (just 'heading' style in this case) is included in that consent page's `<style>` section. In case of Utrecht University, this could better be done by inserting a link to the default UU House style .css files. We'll put up a link for that soon and update. (Todo).
 
 ### 2. Survey questions
-You can adapt the survey questions to your onw needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about [_input (or data) validation_](https://en.wikipedia.org/wiki/Data_validation). For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is importantn for quality research online, think about (your) data management.
+You can adapt the survey questions to your onw needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about [_input (or data) validation_](https://en.wikipedia.org/wiki/Data_validation). For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is important for quality research online, think about (your) data management.
 
 ### 3. Keyboard procedure (sometimes also audio procedures).
-The Lexical Decison Templates use a custom keyboard setting procedure. This is to miltigate potential Reaction Time (RT) (interaction) effects due to hand preference. In templates that use audio, there is also a simple testing procedure in the template.
+The Lexical Decison Templates use a custom keyboard setting procedure. This is to miltigate potential Reaction Time (RT) (interaction) effects due to hand preference. In templates that use _audio_, there is also a simple testing procedure for that in the template.
 
 ### 4. Generic UiL utility library
 This utility library was created to enable:
@@ -142,7 +142,7 @@ jsPsych was developed with scientists in mind, not developers. In essence, the j
 - Mac users can use TextEdit in plain text mode (preferences) or try out Visual Studio Code, use XCode, Sublime Text, etc.
 - (Linux users will usually find their way with this step.)
 
-## 'The lab' vs 'The Web: limitations and opportunities
+## 'The lab' vs 'The Web': limitations and opportunities
 Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the UiL OTS labs for time critical experimentation and there are many templates to start with using ZEP. ZEP was designed in house and has been designed to accurately sync sound, visuals/text and/or other hardware (eye tracking, EEG, EMG, etc) in a 'traditional' research lab setup. By that we mean:
 
 - A quite controlled/controllable environment in terms of hardware, software and possible distractions for participants.
@@ -156,6 +156,7 @@ The lab-based situation is expected to be limited due to the COVID-19 pandemic, 
 - Especially when sounds _and_ images need to be synced, be sure to define means to verify or falsify presentation syncing and test well.
 
 On the other hand:
+
 - The _principles_ of most paradigms can still be taught and learned.
 - You could potentially get a lot more data, which may to some extent compensate noise and little control.
 - You can find a lot of code snippets and examples online, there is a huge user base for jsPsych and many plugins for certain paradigms can be used or adapted to certain needs.
@@ -174,7 +175,7 @@ The following is true with regard to how these templates have evolved:
 
 We have aimed to find a balance between template code organisation and following the typical _'jsPsych way of doing things'_.
 
-A 'bare bones' jsPsych experiment can consist of _only one specialised html file_ and a folder with the jsPysch library --or a link to an online version with the jsPsych javascript library given its fixed organisation. With our templates, we usually ship the following files by default:
+A 'bare bones' jsPsych experiment can consist of _only one specialised html file_ and a folder with the jsPysch library --or--, a link to an online version with the jsPsych javascript library given its fixed organisation. With our templates, we usually ship the following files by default:
 
 - An ```index.html``` file which is the 'landing page' for each jsPsych experiment template folder (minimal jsPsych). 
 - A ```consent_page.html``` 'placeholder', an external html file for informed consent.
@@ -182,7 +183,7 @@ A 'bare bones' jsPsych experiment can consist of _only one specialised html file
 - A ```instruction.js``` file where you are tempted to think about specific instructions.
 - A ```globals.js``` file where some defaults for relevant variables and 'constants' for the template experiment's index.html are defined.
 
-In some cases, plugins and/or other files can also be found, for instance in the case of the self-paced reading template.
+In some cases, plugins and/or other files can also be found, for instance in the case of the self-paced reading template. Mode details on how and where to adapt files to suit your needs will follow.
 
 ## Modes of using jsPsych (and our templates)
 There are multiple ways to test, run and configure jsPsych-based experiments:
@@ -208,16 +209,16 @@ Of course, there are many rules and regulations and procedures that need to be f
 
 With the above scope limitations, the bigger picture overview is:
 
-Step                                                          | Comment
---------------------------------------------------------------|---------------------------------------------------
-Choose a template to base your experiment on.                 | Think about this well!
-Edit the template to your needs and test it _locally_.        | First, focus on the genral flow and look and feel.
-Log in to the Experiment data store and _read the docs_.      | [Experiment data store](https://experiment-datastore.acc.lab.hum.uu.nl)
-Make your experiment ready for _online_ (web server) usage.   | More info on this will follow in _this_ documentation, too.
-Upload your experiment and test again.                        | The data output options are a bit easier to use, focus on output.
-Open and share the link to your experiment.                   | Test well before doing this, nobody likes failing online experiments or unusable research data.
+\# | Description                                                          | Comment
+---|----------------------------------------------------------------------|---------------------------------------------------
+1. | Choose a template to base your experiment on.                        | Read the template docs.
+2. | Edit the template to your needs and test it _locally_.               | First, focus on the general flow and look and feel.
+3. | Log in to the Experiment data store and _read the docs_.             | [Experiment data store](https://experiment-datastore.acc.lab.hum.uu.nl)
+4. | Make your experiment ready for _online_ (web server) usage.          | More info on this will follow in _this_ documentation, too.
+5. | Upload your experiment and test again.                               | The data output options are a bit easier to use, focus on data output is advised in this step.
+6. | 'Open' and share the link to your experiment.                        | Test very well before doing this (nobody likes failing online experiments or unusable research data)!
 
-The forth and fifth step will generally be alternated iteratively, until all is working well on all aspects: 
+Step 4 and 5 will generally be alternated iteratively, until all is working well on _all_ aspects: 
 
 - Flow/look and feel, routing, timing, survey & consent.
 - Data output and usability. 
@@ -225,16 +226,15 @@ The forth and fifth step will generally be alternated iteratively, until all is 
 
 In short: _everything(!)_ that you consider relevant to solving an actual problem with your experiment.
 
-More detailed descriptions:
+Detailed descriptions:
 
 # 1. Choosing a template
 There are quite some variations for the Lexical Decision Experiments, read the template's specific documentation te make an informed decision.
 
 # 2. How and where to edit templates
-Editing templates is largely self-explanatory: stimuli are edited in stimuli.js, global settings in globals.js, and instructions in instructions.js. Some hints can be found in the comments in the files themselves (comments are preceded with two forward slashes //). When changing things, make sure to frequently run the experiment again to make sure it still works (and that you haven't messed up the syntax by accidentally deleting brackets, quotes and such).
+Editing templates is largely self-explanatory: stimuli are edited in stimuli.js, global settings in globals.js, and instructions in instructions.js. Some hints can be found in the comments in the files themselves (comments are preceded with two forward slashes //). When changing things, make sure to frequently run the experiment again to make sure it still works (and that you haven't messed up the syntax by accidentally deleting brackets, quotes and such). Regardless, we will discuss some more details.
 
-
-## Imports in 'index.html' 
+## 2.1 Imports in the head section 'index.html' 
 ###(Import the jsPsych library, some typically used jsPsych plugins, the jsPsych style sheet and also 'our' custom template libraries & files)
 
 Javascript libraries --among other things-- are imported in the index.html's so-called _head section_ (somewhere in between the ```<head>``` & ```</head>``` tags, you will find import lines that may look like this:
@@ -247,9 +247,9 @@ In the above case, the import is in fact an example using the custom [Experiment
 
 Configuring your own local paths to jsPsych's core scripts like in the latter examples is generally discouraged, because it may lead to difficult problems if you are not a web developer and things go wrong. If making an exception to this solves an actual problem, lab support may be able to help you out. For instance, maybe a a newer version of jsPysch would add a crucial new feature that you want to use.
 
+A typical import section for a template:
 
-Now, let's just have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of the file, just until the end of the head section looks like and walk through that step by step:
-
+Let's have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of that file (just until the end of the head section) looks like and walk through that step by step:
 
 ```
 1.  <!DOCTYPE html>
