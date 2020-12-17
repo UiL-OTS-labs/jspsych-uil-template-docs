@@ -175,7 +175,7 @@ The following is true with regard to how these templates have evolved:
 
 We have aimed to find a balance between template code organisation and following the typical _'jsPsych way of doing things'_.
 
-A 'bare bones' jsPsych experiment can consist of _only one specialised html file_ and a folder with the jsPysch library --or--, a link to an online version with the jsPsych javascript library given its fixed organisation. With our templates, we usually ship the following files by default:
+A 'bare bones' jsPsych experiment can consist of _only one specialised html file_ and a folder with the jsPysch library --or--, a link to an online version with the jsPsych javascript library. With our templates, we usually ship the following files by default:
 
 - An ```index.html``` file which is the 'landing page' for each jsPsych experiment template folder (minimal jsPsych). 
 - A ```consent_page.html``` 'placeholder', an external html file for informed consent.
@@ -237,7 +237,7 @@ Editing templates is largely self-explanatory: stimuli are edited in `stimuli.js
 _Some_ more details about this.
 
 ## 2.1 Imports in the head section 'index.html' 
-### (Import the jsPsych library, some typically used jsPsych plugins, the jsPsych style sheet and also 'our' custom template libraries & files)
+#### Imports the jsPsych library, some typically used jsPsych plugins, the jsPsych style sheet and also 'our' custom template libraries & files.
 
 Javascript libraries --among other things-- are imported in the index.html's so-called _head section_ (somewhere in between the ```<head>``` & ```</head>``` tags, you will find import lines that may look like this:
 
@@ -358,24 +358,44 @@ Lines 29-31 import 'non-jsPsych' _default_ files, they import the aforementioned
 #### In _general_: import only what you really need
 You may have noticed that a standard template already has quite some lines for standard things. This is mainly because they were designed to be 'complete experiments'. If for instance, you would _not_ want to include any survey questions, it's best to delete the imports related to them, and of course also the parts in the index.html that relate to the survey blocks, read on to find out about the next important section of the index.html file.
 
-## 2.2 The _script section_
-#### javaScripy Code blocks, (sub-)trials, trial procedures and other code organisation in an index.html file
+## 2.2 The _script section_ of 'index.html'
+#### javaScript code blocks, (sub-)trial definitions, trial procedures and other code organisation in an index.html file
 After looking at what is imported in between the `<head>` tags, let's now look at what is in the next important section for using jsPsych: the part where all these files and libraries are actually used to _do_ things in the participants browser. Note, this will not be very in-depth at this point.
 
 Global structure of the script section:
 
 section/block | Description
 --------------|-------------------------------------------------------------------------------------------------------
-A             | Stimuli loading, using stimuli.js function(s).
+A             | Stimuli loading, using stimuli.js function(s), media preloading routines.
 B             | Experiment logic_ variables (don't touch these, usually).
 C             | Custom (template-related) Javascript _functions_ (if necessary, like with the keyboard setting procedure).
 D             | Data preparation: _jsPsych-specific_ way of defining data that should be added to all trials.
 E             | Trials and trial elements:_jsPsych-specific_ definition for trials/trial phases and other functional block definitions (instructions, survey blocks, consent page).
 F             | Procedures: _jsPsych-specific_ _procedures_ typically use a combination of parts as defined in block E.
-G             | A block with the timeline, where the experiment's building blocks are added to form your experiment flow.
-H             | The _init_-block: witch this part, you actually start the experiment.
+G             | The timeline, where the experiment's building blocks are added to form your experiment flow.
+H             | The _init_-block: witch this part, you actually start the experiment by executing the timeline.
 
-# Best practices for jsPsych experiments 
+# 3. The experiment data store
+Most information about should be availble once you have logged in to the [Experiment Data Store](https://experiment-datastore.acc.lab.hum.uu.nl). 
+
+# 4. Making the experiment ready for online testing
+Most generally, once you have requested/defined your experiment folder, you have to copy the _Access key_ for your experiment to be the new value for the ACCESS_KEY constant in _your version_ of the `globals.js` file. So, say you have been given the code `N278123456-%^&&8888*(*7777--090900!#$%1234`, implement it like this:
+```
+// ACCESS_KEY needs to be used for server setup (data store)
+const ACCESS_KEY = 'zeeekretkeey'; 
+```
+And change it to:
+
+```
+// ACCESS_KEY needs to be used for server setup (data store)
+const ACCESS_KEY = 'N278123456-%^&&8888*(*7777--090900!#$%1234'; 
+```
+Note the _quotes_!
+
+# 5. Finishing up.
+Running your experiment _locally_ will usually _also_ still work after editing that value the `globals.js` file, but of course, the data is not saved like on the server, you will just get a bunch of output in your browser window, like while developing locally. Please do make sure to keep track of your edits, once you are sure everything works, you can invite your participants!
+
+# Genral best practices for jsPsych experiments 
 
 ## Audio
 In the case of web server setup, it is as good idea to initialise jsPysch with ```use_webaudio = true```, in case you use audio stimuli. This is typically faster than when set to false. This seems to be be redundant now, since we can do such things using ```jspsych-uil-utils```.
@@ -386,7 +406,7 @@ In general, since timing is important, please make sure to [pre-load all media f
 ## Always start an experiment with a _html-button-response_ interaction part
 Browsers will often disallow auto-playing sound/video if there is no user activity related to a _mouse click_. It would be a shame to start of the experiment with errors of this type. An _instruction_ (plugin) with a mouse button response (or a multi-page instuction) will also fix this potential error.
 
-
+# Additional reading (to clean up, todo)
 
 # CSV, JSON and javascript style 
 
