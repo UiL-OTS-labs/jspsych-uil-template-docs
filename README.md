@@ -23,7 +23,7 @@ A consent page placeholder is included before the experiment starts. It is up to
 You can adapt the survey questions to your onw needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about [_input (or data) validation_](https://en.wikipedia.org/wiki/Data_validation). For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is important for quality research online, think about (your) data management.
 
 ### 3. Keyboard procedure (sometimes also audio procedures).
-The Lexical Decison Templates use a custom keyboard setting procedure. This is to miltigate potential Reaction Time (RT) (interaction) effects due to hand preference. In templates that use _audio_, there is also a simple testing procedure for that in the template.
+The Lexical Decision Templates use a custom keyboard setting procedure. This is to miltigate potential Reaction Time (RT) (interaction) effects due to hand preference. In templates that use _audio_, there is also a simple testing procedure for that in the template.
 
 ### 4. Generic UiL utility library
 This utility library was created to enable:
@@ -67,10 +67,10 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 - Visual Lexical Decision with Visual Masked Prime: [vislexdec-vp-vm](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp-vm)
 
 ### Auditory and/or Visual Lexical Decision Templates
-- Auditory Lexical Decison basic version: [audlexdec](https://github.com/UiL-OTS-labs/jspsych-audlexdec)
-- Auditory Lexical Decison with Visual Prime: [audlexdec-vp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
-- Auditory Lexical Decison with Visual Masked Prime: [audlexdec-vp-vm](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-vm)
-- Auditory Lexical Decison with Auditory Prime: [audlexdec-ap](https://github.com/UiL-OTS-labs/jspsych-audlexdec-ap)
+- Auditory Lexical Decision basic version: [audlexdec](https://github.com/UiL-OTS-labs/jspsych-audlexdec)
+- Auditory Lexical Decision with Visual Prime: [audlexdec-vp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
+- Auditory Lexical Decision with Visual Masked Prime: [audlexdec-vp-vm](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-vm)
+- Auditory Lexical Decision with Auditory Prime: [audlexdec-ap](https://github.com/UiL-OTS-labs/jspsych-audlexdec-ap)
 
 ### Self-Paced Reading with Moving window Template
 - Word-by-word self-paced reading, moving window [jspsych-spr-mw](https://github.com/UiL-OTS-labs/jspsych-spr-mw)
