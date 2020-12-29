@@ -73,7 +73,7 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 - Auditory Lexical Decison with Auditory Prime: [audlexdec-ap](https://github.com/UiL-OTS-labs/jspsych-audlexdec-ap)
 
 ### Self-Paced Reading with Moving window Template
-- [jspsych-spr-mw](https://github.com/UiL-OTS-labs/jspsych-spr-mw)
+- Word-by-word self-paced reading, moving window [jspsych-spr-mw](https://github.com/UiL-OTS-labs/jspsych-spr-mw)
 
 ## Generic 'UiL' utility library (used in most templates)
 A tool that may help with things like restrained randomisation, detecting mobile phone/tablets and other reusable functionality.
