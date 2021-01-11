@@ -179,7 +179,7 @@ A 'bare bones' jsPsych experiment can consist of _only one specialised html file
 
 - An ```index.html``` file which is the 'landing page' for each jsPsych experiment template folder (minimal jsPsych). 
 - A ```consent_page.html``` 'placeholder', an external html file for informed consent.
-- A ```stimuli.js``` file where you can conmfigure stimulus lists and timelinVariable fields.
+- A ```stimuli.js``` file where you can configure stimulus lists and timelineVariable fields.
 - A ```instruction.js``` file where you are tempted to think about specific instructions.
 - A ```globals.js``` file where some defaults for relevant variables and 'constants' for the template experiment's index.html are defined.
 
@@ -234,7 +234,7 @@ There are quite some variations for the Lexical Decision Experiments, read the t
 # 2. How and where to edit templates
 Editing templates is largely self-explanatory: stimuli are edited in `stimuli.js`, global settings in `globals.js`, and instructions in `instructions.js`. Some hints can be found in the comments in the files themselves (comments are preceded with two forward slashes //). When changing things, make sure to frequently run the experiment again to make sure it still works (and that you haven't messed up the syntax by accidentally deleting brackets, quotes and such). 
 
-_Some_ more details about this.
+_Some_ more details about this follow below.
 
 ## 2.1 Imports in the head section 'index.html' 
 #### Imports the jsPsych library, some typically used jsPsych plugins, the jsPsych style sheet and also 'our' custom template libraries & files.
@@ -247,10 +247,9 @@ In the above case, the import is in fact an example using the custom [Experiment
 
 ```<script src="jspsych/6.1.2/jspsych.js"></script>```
 
-Configuring your own local paths to jsPsych's core scripts like in the latter examples is generally discouraged, because it may lead to difficult problems if you are not a web developer and things go wrong. If making an exception to this solves an actual problem, lab support may be able to help you out. For instance, maybe a a newer version of jsPysch would add a crucial new feature that you want to use.
+Configuring your own local paths to jsPsych's core scripts like in the latter examples is generally discouraged, because it may lead to difficult problems if you are not a web developer and things go wrong. If making an exception to this solves an actual problem, lab support may be able to help you out. For instance, maybe a newer version of jsPysch would add a crucial new feature that you want to use.
 
 #### A typical _head section_ import structure
-
 Let's have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of that file (just until the end of the head section) looks like and walk through that step by step:
 
 ```
@@ -308,7 +307,7 @@ On line 9 and 10 we read:
 ```
 These are some of the most basic jspsych interaction _plugins_, the first one deals with a participant keyboard responses, the other one with mouse interactions with clickable buttons, found in most experiments.
 
-The ```jspsych-html-button-response``` button response plugin is generally _always_ recommended as a first 'participant interaction trial', since most browsers don't automatically aloow the playing of sounds or videos with sound without such an interaction element. This type of interaction could also be part of a so-called 'instruction' plugin, so it depends on preference.
+The ```jspsych-html-button-response``` button response plugin is generally _always_ recommended as a first 'participant interaction trial', since most browsers don't automatically allow the playing of sounds or videos with sound without such an interaction element at the start of your experiment. This type of interaction could also be part of a so-called 'instruction' plugin, so it depends on preference.
 
 From lines 12-14, we may gather:
 ```
@@ -336,7 +335,7 @@ Line 18 imports the `jspsych-instructions` plugin, specialised in (multi-page) c
 Line 19 imports a html plugin for survey questions.
 Line 20 imports a multiple choice plugin, also for survey purposes.
 
-We already mentioned the default css _link_ used by sPsych (line 22). It's not a Javascript library or plugin, but a place where css styling is defined. It's placed _below_ all _standard jsPsych_ plugins, but _before_ our custom template-related scripts. The comments should also make this clear. So, we continue with the 'UiL OTS custom template' imports:
+We already mentioned the default css _link_ used by jsPsych (line 22). It's not a Javascript library or plugin, but a place where styling is defined. It's placed _below_ all _standard jsPsych_ plugins, but _before_ our custom template-related scripts. The comments should also make this clear. So, we continue with the 'UiL OTS custom template' imports:
 
 ```
 ...
@@ -395,7 +394,7 @@ Note the _quotes_!
 # 5. Sharing your experiment
 Running your experiment _locally_ will usually _also_ still work after editing that value the `globals.js` file, but of course, the data is not saved like on the server, you will just get a bunch of output in your browser window, like while developing locally. Please do make sure to keep track of your edits, once you are sure everything works, you can invite your participants!
 
-# Genral best practices for jsPsych experiments 
+# General best practices for jsPsych experiments 
 
 ## Audio
 In the case of web server setup, it is as good idea to initialise jsPysch with ```use_webaudio = true```, in case you use audio stimuli. This is typically faster than when set to false. This seems to be be redundant now, since we can do such things using ```jspsych-uil-utils```.
@@ -405,6 +404,83 @@ In general, since timing is important, please make sure to [pre-load all media f
 
 ## Always start an experiment with a _html-button-response_ interaction part
 Browsers will often disallow auto-playing sound/video if there is no user activity related to a _mouse click_. It would be a shame to start of the experiment with errors of this type. An _instruction_ (plugin) with a mouse button response (or a multi-page instuction) will also fix this potential error.
+
+# Pseudo-random vs true random: theoretical and practical considerations
+There can be many reasons to go for a design that implements restrictions on 'true' randomisation of trials. For instance, a reasearcher may not want more than two consecutive items of 'condition A' in their trial presentation flow, because participants are thought to discover the underlying structure of items that make up condition a (say, passive sentences with a more difficult structure vs fillers with a less complex structure) after this many of the same condition. Or they might get frustrated, bored, wahtnot. So, a solution would be to _restrain_ the randomization with the extra rule that no more than 2 items of 'condition A' are allowed. 
+
+Wether or not they are valid and wether to use restrictions is _essentially_ up to the researcher. However, think well about the problem you want to solve with adding restrictions. There is a delicate balance between the number of items per condition, the number of additional restrictions and the degrees of freedom left to shuffle test items. A list of 12 items with two additional contraints on presentation order may end up looking a lot like a fixed block. Sinces the web can be used to get a lot more participants, it may make sense to think about different ways of solving potential problems like this. 
+
+Regardless, you will find a rule which limits the presentation of more than two consecutive items in most current templates, using a function from the 'uil-util' library. This function is configured in the templates as a constant in each ```globals.js``` file with the constant named ```const MAX_SUCCEEDING_ITEMS_OF_TYPE = 2;```. The big caveat, especially with the current small amount of items templates: the utility function tries to shuffle your items given this 'max 2-succeeding items restriction' for X (say, 10) times when your index.html initialises the experiment. If it (the function) fails to do so, --in this case, because you have too little items to make it happen-- your experiment will _not_ start (because of this underlying error, not visible in the browser). It _COULD_ be that after refreshing the experiment's index.html page two or three times, the function _will_ succeed within those X (10) times of trying and the experiment could run, but by then, your participant will probably already be checking mail or looking for cute cat videos, thinking your experiment is not working.  
+
+In the lexical decision templates, you will (as of this moment, may change to the other way around, _todo_ _dev_) find the sections in the timeline part (block G, pretty down below the index.html file) where you can either 'real' randomisation or pseudorandomisation given the criterion configured in ```globals.js```. Example taken from [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp):
+
+```
+
+        //////////////// timeline /////////////////////////////////
+
+        let timeline = [];
+
+        // it's best practice to have *mouse click* user I/O first
+        timeline.push(start_screen);
+        
+        // survey
+        timeline.push(survey_procedure);
+        
+        // kb layout
+        timeline.push(select_keyboard_layout);
+        
+        // kb important keys
+        timeline.push(keyboard_set_key_left_procedure);
+        timeline.push(keyboard_set_key_right_procedure);
+        
+        // task instruction
+        timeline.push(instruction_screen_practice);
+
+        // a keyboard dominant hand configured key continue/prepare flow
+        timeline.push(participant_keyboard_control_start);
+        
+        timeline.push(practice_procedure);
+        timeline.push(well_done_screen);
+
+        // "get ready"
+        timeline.push(participant_keyboard_control_start);
+
+        // NOTE options below! comment/uncomment for regular vs restrained randomization
+        // true randomness is better for the current template's amount of items...
+
+        timeline.push(trial_procedure_pseudorandom); // don't do this with little stimuli
+        //timeline.push(trial_procedure_random);
+        
+        timeline.push(end_screen);
+ ```
+ Below the ```//NOTE options below! (...)``` comment, a trial procedure is called that uses _trial_procedure_pseudorandom_. Commnented out below that one, you find a different one, called _trial_procedure_random_. To go for 'real random', comment out ```timeline.push(trial_procedure_pseudorandom);``` (cahnge to ```//timeline.push(trial_procedure_pseudorandom);```and uncomment the other one below (change ```//timeline.push(trial_procedure_random);``` to ```timeline.push(trial_procedure_random);```.
+ 
+ The definitions of the procedures are --in this example-- only slightly above section G:
+``` 
+         let trial_procedure_pseudorandom = {
+            timeline:[
+                present_fixation,
+                present_prime,
+                present_word,
+            ],
+            timeline_variables: uil.randomization.randomizeStimuli(
+                stimuli.table,
+                MAX_SUCCEEDING_ITEMS_OF_TYPE,
+                'item_type',
+            ),
+            randomize_order: false // this should be false if uil randomization is used...
+        };
+
+        let trial_procedure_random = {
+            timeline:[
+                present_fixation,
+                present_prime,
+                present_word,
+            ],
+            timeline_variables: stimuli.table,
+            randomize_order: true // this should be true if you want jsPsych's randomization
+        };
+```
 
 # Additional reading (to clean up, todo)
 
