@@ -9,11 +9,6 @@ This is a first start to provide a broader scope to using some in-house develope
 - Separate _generic_ documentation from _specific_ documentation.
 - Give some _background information_ that may help Students, Researchers & Developers & Managers plan online experimenting better.
 
-Of course, new insights will probably lead to better and probably more complex organisation.
-
-# Context and scope of current developments
-The first templates are developed for the liguistics master course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similar to the traditional, lab-bound way that was used before, using [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision). However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same and some concessions have been made. 
-
 At this point, __every__ jspsych template comes with the following 'default' components included: 
 
 ### 1. Consent page
@@ -57,13 +52,36 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 
 
 ```
+# Functional code separation
+Recent consensus lead to the separation of some of the javascript(jspsych) code (that is used by the experiments 'index.html') in separate files. After unzipping a template download, you will often find the following files/folder structure.
+
+```
+template_download_main_folder\
+                              | plugins/    
+                              |        |
+                              |         \ someplugin.js          # _Only_ if there is a custom plugin needed, you will find this folder 'plugins'.
+                              | consent.js                       # Informed consent related code.
+                              | globals.js                       # Global template settings/constants (buttonlabels/html messages, etc.).
+                              | index.html                       # The main experiment file, always called 'index.html'. Always there!
+                              | instructions.js                  # Instruction-related code.
+                              | stimuli.js                       # Stimuli and their designs. Experimental, often Reaction Time (RT) critical!
+                              | survey.js                        # Survey tools. 
+                             /
+```
+As a general 'guideline', we design templates in such a way, that the main experiment's file (index.html!) remains rather 'minimal'. That is: not too much lines of code that can be bundled functionally in a separate file and functional name.
+                             
+# Context and scope of current developments
+The first templates are developed for the liguistics master course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similar to the traditional, lab-bound way that was used before, using [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision). However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same and some concessions have been made.
 
 # List of jsPsych-based template repositories 
 ###### (Developers: keep this list _updated_)
 
+### Self-Paced Reading with Moving window Template
+- Word-by-word self-paced reading, moving window [jspsych-spr-mw](https://github.com/UiL-OTS-labs/jspsych-spr-mw)
+
 ### Visual Lexical Decision Templates
 - Visual Lexical Decision basic version: [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
-- Visual Lexical Decision with Visual Prime: [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp)
+- Visual Lexical Decision with Visual Prime: [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp)("mother template", TODO)
 - Visual Lexical Decision with Visual Masked Prime: [vislexdec-vp-vm](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp-vm)
 
 ### Auditory and/or Visual Lexical Decision Templates
@@ -72,8 +90,6 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 - Auditory Lexical Decision with Visual Masked Prime: [audlexdec-vp-vm](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-vm)
 - Auditory Lexical Decision with Auditory Prime: [audlexdec-ap](https://github.com/UiL-OTS-labs/jspsych-audlexdec-ap)
 
-### Self-Paced Reading with Moving window Template
-- Word-by-word self-paced reading, moving window [jspsych-spr-mw](https://github.com/UiL-OTS-labs/jspsych-spr-mw)
 
 ## Generic 'UiL' utility library (used in most templates)
 A tool that may help with things like restrained randomisation, detecting mobile phone/tablets and other reusable functionality.
