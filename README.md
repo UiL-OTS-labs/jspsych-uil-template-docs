@@ -34,7 +34,7 @@ The Lexical Decision Templates use a custom keyboard setting procedure. See `key
 ### 3. Audio setting/testing procedures
 Some templates use _audio_, if they do, there is or will be a simple testing procedure.
 
-# Data output
+# Output (data)
 Although each template has its own _specific output_ that will be described in each template, you can find a very relevant primer. This relates jsPysch's way of "dealing with data" and some of the UiL OTS template's defaults for data output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
 
 In a nutshell, about data output:
@@ -65,7 +65,7 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 ### Longer Description
 <A longer description that reflects on, for instance a paradigm's variations.>
 
-# Output
+# Output (data)
 The data of all (sub) trial phases are logged. Please read the [general primer on jsPsych's data output](https://github.com/UiL-OTS-labs/jspsych-output) if you are new to jsPsych data output.
 
 <Specific output variables and how to adapt your stimuli.js and/or other files regarding data output.>
@@ -74,7 +74,7 @@ The data of all (sub) trial phases are logged. Please read the [general primer o
 <How to use/start the experiment.>
 
 ```
-# Functional code separation
+# Functional code separation in different files.
 Recent consensus lead to the separation of some of the javascript(jspsych) code (that is used by the experiments 'index.html') in separate files. After unzipping a template download, you will often find the following files/folder structure.
 
 ```
@@ -131,6 +131,7 @@ As mentioned before, please read the [primer on data output](https://github.com/
 
 __Name__                                          | __weblink__                                                  |
 --------------------------------------------------|--------------------------------------------------------------|
+Self-paced reading w/ Moving window               | https://web-experiments.lab.hum.uu.nl/boilerplate-spr-mw/    |
 Visual Lexical Decision                           | https://web-experiments.lab.hum.uu.nl/vislexdec/             |
 Visual Lexical Decision w/ Visual Prime           | https://web-experiments.lab.hum.uu.nl/vislexdec-vp/          |
 Visual Lexical Decision w/ Visual Masked Prime    | https://web-experiments.lab.hum.uu.nl/vislexdec-vp-vm/       |
@@ -207,38 +208,20 @@ Before you start editing one of these templates, reading up about jsPsych will u
 ## The templates in a 'jsPsych' perspective
 As always, the easy things tend to be easy to read (lines of code and examples) and understand, but in order to conduct a full-fledged online experiment, you need to invest a lot more time to make things work. This is why we chose to equip this selection of templates with the aforemetioned 'standard components' (consent, survey, a shared common utilities library). Also, by default, the templates implement stimulus lists with a so-called _'timelineVariable'_ implementation.
 
-The following is true with regard to how these templates have evolved:
-
-- More complex experiment requirements requires more and/or more complex code.
-- More code requires better organisation of code.
-- Better organisation of code leads to more files to edit in order to adapt a template.
-
-We have aimed to find a balance between template code organisation and following the typical _'jsPsych way of doing things'_.
-
-A 'bare bones' jsPsych experiment can consist of _only one specialised html file_ and a folder with the jsPysch library --or--, a link to an online version with the jsPsych javascript library. With our templates, we usually ship the following files by default:
-
-- An ```index.html``` file which is the 'landing page' for each jsPsych experiment template folder (minimal jsPsych). 
-- A ```consent_page.html``` 'placeholder', an external html file for informed consent.
-- A ```stimuli.js``` file where you can configure stimulus lists and timelineVariable fields.
-- A ```instruction.js``` file where you are tempted to think about specific instructions.
-- A ```globals.js``` file where some defaults for relevant variables and 'constants' for the template experiment's index.html are defined.
-
-In some cases, plugins and/or other files can also be found, for instance in the case of the self-paced reading template. More details on how and where to adapt files to suit your needs will follow in time.
-
-## Modes of using jsPsych (and our templates)
+## Modes of using jsPsych (and the templates)
 There are multiple ways to test, run and configure jsPsych-based experiments:
 
-- Locally on your (or a participant's) PC, by double clicking the html file.
+- Locally on your (or a participant's) PC, by double-clicking the `index.html` file.
 - Full web server implementation (getting a link to the experiment, served by ICT&Media).
 
 These two modes will likely confuse those who are not web developers, but the bottom line is: 
 
-- A locally developed experiment will not guarantee that the same experiment will run in a server setup, or vice versa. 
+- A locally developed experiment will _not guarantee that the same experiment will run in a server setup__, or vice versa! 
 
 Many browsers and versions have their own defaults for security like 'autoplay', allowing sounds, pop-ups and alerts, importing images from local sources, etc. It is impossible to know 100% sure if things will work in your browser in advance, so be prepared to deal with some confusion.
 
 ## For 'real' online data collection, you will need a server-based setup.
-While you could -- in principle -- use jsPsych in the traditional lab context, it will typically not make a lot of sense. Especially if you want to store your research data for an experiment in one place, a web-server setup is the way to go. Read on to find out how this can be done, if some conditions are met.
+While you could -- in principle -- use jsPsych in the traditional lab context, it will typically not make a lot of sense. Especially if you want to store your research data for an experiment in one place, a web-server setup is the way to go. 
 
 # From template to your own online experiment
 
@@ -270,7 +253,7 @@ In short: _everything(!)_ that you consider relevant to solving an actual proble
 Detailed descriptions:
 
 # 1. Choosing a template
-There are quite some variations for the Lexical Decision Experiments, read the template's specific documentation te make an informed decision.
+There are quite some variations for the Lexical Decision Experiments, read the template's specific documentation `README.md` to make an informed decision.
 
 # 2. How and where to edit templates
 Editing templates is largely self-explanatory: stimuli are edited in `stimuli.js`, global settings in `globals.js`, and instructions in `instructions.js`. Some hints can be found in the comments in the files themselves (comments are preceded with two forward slashes `//`). When changing things, make sure to frequently run the experiment again to make sure it still works (and that you haven't messed up the syntax by accidentally deleting brackets, quotes and such). 
@@ -342,7 +325,7 @@ Let us have a look at some ```<script>```-```</script>``` imports in between lin
 
 On line 9 and 10 we read:
 
-```
+```html
 9.     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
 10.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-button-response.js"></script>
 ```
@@ -351,7 +334,7 @@ These are some of the most basic jspsych interaction _plugins_, the first one de
 The ```jspsych-html-button-response``` button response plugin is generally _always_ recommended as a first 'participant interaction trial', since most browsers don't automatically allow the playing of sounds or videos with sound without such an interaction element at the start of your experiment. This type of interaction could also be part of a so-called 'instruction' plugin, so it depends on preference.
 
 From lines 12-14, we may gather:
-```
+```html
 12.    <!-- Audio playback &response libraries (audio) -->
 13.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-button-response.js"></script>
 14.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-keyboard-response.js"></script>
@@ -363,7 +346,7 @@ From lines 12-14, we may gather:
 
 Lines 16-20 deal with other plugins used by our templates, they are usually _all_ included:
 
-```
+```html
 16.    <!-- Generic check/ask libraries (consent, instructions & surveys) -->
 17.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-external-html.js"></script>
 18.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
@@ -378,7 +361,7 @@ Line 20 imports a multiple choice plugin, also for survey purposes.
 
 We already mentioned the default css _link_ used by jsPsych (line 22). It's not a Javascript library or plugin, but a place where styling is defined. It's placed _below_ all _standard jsPsych_ plugins, but _before_ our custom template-related scripts. The comments should also make this clear. So, we continue with the 'UiL OTS custom template' imports:
 
-```
+```html
 ...
 25.    <!-- Uil OTS libraries -->
 26.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
@@ -446,16 +429,13 @@ In general, since timing is important, please make sure to [pre-load all media f
 ## Always start an experiment with a _html-button-response_ interaction part
 Browsers will often disallow auto-playing sound/video if there is no user activity related to a _mouse click_. It would be a shame to start of the experiment with errors of this type. An _instruction_ (plugin) with a mouse button response (or a multi-page instuction) will also fix this potential error.
 
-# Pseudo-random vs true random: theoretical and practical considerations
-There can be many reasons to go for a design that implements restrictions on 'true' randomisation of trials. For instance, a reasearcher may not want more than two consecutive items of 'condition A' in their trial presentation flow, because participants are thought to discover the underlying structure of items that make up condition a (say, passive sentences with a more difficult structure vs fillers with a less complex structure) after this many of the same condition. Or they might get frustrated, bored, wahtnot. So, a solution would be to _restrain_ the randomization with the extra rule that no more than 2 items of 'condition A' are allowed. 
+# Pseudo-random vs true random
 
-Wether or not they are valid and wether to use restrictions is _essentially_ up to the researcher. However, think well about the problem you want to solve with adding restrictions. There is a delicate balance between the number of items per condition, the number of additional restrictions and the degrees of freedom left to shuffle test items. A list of 12 items with two additional contraints on presentation order may end up looking a lot like a fixed block. Since 'the web' can be used to get a lot more participants, it may make sense to think about different ways of solving potential problems due to succeeding trials of the same type. 
+You can find a trial procedure using a custom function from the 'uil-utils' library. A default restriction for pseudorandomisation is configured in the templates as a constant in each ```globals.js``` file, with the string ```const MAX_SUCCEEDING_ITEMS_OF_TYPE = 2```. 
 
-Regardless, you will find a rule which limits the presentation of more than two consecutive items 'pre-defined' in most current templates. And you will find a trial procedure using a custom function from the 'uil-utils' library. A default value for pseudorandomisation is configured in the templates as a constant in each ```globals.js``` file, with the string ```const MAX_SUCCEEDING_ITEMS_OF_TYPE = 2```. 
+The big caveat for pseudorandomisation, especially with the current small amount of items in templates (only _two_ items in the practice items): the utility function _tries_ to shuffle your items given this 'max 2-succeeding items restriction' for X (say, 10) times when your index.html initialises the experiment. If it (the function) fails to do so, --in this case, because you have too little items to make it happen-- your experiment will _not_ start (because of this underlying error, not visible in the browser).
 
-The big caveat for pseudorandomisation, especially with the current small amount of items in templates (only _two_ items in the practice items): the utility function _tries_ to shuffle your items given this 'max 2-succeeding items restriction' for X (say, 10) times when your index.html initialises the experiment. If it (the function) fails to do so, --in this case, because you have too little items to make it happen-- your experiment will _not_ start (because of this underlying error, not visible in the browser). It _COULD_ be that after refreshing the experiment's index.html page two or three times, the function _will_ succeed within those X (10) times of trying and the experiment could run, but by then, your participant could already be checking mail or looking for cute cat videos, thinking your experiment is not working
-
-In the lexical decision templates, you will (as of this moment, may change to the other way around, _todo_ _dev_) find the sections in the timeline part (block G, pretty down below the index.html file) where you can either 'real' randomisation or pseudorandomisation given the criterion configured in ```globals.js```. Example taken from [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp):
+In the lexical decision templates index.html file, find the sections in the timeline part (block G, pretty down below) where you can either use 'real' randomisation or pseudorandomisation given the criterion configured in ```globals.js```. Example taken from [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp):
 
 ```
 
@@ -524,173 +504,6 @@ In the lexical decision templates, you will (as of this moment, may change to th
             randomize_order: true // this should be true if you want jsPsych's randomization
         };
 ```
-
-# Additional reading (to clean up, todo)
-
-# CSV, JSON and javascript style 
-
-- Lab website on csv links?
-- Other links?
-
-## CSV
-
-### Headers, rows and columns
-
-Pro: 
-- Everyone knows spreadsheets and a bit of how to use it.
-
-Cons: 
-- CSV exports may vary between spreadsheet programs
-- There is no fixed standard for quoting and field separators
-- Multiline text stimuli with whitespace/layout options is often problematic
-- CSV exports are difficult to read at the level of plain text editing
-
-### Examples of some stimulus file setup in CSV table style
-
-#### No quotes:
-
-id | condition | string 
----|-----------|------- 
-1  | nonword   | clet
-2  | word      | ball
-3  | nonword   | hamp
-
-#### Some variable type is quoted, some is not, but it may be needed to do things way:
-
-id | condition | string 
----|-----------|------- 
-1  | "nonword" | clet
-2  | "word"    | ball
-3  | "nonword" | hamp
-
-id | condition | string 
----|-----------|------- 
-1  | nonword   | "clet"
-2  | word      | "ball"
-3  | nonword   | "hamp"
-
-#### This will drive most people crazy, but it might just work
-
-id | condition | string 
----|-----------|------- 
-1  | "nonword" | "clet"
-2  | word      | "ball"
-3  | nonword   | hamp
-
-#### A valid reason to use quotes can be found here
-id | condition | string 
----|-----------|------- 
-1  | nonwords  | blerg noppa
-2  | words     | "it's complicated"
-3  | nonwords  | floep quotenot
-
-
-#### But consistency is often better...
-id | condition | string 
----|-----------|------- 
-1  | nonwords  | "blerg noppa"
-2  | words     | "it's complicated"
-3  | nonwords  | "floep quotenot"
-
-
-### In short
-
-- Layouting, dealing with formatting, line breaks etc is always going to be a drag to some. 
-- But with swicthing between excel, plain text, exports etc, CSV, it can be terribly confusing.
-- But, if you keep it simple and are aware of things, you can use converters from CSV to formats that we think are better for jsPsych experiments. You can find working examples of Python scripts that may help to convert from .csv tot .json [here](https://github.com/UiL-OTS-labs/jspsych-boilerplates).
-
-# JSON version
-```
-[
-    {
-        "id": "1",
-        "condition": "nonword",
-        "string": "clet"
-    },
-    {
-        "id": "2",
-        "condition": "word",
-        "string": "ball"
-    },
-    {
-        "id": "3",
-        "condition": "nonword",
-        "string": "hamp"
-    }
-]
-```
-
-# Current implementation style: stimuli.js (javascript object)
-In the first templates we will deliver, we design out stimulus configurations in the javascript key-value pair style. It's not that difficult and has the benefits of being available without using extra code to implement the availablity of test items in an experiment-specific, <i>'dynamic'</i> context. 
-```
-var stimuli = [
-    {
-        id: "1",
-        condition: "nonword",
-        string: "clet"
-    },
-    {
-        id: "2",
-        condition: "word",
-        string: "ball"
-    },
-    {
-        id: "3",
-        condition: "nonword",
-        string: "hamp"
-    }
-]
-
-
-```
-Now, with that, we are already speaking some real javascript!
-
-### Arrays in javascript
-```
-//This defines an array named myArray
-var myArray = ['item', 'another item']; 
-```
-```
-//This is an array, too
-var myArrayToo = [
-    'item two', 
-    'another item two, too'
-    ];
- ```
- Note this.
- ```
- //This is an array, too
- var myArrayToo = ['item two', 'another item two, too'];
- ```
- 
- or 
- ```
- //This is an array, too
-var myArrayToo = [
-    "item two", 
-    'another item two, too'
-    ];
-```
-# Timelines and trials and designs
-
-There are many [randomization](https://www.jspsych.org/core_library/jspsych-randomization/) batteries included in jsPsych.
-
-Typical folder structure:
-
-```
-visdeclex/
-         /index.html        <---- Double-click this (index).html file to start)
-         /jspsych           <---- It depends on configuration (web server or local)
-         /css               <---- Optionally, experiment specific styling code. 
-         /stimuli.js        <---- Usually a file called stimuli.js
-         /globals.js        <---- Often a file called globals.js
-```
-
-
-
-
-
-
 
 
 
