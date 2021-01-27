@@ -53,6 +53,7 @@ The text within ```< >``` are 'placeholder text', the ones without them should b
 
 # Generic documentation
 Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context and scope.
+Affiliated students and researchers should follow [this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
 # Paradigm-specific template related documentation
 <If there are clearly shared properties of templates (a general paradigm), like in the case of the Lexical Decision Paradigm, they may be referenced here.>
