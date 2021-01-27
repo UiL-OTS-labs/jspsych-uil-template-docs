@@ -283,8 +283,7 @@ Configuring your own local paths to jsPsych's core scripts like in the latter ex
 #### A typical _head section_ import structure
 Let's have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of that file (just until the end of the head section) looks like and walk through that step by step:
 
-```
-html
+```html
 1.  <!DOCTYPE html>
 2.  <html>
 3.     <head>
@@ -323,11 +322,15 @@ html
  
 In order for your experiment to use _only_ jsPsych's core library, the import is on line 8 from the previous example:
 
-```<script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>```
+```html
+<script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
+```
 
 Additionally, the default 'look and feel' for common jsPsych experiment layouts is bundled in a 'styling' file, a .css file, this is imported on line 22 in the above line-numbered example, if you don't import it, things will not be layouted like jsPsych experiments usually 'work', so it should also always be there when you start with your own experiment: 
 
-```<link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>```
+```html
+<link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
+```
 
 Let us have a look at some ```<script>```-```</script>``` imports in between lines 8 and 23 and reflect on what they do to make the jsPsych library actually do things like things that typically define (reaction time) experimental linguistics experiments: key-presses, questions, audio fragments and text presentations, amongst others.
 
@@ -362,10 +365,10 @@ Lines 16-20 deal with other plugins used by our templates, they are usually _all
 20.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
 ```
 
-Line 17 imports the `jspsych-external-html` plugin, which is used for the consent page (placeholder html).
-Line 18 imports the `jspsych-instructions` plugin, specialised in (multi-page) clickable navigation instructions.
-Line 19 imports a html plugin for survey questions.
-Line 20 imports a multiple choice plugin, also for survey purposes.
+- Line 17 imports the `jspsych-external-html` plugin, which is used for the consent page (placeholder html).
+- Line 18 imports the `jspsych-instructions` plugin, specialised in (multi-page) clickable navigation instructions.
+- Line 19 imports a html plugin for survey questions.
+- Line 20 imports a multiple choice plugin, also for survey purposes.
 
 We already mentioned the default css _link_ used by jsPsych (line 22). It's not a Javascript library or plugin, but a place where styling is defined. It's placed _below_ all _standard jsPsych_ plugins, but _before_ our custom template-related scripts. The comments should also make this clear. So, we continue with the 'UiL OTS custom template' imports:
 
@@ -411,13 +414,13 @@ Most information about should be availble once you have logged in to the [Experi
 
 # 4. Making the experiment ready for online testing
 Most generally, once you have requested/defined your experiment folder, you have to copy the _Access key_ for your experiment to be the new value for the ACCESS_KEY constant in _your version_ of the `globals.js` file. So, say you have been given the code `N278123456-%^&&8888*(*7777--090900!#$%1234`, implement it like this:
-```
+```javascript
 // ACCESS_KEY needs to be used for server setup (data store)
 const ACCESS_KEY = 'zeeekretkeey'; 
 ```
 And change it to:
 
-```
+```javacript
 // ACCESS_KEY needs to be used for server setup (data store)
 const ACCESS_KEY = 'N278123456-%^&&8888*(*7777--090900!#$%1234'; 
 ```
@@ -445,8 +448,7 @@ The big caveat for pseudorandomisation, especially with the current small amount
 
 In the lexical decision templates index.html file, find the sections in the timeline part (block G, pretty down below) where you can either use 'real' randomisation or pseudorandomisation given the criterion configured in ```globals.js```. Example taken from [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp):
 
-```
-javascript
+```javascript
 
         //////////////// timeline /////////////////////////////////
 
@@ -488,8 +490,8 @@ javascript
  Below the ```//NOTE options below! (...)``` comment, a trial procedure is called that uses _trial_procedure_pseudorandom_. Commented out below that one, you find a different one, called _trial_procedure_random_. To go for 'real random', comment out ```timeline.push(trial_procedure_pseudorandom);``` (change to ```//timeline.push(trial_procedure_pseudorandom);```and uncomment the other one below (change ```//timeline.push(trial_procedure_random);``` to ```timeline.push(trial_procedure_random);```.
  
  The definitions of the procedures are --in this example-- only slightly above section G:
-```
-javascript
+```javascript
+
          let trial_procedure_pseudorandom = {
             timeline:[
                 present_fixation,
