@@ -33,16 +33,7 @@ Some templates use _audio_, if they do, there is or will be a simple testing pro
 # Data output
 Although each template has its own _specific output_ that will be described in each template, you can find a  very relevant primer on data output (jsPysch's data output vs. some UiL OTS template-wide defaults for output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates.
 
-In a nutshell:
-- jsPsych experiments _always returns all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
-- Many of _our_ templates add data (subject ID & group ID as _key, value_ pairs) to all the aforementioned objects, so the (sub)trial-data always have this information available for analysis.
-- In the case of 'trials' that are of the _survey_ type, we added the key "survey_data_flag" with a value 'true'.
-- In the case of a trial or trial phase where the output contains relevant (experimental item, Reaction Time, etc), we added the key "usefule_data_flag" with a value 'true'.
-
-The last mentioned _flags_ can be of help when filtering the data, because by default, you may be slightly overwhelmed by all the output from an experiment.
- [here](https://github.com/UiL-OTS-labs/jspsych-output). Please read the [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output). 
-
-In a nutshell:
+In a nutshell, about data output:
 - jsPsych experiments _always returns all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
 - Many of _our_ templates add data (subject ID & group ID as _key, value_ pairs) to all the aforementioned objects, so the (sub)trial-data always have this information available for analysis.
 - In the case of 'trials' that are of the _survey_ type, we added the key "survey_data_flag" with a value 'true'.
@@ -60,6 +51,9 @@ The text within ```< >``` are 'placeholder text', the ones without them should b
 # Generic documentation
 Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context and scope.
 
+# Paradigm-specific template related documentation
+<If there are clearly shared properties of templates (a general paradigm), like in the case of the Lexical Decision Paradigm, they may be referenced here.>
+
 # Task Description
 <Optionally, some scope information about the paradigm or shared organisation, if relevant.>
 
@@ -71,7 +65,6 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 
 # Getting started
 <How to use/start the experiment.>
-
 
 ```
 # Functional code separation
@@ -112,7 +105,6 @@ The first templates are developed for the liguistics master course [Experimental
 - Auditory Lexical Decision with Visual Masked Prime: [audlexdec-vp-vm](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-vm)
 - Auditory Lexical Decision with Auditory Prime: [audlexdec-ap](https://github.com/UiL-OTS-labs/jspsych-audlexdec-ap)
 
-
 ## Generic 'UiL' utility library (used in most templates)
 A tool that may help with things like restrained randomisation, detecting mobile phone/tablets and other reusable functionality.
 - [jspsych-uil-utils](https://github.com/UiL-OTS-labs/jspsych-uil-utils)
@@ -142,7 +134,7 @@ Auditory Lexical Decision w/ Visual Masked Prime  | https://web-experiments.lab.
 
 (\*) These demos may _not reflect the most recent states_ of the Github repositories. Typically, they are not often updated to do so.
 
-# General Overview (draft)
+# General Overview
 
 ## jsPsych is _not_ a 'programming language'
 
