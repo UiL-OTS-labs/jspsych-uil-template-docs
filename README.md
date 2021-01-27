@@ -31,7 +31,10 @@ This utility library was created to enable:
 - Mobile/Tablet detection (not the type of devices we want participants to use).
 - Restrained (or pseudo-) randomisation.
 
-The consquence of including all this, is that these templates contain quite a lot of more (and more complex) code than a basic jsPsych experiment. On the other hand, they automatically contain all components needed for 'professional' online research.   
+The consquence of including all this, is that these templates contain quite a lot of more (and more complex) code than a basic jsPsych experiment. On the other hand, they automatically contain all components needed for 'professional' online research.  
+
+# Data output
+Although each template has its own _specific output_ that will be described in each template, you can find a  very relevant primer on data output [here](https://github.com/UiL-OTS-labs/jspsych-output). Please read it, if this is your first time using one of our templates!  
 
 # Documentation that should minimally be in _every template_ (developer requirements)
 Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
@@ -78,6 +81,9 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 ## Generic 'UiL' utility library (used in most templates)
 A tool that may help with things like restrained randomisation, detecting mobile phone/tablets and other reusable functionality.
 - [jspsych-uil-utils](https://github.com/UiL-OTS-labs/jspsych-uil-utils)
+
+## Output documentation
+As mentioned before, please read the [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output)
 
 ## Miscallenous jspsych related repositories
 
