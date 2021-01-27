@@ -420,7 +420,7 @@ const ACCESS_KEY = 'zeeekretkeey';
 ```
 And change it to:
 
-```javacript
+```javascript
 // ACCESS_KEY needs to be used for server setup (data store)
 const ACCESS_KEY = 'N278123456-%^&&8888*(*7777--090900!#$%1234'; 
 ```
