@@ -8,6 +8,8 @@ This is a first start to provide a broader scope to using some in-house develope
 - Separate _generic_ documentation from _specific_ documentation.
 - Give some _background information_ that may help Students, Researchers & Developers & Managers plan online experimenting better.
 
+
+## Standard Components
 At this point, __every__ jspsych template comes with the following 'default' components included: 
 
 ### 1. Consent
@@ -23,6 +25,8 @@ This [utility library](https://github.com/UiL-OTS-labs/jspsych-uil-utils) was cr
 - Restrained (or pseudo-) randomisation.
 
 ## Optional Components
+Some templates have additional files and folders included:
+
 ### 1. Plugins
 Sometimes, a custom plugin is used, for instance in the [Word-by-word self-paced reading](https://github.com/UiL-OTS-labs/jspsych-spr-mw) template. See the folder `plugins` and its contents.
 ### 2. Keyboard setting/testing proceures
@@ -31,15 +35,14 @@ The Lexical Decision Templates use a custom keyboard setting procedure. See `key
 Some templates use _audio_, if they do, there is or will be a simple testing procedure.
 
 # Data output
-Although each template has its own _specific output_ that will be described in each template, you can find a  very relevant primer on data output (jsPysch's data output vs. some UiL OTS template-wide defaults for output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates.
+Although each template has its own _specific output_ that will be described in each template, you can find a  very relevant primer. This relates jsPysch's way of "dealing with data" and some of the UiL OTS template's defaults for data output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
 
 In a nutshell, about data output:
 - jsPsych experiments _always returns all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
 - Many of _our_ templates add data (subject ID & group ID as _key, value_ pairs) to all the aforementioned objects, so the (sub)trial-data always have this information available for analysis.
 - In the case of 'trials' that are of the _survey_ type, we added the key "survey_data_flag" with a value 'true'.
 - In the case of a trial or trial phase where the output contains relevant (experimental item, Reaction Time, etc), we added the key "usefule_data_flag" with a value 'true'.
-
-The last mentioned _flags_ can be of help when filtering the data, because by default, you may be slightly overwhelmed by all the output from an experiment.
+- The above mentioned _flags_ can be of help when filtering the data, because by default, you may be slightly overwhelmed by all the output from an experiment.
 
 # Documentation that should minimally be in _every template_ (developer requirements)
 Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
