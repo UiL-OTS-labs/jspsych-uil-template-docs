@@ -1,8 +1,9 @@
 # jspsych-uil-template-docs
-A collection of generic background information on UiL OTS 'templates' (or 'boilerplates') for [jsPsych](https://www.jspsych.org) experiments (mostly linguistic experimental paradigms) and some additional tools that can be reused. Ideally, any new template links to this overview in its README.md, so that we can keep core documentation in one place.
+- A collection of generic background information on UiL OTS 'templates' (or 'boilerplates') for [jsPsych](https://www.jspsych.org) experiments (mostly linguistic experimental paradigms) and some additional tools that can be reused. 
+- Ideally, any new template links to this overview in its README.md, so that we can keep core documentation in one place.
 
 # Background and Rationale
-This is a first start to provide a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own online experiment using [jsPsych](https://www.jspsych.org/). The current goals with this repository are:
+This documentation provides a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own online experiment using [jsPsych](https://www.jspsych.org/). The current goals with this repository are:
 
 - Keep documentation on a selection of code bases in _one place_.
 - Separate _generic_ documentation from _specific_ documentation.
@@ -25,7 +26,7 @@ This [utility library](https://github.com/UiL-OTS-labs/jspsych-uil-utils) was cr
 - Restrained (or pseudo-) randomisation.
 
 ## Optional and or additional components
-Some templates have additional files and folders included:
+Some templates have additional files and folders included, for example:
 
 ### 1. Plugins
 Sometimes, a custom plugin is used, for instance in the [Word-by-word self-paced reading](https://github.com/UiL-OTS-labs/jspsych-spr-mw) template. See the folder `plugins` and its contents.
@@ -68,7 +69,7 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 # Output (data)
 The data of all (sub) trial phases are logged. Please read the [general primer on jsPsych's data output](https://github.com/UiL-OTS-labs/jspsych-output) if you are new to jsPsych data output.
 
-<Specific output variables and how to adapt your stimuli.js and/or other files regarding data output.>
+<Specific template output variables and how to adapt your stimuli.js and/or other files regarding data output.>
 
 # Getting started
 <How to use/start the experiment.>
