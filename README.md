@@ -9,7 +9,7 @@ This is a first start to provide a broader scope to using some in-house develope
 - Give some _background information_ that may help Students, Researchers & Developers & Managers plan online experimenting better.
 
 
-## Standard Components
+## Standard components
 At this point, __every__ jspsych template comes with the following 'default' components included: 
 
 ### 1. Consent
@@ -24,25 +24,24 @@ This [utility library](https://github.com/UiL-OTS-labs/jspsych-uil-utils) was cr
 - Mobile/Tablet detection (not the type of devices we want participants to use).
 - Restrained (or pseudo-) randomisation.
 
-## Optional Components
+## Optional and or additional components
 Some templates have additional files and folders included:
 
 ### 1. Plugins
 Sometimes, a custom plugin is used, for instance in the [Word-by-word self-paced reading](https://github.com/UiL-OTS-labs/jspsych-spr-mw) template. See the folder `plugins` and its contents.
-### 2. Keyboard setting/testing proceures
+### 2. Keyboard setting/testing procedures
 The Lexical Decision Templates use a custom keyboard setting procedure. See `keyboard.js`
 ### 3. Audio setting/testing procedures
 Some templates use _audio_, if they do, there is or will be a simple testing procedure.
 
 # Data output
-Although each template has its own _specific output_ that will be described in each template, you can find a  very relevant primer. This relates jsPysch's way of "dealing with data" and some of the UiL OTS template's defaults for data output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
+Although each template has its own _specific output_ that will be described in each template, you can find a very relevant primer. This relates jsPysch's way of "dealing with data" and some of the UiL OTS template's defaults for data output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
 
 In a nutshell, about data output:
 - jsPsych experiments _always returns all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
 - Many of _our_ templates add data (subject ID & group ID as _key, value_ pairs) to all the aforementioned objects, so the (sub)trial-data always have this information available for analysis.
-- In the case of 'trials' that are of the _survey_ type, we added the key "survey_data_flag" with a value 'true'.
-- In the case of a trial or trial phase where the output contains relevant (experimental item, Reaction Time, etc), we added the key "usefule_data_flag" with a value 'true'.
-- The above mentioned _flags_ can be of help when filtering the data, because by default, you may be slightly overwhelmed by all the output from an experiment.
+- In the case of a trial or trial phase where the output contains relevant (experimental item, Reaction Time, etc), we sometimes add a key "useful_data_flag" with a value 'true' in the experiment, noet that this may or may not include practice trials, so always keep checking your code and your output!
+- The above mentioned use of _flags_ can be of use for filtering your data.
 
 # Documentation that should minimally be in _every template_ (developer requirements)
 Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
@@ -65,6 +64,11 @@ Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-
 
 ### Longer Description
 <A longer description that reflects on, for instance a paradigm's variations.>
+
+# Output
+The data of all (sub) trial phases are logged. Please read the [general primer on jsPsych's data output](https://github.com/UiL-OTS-labs/jspsych-output) if you are new to jsPsych data output.
+
+<Specific output variables and how to adapt your stimuli.js and/or other files regarding data output.>
 
 # Getting started
 <How to use/start the experiment.>
