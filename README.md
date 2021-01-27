@@ -47,7 +47,7 @@ In a nutshell a _reminder_ to summarize with regard to experiment data output:
 # Documentation that should minimally be in _every template_ (developer requirements)
 Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
 The text within ```< >``` are 'placeholder text', the ones without them should be _'as is'_.
-```
+```markdown
 # <Template name>
 <A human redadable intuitive description related to the template name.>
 
@@ -268,11 +268,15 @@ _Some_ more details about this follow below.
 
 Javascript libraries --among other things-- are imported in the index.html's so-called _head section_ (somewhere in between the ```<head>``` & ```</head>``` tags, you will find import lines that may look like this:
 
-```<script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>```
+```html
+<script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
+```
 
 In the above case, the import is in fact an example using the custom [Experiment Datastore](https://experiment-datastore.acc.lab.hum.uu.nl) path as can be used with our current server path to the general jsPsych JavaScript library. If you should want to use your own, _relative path_ to a different version of jsPsych, it could look like this, for example:
 
-```<script src="jspsych/6.1.2/jspsych.js"></script>```
+```html
+<script src="jspsych/6.1.2/jspsych.js"></script>
+```
 
 Configuring your own local paths to jsPsych's core scripts like in the latter examples is generally discouraged, because it may lead to difficult problems if you are not a web developer and things go wrong. If making an exception to this solves an actual problem, lab support may be able to help you out. For instance, maybe a newer version of jsPysch would add a crucial new feature that you want to use.
 
@@ -280,6 +284,7 @@ Configuring your own local paths to jsPsych's core scripts like in the latter ex
 Let's have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of that file (just until the end of the head section) looks like and walk through that step by step:
 
 ```
+html
 1.  <!DOCTYPE html>
 2.  <html>
 3.     <head>
@@ -441,6 +446,7 @@ The big caveat for pseudorandomisation, especially with the current small amount
 In the lexical decision templates index.html file, find the sections in the timeline part (block G, pretty down below) where you can either use 'real' randomisation or pseudorandomisation given the criterion configured in ```globals.js```. Example taken from [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp):
 
 ```
+javascript
 
         //////////////// timeline /////////////////////////////////
 
@@ -482,7 +488,8 @@ In the lexical decision templates index.html file, find the sections in the time
  Below the ```//NOTE options below! (...)``` comment, a trial procedure is called that uses _trial_procedure_pseudorandom_. Commented out below that one, you find a different one, called _trial_procedure_random_. To go for 'real random', comment out ```timeline.push(trial_procedure_pseudorandom);``` (change to ```//timeline.push(trial_procedure_pseudorandom);```and uncomment the other one below (change ```//timeline.push(trial_procedure_random);``` to ```timeline.push(trial_procedure_random);```.
  
  The definitions of the procedures are --in this example-- only slightly above section G:
-``` 
+```
+javascript
          let trial_procedure_pseudorandom = {
             timeline:[
                 present_fixation,
