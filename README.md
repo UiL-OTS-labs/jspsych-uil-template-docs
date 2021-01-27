@@ -222,7 +222,7 @@ These two modes will likely confuse those who are not web developers, but the bo
 
 Many browsers and versions have their own defaults for security like 'autoplay', allowing sounds, pop-ups and alerts, importing images from local sources, etc. It is impossible to know 100% sure if things will work in your browser in advance, so be prepared to deal with some confusion.
 
-## For 'real' online data collection, you will need a server-based setup.
+## For 'real' online data collection, you will need a server-based setup
 While you could -- in principle -- use jsPsych in the traditional lab context, it will typically not make a lot of sense. Especially if you want to store your research data for an experiment in one place, a web-server setup is the way to go. 
 
 # From template to your own online experiment
@@ -230,7 +230,8 @@ While you could -- in principle -- use jsPsych in the traditional lab context, i
 ## Prerequisites and scope limitation
 This documentation is primarily aimed at people _affiliated to the UiL OTS labs_ (Utrecht University: RMA Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_. While we are still developing, support is limited to students in the EDDA course only!
 
-- People _affiliated to our lab__ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. 
+- People _affiliated to our lab__ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
+
 - People _not affiliated to our lab_ can of course use the templates, but will have to do without (support for, access to) the UiL OTS Experiment Datastore (link, CODEBASE? TODO).
 
 With the above scope limitations, the bigger picture overview is:
