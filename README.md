@@ -37,9 +37,9 @@ Some templates use _audio_, if they do, there is or will be a simple testing pro
 # Output (data)
 Although each template has its own _specific output_ that will be described in each template, you can find a very relevant primer. This relates jsPysch's way of "dealing with data" and some of the UiL OTS template's defaults for data output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
 
-In a nutshell, about data output:
+In a nutshell a _reminder_ to summarize with regard to experiment data output:
 - jsPsych experiments _always returns all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
-- Many of _our_ templates add data (subject ID & group ID as _key, value_ pairs) to all the aforementioned objects, so the (sub)trial-data always have this information available for analysis.
+- Many of _our_ templates add data (subject ID & list ID as _key, value_ pairs) to all the aforementioned objects, so the (sub)trial-data always have this information available for analysis.
 - In the case of a trial or trial phase where the output contains relevant (experimental item, Reaction Time, etc), we sometimes add a key "useful_data_flag" with a value 'true' in the experiment, noet that this may or may not include practice trials, so always keep checking your code and your output!
 - The above mentioned use of _flags_ can be of use for filtering your data.
 
@@ -93,7 +93,7 @@ template_download_main_folder\
 As a general 'guideline', we design templates in such a way, that the main experiment's file (index.html!) remains rather 'minimal'. That is: not too much lines of code that can be bundled functionally in a separate file and functional name.
                              
 # Context and scope of current developments
-The first templates are developed for the liguistics master course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similar to the traditional, lab-bound way that was used before, using [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision). However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same and some concessions have been made.
+The first templates are developed for the liguistics master course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similar to the traditional, lab-bound way that was used before, using [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision). However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same.
 
 # List of jsPsych-based template repositories 
 ###### (Developers: keep this list _updated_)
