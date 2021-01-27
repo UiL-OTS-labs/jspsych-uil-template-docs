@@ -29,7 +29,26 @@ This utility library was created to enable:
 The consquence of including all this, is that these templates contain quite a lot of more (and more complex) code than a basic jsPsych experiment. On the other hand, they automatically contain all components needed for 'professional' online research.  
 
 # Data output
-Although each template has its own _specific output_ that will be described in each template, you can find a  very relevant primer on data output [here](https://github.com/UiL-OTS-labs/jspsych-output). Please read it, if this is your first time using one of our templates!  
+Although each template has its own _specific output_ that will be described in each template, you can find a  very relevant primer on data output (jsPysch's data output vs. some UiL OTS template-wide defaults for output
+Please read the [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates.
+
+In a nutshell:
+- jsPsych experiments _always returns all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
+- Many of _our_ templates add data (subject ID & group ID as _key, value_ pairs) to all the aforementioned objects, so the (sub)trial-data always have this information available for analysis.
+- In the case of 'trials' that are of the _survey_ type, we added the key "survey_data_flag" with a value 'true'.
+- In the case of a trial or trial phase where the output contains relevant (experimental item, Reaction Time, etc), we added the key "usefule_data_flag" with a value 'true'.
+
+The last mentioned _flags_ can be of help when filtering the data, because by default, you may be slightly overwhelmed by all the output from an experiment.
+ [here](https://github.com/UiL-OTS-labs/jspsych-output). Please read the [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output). 
+
+In a nutshell:
+- jsPsych experiments _always returns all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
+- Many of _our_ templates add data (subject ID & group ID as _key, value_ pairs) to all the aforementioned objects, so the (sub)trial-data always have this information available for analysis.
+- In the case of 'trials' that are of the _survey_ type, we added the key "survey_data_flag" with a value 'true'.
+- In the case of a trial or trial phase where the output contains relevant (experimental item, Reaction Time, etc), we added the key "usefule_data_flag" with a value 'true'.
+
+The last mentioned _flags_ can be of help when filtering the data, because by default, you may be slightly overwhelmed by all the output from an experiment.
+
 
 # Documentation that should minimally be in _every template_ (developer requirements)
 Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
@@ -227,7 +246,8 @@ While you could -- in principle -- use jsPsych in the traditional lab context, i
 ## Prerequisites and scope limitation
 This documentation is primarily aimed at people _affiliated to the UiL OTS labs_ (Utrecht University: RMA Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_. While we are still developing, support is limited to students in the EDDA course only!
 
-Of course, there are many rules and regulations and procedures that need to be followed before conducting an online study. We will _not_ describe the organisational regulations in detail here, but please do keep in mind that, _generally_, the _same steps_ as mentioned on our [lab website](https://uilots-labs.wp.hum.uu.nl/experiments/planning-an-experiment/) need to be followed, even though some details may be different at the detail level.
+- People _affiliated to our lab__ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. 
+- People _not affiliated to our lab_ can of course use the templates, but will have to do without (support for, access to) the UiL OTS Experiment Datastore (link, CODEBASE? TODO).
 
 With the above scope limitations, the bigger picture overview is:
 
