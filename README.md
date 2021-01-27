@@ -1,6 +1,5 @@
 # jspsych-uil-template-docs
-A collection of generic background information on UiL OTS 'templates' (or 'boilerplates', preference for templates here) for [jsPsych](https://www.jspsych.org) experiments (mostly linguistic experimental paradigms) and some additional tools that can be reused. Ideally, any new template links to this overview in its README.md, so that we can keep core documentation in one place.
-
+A collection of generic background information on UiL OTS 'templates' (or 'boilerplates') for [jsPsych](https://www.jspsych.org) experiments (mostly linguistic experimental paradigms) and some additional tools that can be reused. Ideally, any new template links to this overview in its README.md, so that we can keep core documentation in one place.
 
 # Background and Rationale
 This is a first start to provide a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own online experiment using [jsPsych](https://www.jspsych.org/). The current goals with this repository are:
@@ -11,26 +10,28 @@ This is a first start to provide a broader scope to using some in-house develope
 
 At this point, __every__ jspsych template comes with the following 'default' components included: 
 
-### 1. Consent page
-A consent page placeholder is included before the experiment starts. It is up to the specifics of your own goals (and organisation) what should be in that file, called `consent_page.html`. A simple look and feel for a consent page (just 'heading' style in this case) is included in that consent page's `<style>` section. In case of Utrecht University, this could better be done by inserting a link to the default UU House style .css files. We'll put up a link for that soon and update. (todo/doing).
+### 1. Consent
+A consent page placeholder is included before the experiment starts. It is up to the specifics of your own goals (and organisation) what information should ne given. A consent page must always implement a combination of a consent statement, a checkbox that must be checked _and_ a _button_ that needs to be clicked to give consent. See `consent.js` for (placeholder) content.
 
 ### 2. Survey questions
-You can adapt the survey questions to your onw needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about [_input (or data) validation_](https://en.wikipedia.org/wiki/Data_validation). For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is important for quality research online, think about (your) data management.
+You can adapt the survey questions to your onw needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about [input (data) validation_](https://en.wikipedia.org/wiki/Data_validation). For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is important for quality research online, think about (your) data management. See `survey.js`.
 
-### 3. Keyboard procedure (sometimes also audio procedures).
-The Lexical Decision Templates use a custom keyboard setting procedure. This is to miltigate potential Reaction Time (RT) (interaction) effects due to hand preference. In templates that use _audio_, there is also a simple testing procedure for that in the template.
-
-### 4. Generic UiL utility library
-This utility library was created to enable:
+### 3. Generic UiL utility library
+This [utility library](https://github.com/UiL-OTS-labs/jspsych-uil-utils) was created to enable:
 
 - Mobile/Tablet detection (not the type of devices we want participants to use).
 - Restrained (or pseudo-) randomisation.
 
-The consquence of including all this, is that these templates contain quite a lot of more (and more complex) code than a basic jsPsych experiment. On the other hand, they automatically contain all components needed for 'professional' online research.  
+## Optional Components
+### 1. Plugins
+Sometimes, a custom plugin is used, for instance in the [Word-by-word self-paced reading](https://github.com/UiL-OTS-labs/jspsych-spr-mw) template. See the folder `plugins` and its contents.
+### 2. Keyboard setting/testing proceures
+The Lexical Decision Templates use a custom keyboard setting procedure. See `keyboard.js`
+### 3. Audio setting/testing procedures
+Some templates use _audio_, if they do, there is or will be a simple testing procedure.
 
 # Data output
-Although each template has its own _specific output_ that will be described in each template, you can find a  very relevant primer on data output (jsPysch's data output vs. some UiL OTS template-wide defaults for output
-Please read the [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates.
+Although each template has its own _specific output_ that will be described in each template, you can find a  very relevant primer on data output (jsPysch's data output vs. some UiL OTS template-wide defaults for output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates.
 
 In a nutshell:
 - jsPsych experiments _always returns all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
@@ -48,7 +49,6 @@ In a nutshell:
 - In the case of a trial or trial phase where the output contains relevant (experimental item, Reaction Time, etc), we added the key "usefule_data_flag" with a value 'true'.
 
 The last mentioned _flags_ can be of help when filtering the data, because by default, you may be slightly overwhelmed by all the output from an experiment.
-
 
 # Documentation that should minimally be in _every template_ (developer requirements)
 Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
