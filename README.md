@@ -52,7 +52,7 @@ The text within ```< >``` are 'placeholder text', the ones without them should b
 <A human redadable intuitive description related to the template name.>
 
 # Generic documentation
-Every template includes a link to this [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context.
+Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context and scope.
 UiL-OTS-affiliated students and researchers should follow [this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
 # Paradigm-specific template related documentation
