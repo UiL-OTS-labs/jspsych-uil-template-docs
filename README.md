@@ -7,17 +7,17 @@ This documentation provides a broader scope to using some in-house developed tem
 
 - Keep documentation on a selection of code bases in _one place_.
 - Separate _generic_ documentation from _specific_ documentation.
-- Give some _background information_ that may help Students, Researchers & Developers & Managers plan online experimenting better.
+- Give some _background information_ to help Students, Researchers, and Developers plan online experimenting better.
 
 
 ## Standard components
 At this point, __every__ jspsych template comes with the following 'default' components included: 
 
 ### 1. Consent
-A consent page placeholder is included before the experiment starts. It is up to the specifics of your own goals (and organisation) what information should ne given. A consent page must always implement a combination of a consent statement, a checkbox that must be checked _and_ a _button_ that needs to be clicked to give consent. See `consent.js` for (placeholder) content.
+A consent page placeholder is included before the experiment starts. It is up to the specifics of your own goals (and organisation) what information should be given. A consent page must always implement a combination of a consent statement, a checkbox that must be checked _and_ a _button_ that needs to be clicked to give consent. See `consent.js` for (placeholder) content.
 
 ### 2. Survey questions
-You can adapt the survey questions to your onw needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about [input (data) validation_](https://en.wikipedia.org/wiki/Data_validation). For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is important for quality research online, think about (your) data management. See `survey.js`.
+You can adapt the survey questions to your own needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about [input (data) validation_](https://en.wikipedia.org/wiki/Data_validation). For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is important for quality of online research, think about (your) data management. See `survey.js`.
 
 ### 3. Generic UiL utility library
 This [utility library](https://github.com/UiL-OTS-labs/jspsych-uil-utils) was created to enable:
@@ -36,12 +36,12 @@ The Lexical Decision Templates use a custom keyboard setting procedure. See `key
 Some templates use _audio_, if they do, there is or will be a simple testing procedure.
 
 # Output (data)
-Although each template has its own _specific output_ that will be described in each template, you can find a very relevant primer. This relates jsPysch's way of "dealing with data" and some of the UiL OTS template's defaults for data output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
+Specific information about the output (data) of each template experiment can be found in its README.md. In addition, there is a general primer describing jsPysch's way of "dealing with data" and some of the UiL OTS template's defaults for data output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
 
 In a nutshell a _reminder_ to summarize with regard to experiment data output:
 - jsPsych experiments _always returns all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
 - Many of _our_ templates add data (subject ID & list ID as _key, value_ pairs) to all the aforementioned objects, so the (sub)trial-data always have this information available for analysis.
-- In the case of a trial or trial phase where the output contains relevant (experimental item, Reaction Time, etc), we sometimes add a key "useful_data_flag" with a value 'true' in the experiment, note that this may or may not include "practice trials", so always keep checking your code and your output!
+- In the case of a trial or trial phase where the output contains relevant (experimental item, Reaction Time, etc), we sometimes add a key "useful_data_flag" with a value 'true' in the experiment; note that this may or may not include "practice trials", so always keep checking your code and your output!
 - The above mentioned use of _flags_ can be of use for filtering your data.
 
 # Documentation that should minimally be in _every template_ (developer requirements)
@@ -52,8 +52,8 @@ The text within ```< >``` are 'placeholder text', the ones without them should b
 <A human redadable intuitive description related to the template name.>
 
 # Generic documentation
-Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context and scope.
-Affiliated students and researchers should follow [this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
+Every template includes a link to this [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context.
+UiL-OTS-affiliated students and researchers should follow [this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
 # Paradigm-specific template related documentation
 <If there are clearly shared properties of templates (a general paradigm), like in the case of the Lexical Decision Paradigm, they may be referenced here.>
@@ -92,7 +92,7 @@ template_download_main_folder\
                               | survey.js                        # Survey tools. 
                              /
 ```
-As a general 'guideline', we design templates in such a way, that the main experiment's file (index.html) remains rather 'minimal'. That is: not too much lines of code in the main experiment's index.html, but bundle shared functionalities in separate files with a functional, descriptive names.
+As a general 'guideline', we design templates in such a way, that the main experiment's file (index.html) remains rather 'minimal'. That is: not too many lines of code in the main experiment's index.html, but bundle shared functionalities in separate files with functional, descriptive names.
                              
 # Context and scope of current developments
 The first templates are developed for the liguistics master course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similar to the traditional, lab-bound way that was used before, using [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision). However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same.
