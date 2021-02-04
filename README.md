@@ -76,8 +76,8 @@ The data of all (sub) trial phases are logged. Please read the [general primer o
 <How to use/start the experiment.>
 
 ```
-# Functional code separation in different files.
-Recent consensus lead to the separation of some of the javascript(jspsych) code (that is used by the experiments 'index.html') in separate files. After unzipping a template download, you will often find the following files/folder structure.
+# Functional code separation in different files (modular structure)
+Recent consensus lead to the separation of some of the javascript (jsPsych) code (that is used by the experiments' 'index.html') into separate files. After unzipping a template download, you will often find the following files/folder structure.
 
 ```
 template_download_main_folder\
