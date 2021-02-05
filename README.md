@@ -95,7 +95,7 @@ template_download_main_folder\
 As a general 'guideline', we design templates in such a way, that the main experiment's file (index.html) remains rather 'minimal'. That is: not too many lines of code in the main experiment's index.html, but bundle shared functionalities in separate files with functional, descriptive names.
                              
 # Context and scope of current developments
-The first templates are developed for the liguistics master course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similar to the traditional, lab-bound way that was used before, using [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision). However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same.
+The first templates were developed for the liguistics RMA course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similarly to the  [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision) that are used in the UiL OTS labs for traditional, lab bound research. However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same.
 
 # List of jsPsych-based template repositories 
 ###### (Developers: keep this list _updated_)
@@ -129,21 +129,6 @@ As mentioned before, please read the [primer on data output](https://github.com/
 ### Tools to help with csv/json conversions
 - [jspsych-boilerplates](https://github.com/UiL-OTS-labs/jspsych-boilerplates)
 
-# Online demo's (using the Experiment Data Store)\*
-
-__Name__                                          | __weblink__                                                  |
---------------------------------------------------|--------------------------------------------------------------|
-Self-paced reading w/ Moving window               | https://web-experiments.lab.hum.uu.nl/boilerplate-spr-mw/    |
-Visual Lexical Decision                           | https://web-experiments.lab.hum.uu.nl/vislexdec/             |
-Visual Lexical Decision w/ Visual Prime           | https://web-experiments.lab.hum.uu.nl/vislexdec-vp/          |
-Visual Lexical Decision w/ Visual Masked Prime    | https://web-experiments.lab.hum.uu.nl/vislexdec-vp-vm/       |
-Auditory Lexical Decision                         | https://web-experiments.lab.hum.uu.nl/audlexdec/             |
-Auditory Lexical Decision w/ Auditory Prime       | https://web-experiments.lab.hum.uu.nl/audlexdec-ap/          |
-Auditory Lexical Decision w/ Visual Prime         | https://web-experiments.lab.hum.uu.nl/audlexdec-vp/          |
-Auditory Lexical Decision w/ Visual Masked Prime  | https://web-experiments.lab.hum.uu.nl/audlexdec-vp-vm/       |
-
-(\*) These demos may _not reflect the most recent states_ of the Github repositories. Typically, they are not often updated to do so.
-
 # General Overview
 
 ## jsPsych is _not_ a 'programming language'
@@ -153,7 +138,7 @@ jsPsych uses a _cominbation_ of a _markup_ language (html), a _styling_ language
 How some concepts relate to each other:
 
 ### HTML
-- HTML is a markup language, not a programming language
+- HTML is a [markup language](https://en.wikipedia.org/wiki/Markup_language), not a programming language
 - All HTML files have a similar structure
 - With the ```<script>somescipt.js</scipt>``` tags, you can use Javascript in HTML
 
@@ -163,11 +148,11 @@ How some concepts relate to each other:
 - There is no "official standard" for coding Javascipt, but it is very powerful  
 
 ### CSS
-- CSS deals with mainly styling, like layouts, fonts, colors, backgrounds.
+- CSS mainly deals with styling, like layouts, fonts, colors, backgrounds.
 - CSS evolved from being primarily a styling language, but is also becoming a bit more like a 'programming language', in a way.
 
 ### jsPsych
-- jspsych _uses_ Javascript code for a specific experimental purpose and the functions from this library need to be imported in the top op your html file before you can use them.
+- jspsych _uses_ Javascript code for a specific experimental purpose and the functions from this library need to be imported in the top of your html file before you can use them.
 - You _could_ run an experiment in your browser while being offline, if you only refer to local sources that are imported in the relative path.
 - If you would need or want to load scripts from an online location in your experiment, you _could_. 
   - But then, do make sure that the locally run code *does* have a working internet connection!
@@ -175,13 +160,13 @@ How some concepts relate to each other:
 ## You will become a 'web developer' 
 jsPsych was developed with scientists in mind, not developers. In essence, the jsPsych library tries to let you focus on mainly writing a html file and (re-)use simple JavaScript-style code blocks for trials or trial parts. However, once you get started with jsPsych, you will become a bit of a 'web developer' anyway, in the sense that:
 
-- You will need _tools_ for editing html files, JavaScript code blocks and stylesheets (not Word, Pages, LibreOffice).
+- You will need _tools_ for editing html files, JavaScript code blocks and stylesheets (not Word, Pages, LibreOffice, but a plain text editor).
 - You will need to learn about _debugging_ and the debugging capabilities of (most) web-browsers.
 - You will be _confused_ when things 'don't work'.
 - You will need to _accept_ that you cannot _control everything_.
 
 ### You need _at least_ a _plain text editor_
-- Windows users may want to download Notepad++, or try out the free Visual Studio Code IDE (todo)
+- Windows users may want to download [Notepad++](https://notepad-plus-plus.org/), or try out the free Visual Studio Code IDE (todo)
 - Mac users can use TextEdit in plain text mode (preferences) or try out Visual Studio Code, use XCode, Sublime Text, etc.
 - (Linux users will usually find their way with this step.)
 
@@ -192,10 +177,10 @@ Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the U
 - Physically being bound to the lab.
 - Relatively small samples, optimised for "Wilhelm Wundt" style traditional research.
 
-The lab-based situation is expected to be limited due to the COVID-19 pandemic, which is why we've started working on web-based alternatives. Some general remarks about this:
+The lab-based situation is limited due to the COVID-19 pandemic, which is why we've started working on web-based alternatives. Some general remarks about this:
 
 - 'The web' cannot offer the accuracy and precision needed for certain paradigms.
-- Variations in hardware, software, internet speed, random noise and distraction and many other aspects may cause variations at multiple levels.
+- Variations in hardware, software, internet speed, random noise and distractions and many other aspects may cause variations at multiple levels.
 - Especially when sounds _and_ images need to be synced, be sure to define means to verify or falsify presentation syncing and test well.
 
 On the other hand:
@@ -223,12 +208,12 @@ These two modes will likely confuse those who are not web developers, but the bo
 Many browsers and versions have their own defaults for security like 'autoplay', allowing sounds, pop-ups and alerts, importing images from local sources, etc. It is impossible to know 100% sure if things will work in your browser in advance, so be prepared to deal with some confusion.
 
 ## For 'real' online data collection, you will need a server-based setup
-While you could -- in principle -- use jsPsych in the traditional lab context, it will typically not make a lot of sense. Especially if you want to store your research data for an experiment in one place, a web-server setup is the way to go. 
+While you could -- in principle -- use jsPsych offline in the traditional lab context, it will typically not make a lot of sense. Especially if you want to store your research data for an experiment in one place, a web-server setup is the way to go. 
 
 # From template to your own online experiment
 
 ## Prerequisites and scope limitation
-This documentation is primarily aimed at people _affiliated to the UiL OTS labs_ (Utrecht University: RMA Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_. While we are still developing, support is limited to students in the EDDA course only!
+This documentation is primarily aimed at people _affiliated to the UiL OTS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_. While we are still developing, support is limited to students in the EDDA course only!
 
 - People _affiliated to our lab__ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
