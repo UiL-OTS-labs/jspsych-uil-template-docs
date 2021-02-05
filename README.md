@@ -251,7 +251,7 @@ _Some_ more details about this follow below.
 ## 2.1 Imports in the head section 'index.html' 
 #### Imports the jsPsych library, some typically used jsPsych plugins, the jsPsych style sheet and also 'our' custom template libraries & files.
 
-Javascript libraries --among other things-- are imported in the index.html's so-called _head section_ (somewhere in between the ```<head>``` & ```</head>``` tags, you will find import lines that may look like this:
+Javascript libraries --among other things-- are imported in the index.html's so-called _head section_. Somewhere in between the ```<head>``` & ```</head>``` tags, you will find import lines that may look like this:
 
 ```html
 <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
@@ -311,7 +311,7 @@ In order for your experiment to use _only_ jsPsych's core library, the import is
 <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
 ```
 
-Additionally, the default 'look and feel' for common jsPsych experiment layouts is bundled in a 'styling' file, a .css file, this is imported on line 22 in the above line-numbered example, if you don't import it, things will not be layouted like jsPsych experiments usually 'work', so it should also always be there when you start with your own experiment: 
+Additionally, the default 'look and feel' for common jsPsych experiment layouts is bundled in a 'styling' file, a .css file. This file is imported on line 22 in the above line-numbered example. If you don't import it, things will not be layouted like jsPsych experiments usually 'work', so it should also always be there when you start with your own experiment: 
 
 ```html
 <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
@@ -325,7 +325,7 @@ On line 9 and 10 we read:
 9.     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
 10.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-button-response.js"></script>
 ```
-These are some of the most basic jspsych interaction _plugins_, the first one deals with a participant keyboard responses, the other one with mouse interactions with clickable buttons, found in most experiments.
+These are some of the most basic jspsych interaction _plugins_. The first one deals with a participant keyboard responses, the other one with mouse interactions with clickable buttons, found in most experiments.
 
 The ```jspsych-html-button-response``` button response plugin is generally _always_ recommended as a first 'participant interaction trial', since most browsers don't automatically allow the playing of sounds or videos with sound without such an interaction element at the start of your experiment. This type of interaction could also be part of a so-called 'instruction' plugin, so it depends on preference.
 
@@ -375,7 +375,7 @@ Line 26 imports the UiL OTS utility library.
 Lines 29-31 import 'non-jsPsych' _default_ files, they import the aforementioned custom template-related javascript files. These _are_ __relative__ imports. To clarify: in case you would remove the stimuli.js file from your template experiment folder, this would result in errors if you do not also remove the import statement. 
 
 #### In _general_: import only what you really need
-You may have noticed that a standard template already has quite some lines for standard things. This is mainly because they were designed to be 'complete experiments'. If for instance, if you would _not_ want to include any survey questions, it's best to delete the imports related to them, and of course also the parts in the index.html that relate to the survey blocks, read on to find out about the next important section of an index.html experiment file.
+You may have noticed that a standard template already has quite a few lines for standard things. This is mainly because they were designed to be 'complete experiments'. If for instance, if you would _not_ want to include any survey questions, it's best to delete the imports related to them, and of course also the parts in the index.html that relate to the survey blocks. Read on to find out about the next important section of an index.html experiment file.
 
 ## 2.2 The _script section_ of 'index.html'
 #### javaScript code blocks, (sub-)trial definitions, trial procedures and other code organisation in an index.html file
@@ -395,7 +395,7 @@ G             | The timeline, where the experiment's building blocks are added t
 H             | The _init_-block: with this part, the experiment starts -for real- by 'executing the timeline'.
 
 # 3. The experiment data store
-Most information about should be availble once you have logged in to the [Experiment Data Store](https://experiment-datastore.acc.lab.hum.uu.nl). 
+Most information should be availble once you have logged in to the [Experiment Data Store](https://experiment-datastore.acc.lab.hum.uu.nl). 
 
 # 4. Making the experiment ready for online testing
 Most generally, once you have requested/defined your experiment folder, you have to copy the _Access key_ for your experiment to be the new value for the ACCESS_KEY constant in _your version_ of the `globals.js` file. So, say you have been given the code `N278123456-%^&&8888*(*7777--090900!#$%1234`, implement it like this:
@@ -412,7 +412,7 @@ const ACCESS_KEY = 'N278123456-%^&&8888*(*7777--090900!#$%1234';
 Note the _quotes_!
 
 # 5. Sharing your experiment
-Running your experiment _locally_ will usually _also_ still work after editing that value the `globals.js` file, but of course, the data is not saved like on the server, you will just get a bunch of output in your browser window, like while developing locally. Please do make sure to keep track of your edits, once you are sure everything works, you can invite your participants!
+Running your experiment _locally_ on your own PC will usually _also_ still work after editing that value the `globals.js` file, but of course, the data is not saved like on the server, you will just get a bunch of output in your browser window. Please do make sure to keep track of your edits. Once you are sure everything works, you can invite your participants!
 
 # General best practices for jsPsych experiments 
 
@@ -429,7 +429,7 @@ Browsers will often disallow auto-playing sound/video if there is no user activi
 
 You can find a trial procedure using a custom function from the 'uil-utils' library. A default restriction for pseudorandomisation is configured in the templates as a constant in each ```globals.js``` file, with the string ```const MAX_SUCCEEDING_ITEMS_OF_TYPE = 2```. 
 
-The big caveat for pseudorandomisation, especially with the current small amount of items in templates (only _two_ items in the practice items): the utility function _tries_ to shuffle your items given this 'max 2-succeeding items restriction' for X (say, 10) times when your index.html initialises the experiment. If it (the function) fails to do so, --in this case, because you have too little items to make it happen-- your experiment will _not_ start (because of this underlying error, not visible in the browser).
+The big caveat for pseudorandomisation, especially with the current small number of items in templates (only _two_ items in the practice items): the utility function _tries_ to shuffle your items given this 'max 2-succeeding items restriction' for X (say, 10) times when your index.html initialises the experiment. If it (the function) fails to do so, --in this case, because you have too few items to make it happen-- your experiment will _not_ start (because of this underlying error, not visible in the browser).
 
 In the lexical decision templates index.html file, find the sections in the timeline part (block G, pretty down below) where you can either use 'real' randomisation or pseudorandomisation given the criterion configured in ```globals.js```. Example taken from [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp):
 
