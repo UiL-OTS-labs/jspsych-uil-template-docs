@@ -213,11 +213,11 @@ While you could -- in principle -- use jsPsych offline in the traditional lab co
 # From template to your own online experiment
 
 ## Prerequisites and scope limitation
-This documentation is primarily aimed at people _affiliated to the UiL OTS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_. While we are still developing, support is limited to students in the EDDA course only!
+This documentation is primarily aimed at people _affiliated with the UiL OTS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_. While we are still developing, support is limited to students in the EDDA course only!
 
-- People _affiliated to our lab__ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
+- People _affiliated with our lab__ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
-- People _not affiliated to our lab_ can of course use the templates, but will have to do without (support for, access to) the UiL OTS Experiment Datastore (link, CODEBASE? TODO).
+- People _not affiliated with our lab_ can of course use the templates, but will have to do without (support for, access to) the UiL OTS Experiment Datastore (link, CODEBASE? TODO).
 
 With the above scope limitations, the bigger picture overview is:
 
@@ -234,14 +234,14 @@ Step 4 and 5 will generally be alternated iteratively, until all is working well
 
 - Flow/look and feel, routing, timing, survey & consent.
 - Data output and usability. 
-- Online specifics for optimising audio presentation, keyboard setting, media and media preloading/.
+- Online specifics for optimising audio presentation, keyboard setting, media and media preloading.
 
 In short: _everything(!)_ that you consider relevant to solving an actual problem with your experiment.
 
 Detailed descriptions:
 
 # 1. Choosing a template
-There are quite some variations for the Lexical Decision Experiments, read the template's specific documentation `README.md` to make an informed decision.
+There are quite a few variations for the Lexical Decision Experiments, read the template's specific documentation `README.md` to make an informed decision.
 
 # 2. How and where to edit templates
 Editing templates is largely self-explanatory: stimuli are edited in `stimuli.js`, global settings in `globals.js`, and instructions in `instructions.js`. Some hints can be found in the comments in the files themselves (comments are preceded with two forward slashes `//`). When changing things, make sure to frequently run the experiment again to make sure it still works (and that you haven't messed up the syntax by accidentally deleting brackets, quotes and such). 
