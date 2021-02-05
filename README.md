@@ -1,4 +1,4 @@
-# jspsych-uil-template-docs
+# jsPsych-uil-template-docs
 - A collection of generic background information on UiL OTS 'templates' (or 'boilerplates') for [jsPsych](https://www.jspsych.org) experiments (mostly linguistic experimental paradigms) and some additional tools that can be reused. 
 - Ideally, any new template links to this overview in its README.md, so that we can keep core documentation in one place.
 
@@ -11,7 +11,7 @@ This documentation provides a broader scope to using some in-house developed tem
 
 
 ## Standard components
-At this point, __every__ jspsych template comes with the following 'default' components included: 
+At this point, __every__ jsPsych template comes with the following 'default' components included: 
 
 ### 1. Consent
 A consent page placeholder is included before the experiment starts. It is up to the specifics of your own goals (and organisation) what information should be given. A consent page must always implement a combination of a consent statement, a checkbox that must be checked _and_ a _button_ that needs to be clicked to give consent. See `consent.js` for (placeholder) content.
@@ -227,8 +227,8 @@ step | Description                                                          | Co
 2    | Edit the template to your needs and test it _locally_.               | First, focus on the general flow and look and feel.
 3    | Log in to the Experiment data store and _read the docs_.             | [Experiment data store](https://experiment-datastore.acc.lab.hum.uu.nl)
 4    | Make your experiment ready for _online_ (web server) usage.          | More info on this will follow in _this_ documentation, too.
-5    | Upload your experiment and test again.                               | The data output options are a bit easier to use, focus on data output is advised in this step.
-6    | 'Open' and share the link to your experiment.                        | Test very well before doing this (nobody likes failing online experiments or unusable research data)!
+5    | Upload your experiment, 'open' it and test again.                               | 'Opening' the experiment allows it to write data to the data server. The data output options there are a bit easier to use, focus on data output is advised in this step.
+6    | Share the link to your experiment.                        | Test very well before doing this (nobody likes failing online experiments or unusable research data)!
 
 Step 4 and 5 will generally be alternated iteratively, until all is working well on _all_ aspects: 
 
