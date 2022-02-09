@@ -29,7 +29,7 @@ This [utility library](https://github.com/UiL-OTS-labs/jspsych-uil-utils) was cr
 Some templates have additional files and folders included, for example:
 
 ### 1. Plugins
-Sometimes, a custom plugin is used, for instance in the [Word-by-word self-paced reading](https://github.com/UiL-OTS-labs/jspsych-spr-mw) template. See the folder `plugins` and its contents.
+Sometimes, a custom plugin is used, for instance in the [Self-paced reading](https://github.com/UiL-OTS-labs/jspsych-spr-mw) template. See the folder `plugins` and its contents.
 ### 2. Keyboard setting/testing procedures
 The Lexical Decision Templates use a custom keyboard setting procedure. See `keyboard.js`
 ### 3. Audio setting/testing procedures
