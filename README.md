@@ -3,7 +3,7 @@
 - Ideally, any new template links to this overview in its README.md, so that we can keep core documentation in one place.
 
 # Background and Rationale
-This documentation provides information about using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own online experiment using [jsPsych](https://www.jspsych.org/). The current goals with this repository are:
+This documentation provides information about using some templates that we developed at the UiL OTS labs for (time critical reaction time) paradigms and tools needed to make your own online experiment using [jsPsych](https://www.jspsych.org/). The aims for this repository are:
 
 - Keep documentation on a selection of code bases in _one place_.
 - Separate _generic_ documentation from _specific_ documentation.
