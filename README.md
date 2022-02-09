@@ -52,11 +52,14 @@ The text within ```< >``` are 'placeholder text', the ones without them should b
 <A human redadable intuitive description related to the template name.>
 
 # Generic documentation
-Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context and scope.
-UiL-OTS-affiliated students and researchers should follow [this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
+Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some 
+  context and scope.
+UiL-OTS-affiliated students and researchers should follow 
+  [this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
 # Paradigm-specific template related documentation
-<If there are clearly shared properties of templates (a general paradigm), like in the case of the Lexical Decision Paradigm, they may be referenced here.>
+<If there are clearly shared properties of templates (a general paradigm), like in the case of the Lexical 
+    Decision Paradigm, they may be referenced here.>
 
 # Task Description
 <Optionally, some scope information about the paradigm or shared organisation, if relevant.>
