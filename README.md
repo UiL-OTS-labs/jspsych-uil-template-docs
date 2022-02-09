@@ -77,7 +77,7 @@ The data of all (sub) trial phases are logged. Please read the [general primer o
 
 ```
 # Functional code separation in different files (modular structure)
-Recent consensus lead to the separation of some of the javascript (jsPsych) code (that is used by the experiments' 'index.html') into separate files. After unzipping a template download, you will often find the following files/folder structure.
+Some of the javascript (jsPsych) code (that is used by the experiments' 'index.html') is separated into separate files/modules. After unzipping a template download, you will often find the following files/folder structure.
 
 ```
 template_download_main_folder\
@@ -92,7 +92,7 @@ template_download_main_folder\
                               | survey.js                        # Survey tools. 
                              /
 ```
-As a general 'guideline', we design templates in such a way, that the main experiment's file (index.html) remains rather 'minimal'. That is: not too many lines of code in the main experiment's index.html, but bundle shared functionalities in separate files with functional, descriptive names.
+As a general rule, we design templates in such a way, that the main experiment's file (index.html) remains rather 'minimal'. That is: not too many lines of code in the main experiment's index.html, but bundle shared functionalities in separate files with functional, descriptive names.
                              
 # Context and scope of current developments
 The first templates were developed for the liguistics RMA course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similarly to the  [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision) that are used in the UiL OTS labs for traditional, lab bound research. However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same.
