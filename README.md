@@ -1,23 +1,23 @@
 # jsPsych-uil-template-docs
-- A collection of generic background information on UiL OTS 'templates' (or 'boilerplates') for [jsPsych](https://www.jspsych.org) experiments (mostly linguistic experimental paradigms) and some additional tools that can be reused. 
+- This page provides generic background information on UiL OTS 'templates' (or 'boilerplates') for [jsPsych](https://www.jspsych.org) experiments (mostly linguistic experimental paradigms) and some additional tools that can be reused. 
 - Ideally, any new template links to this overview in its README.md, so that we can keep core documentation in one place.
 
 # Background and Rationale
-This documentation provides a broader scope to using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own online experiment using [jsPsych](https://www.jspsych.org/). The current goals with this repository are:
+This documentation provides information about using some in-house developed templates for (time critical reaction time) paradigms and tools needed to make your own online experiment using [jsPsych](https://www.jspsych.org/). The current goals with this repository are:
 
 - Keep documentation on a selection of code bases in _one place_.
 - Separate _generic_ documentation from _specific_ documentation.
-- Give some _background information_ to help Students, Researchers, and Developers plan online experimenting better.
+- Give some _background information_ to help Students, Researchers, and Developers plan online experimenting.
 
 
 ## Standard components
-At this point, __every__ jsPsych template comes with the following 'default' components included: 
+At this point, __every__ UiL OTS jsPsych template comes with the following 'default' components included: 
 
 ### 1. Consent
 A consent page placeholder is included before the experiment starts. It is up to the specifics of your own goals (and organisation) what information should be given. A consent page must always implement a combination of a consent statement, a checkbox that must be checked _and_ a _button_ that needs to be clicked to give consent. See `consent.js` for (placeholder) content.
 
 ### 2. Survey questions
-You can adapt the survey questions to your own needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about [input (data) validation_](https://en.wikipedia.org/wiki/Data_validation). For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is important for quality of online research, think about (your) data management. See `survey.js`.
+You can adapt the survey questions to your own needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about [input (data) validation_](https://en.wikipedia.org/wiki/Data_validation). For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is important for quality of online research. Also think about data management, and make sure to formulate your survey questions so that they will provide you with answers you can and will actually use (be specific). See `survey.js`.
 
 ### 3. Generic UiL utility library
 This [utility library](https://github.com/UiL-OTS-labs/jspsych-uil-utils) was created to enable:
