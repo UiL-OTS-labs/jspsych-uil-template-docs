@@ -45,7 +45,7 @@ In a nutshell a _reminder_ to summarize with regard to experiment data output:
 - The above mentioned use of _flags_ can be of use for filtering your data.
 
 # Documentation that should minimally be in _every template_ (developer requirements)
-Certain information should be in every template. This is a first go at what should be in every repository's README.md (Markdown):
+Certain information should be in every template. The elements below should be in every repository's README.md (Markdown):
 The text within ```< >``` are 'placeholder text', the ones without them should be _'as is'_.
 ```markdown
 # <Template name>
