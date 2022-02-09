@@ -39,9 +39,9 @@ Some templates use _audio_, if they do, there is or will be a simple testing pro
 Specific information about the output (data) of each template experiment can be found in its README.md. In addition, there is a general primer describing jsPysch's way of "dealing with data" and some of the UiL OTS template's defaults for data output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
 
 In a nutshell a _reminder_ to summarize with regard to experiment data output:
-- jsPsych experiments _always returns all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
+- jsPsych experiments _always return all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
 - Many of _our_ templates add data (subject ID & list ID as _key, value_ pairs) to all the aforementioned objects, so the (sub)trial-data always have this information available for analysis.
-- In the case of a trial or trial phase where the output contains relevant (experimental item, Reaction Time, etc), we sometimes add a key "useful_data_flag" with a value 'true' in the experiment; note that this may or may not include "practice trials", so always keep checking your code and your output!
+- In the case of a trial or trial phase where the output contains relevant variables (experimental item, Reaction Time, etc), we sometimes add a key "useful_data_flag" with a value 'true' in the experiment; note that this may or may not include "practice trials", so always keep checking your code and your output!
 - The above mentioned use of _flags_ can be of use for filtering your data.
 
 # Documentation that should minimally be in _every template_ (developer requirements)
