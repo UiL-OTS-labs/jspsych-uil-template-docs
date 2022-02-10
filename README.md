@@ -227,7 +227,7 @@ step | Description                                                          | Co
 2    | Edit the template to your needs and test it _locally_.               | First, focus on the general flow and look and feel.
 3    | Log in to the Experiment data store and _read the docs_.             | [Experiment data store](https://experiment-datastore.acc.lab.hum.uu.nl)
 4    | Make your experiment ready for _online_ (web server) usage.          | See the documentation [on our lab webiste](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/)
-5    | Upload your experiment, 'open' it and test again.                               | 'Opening' the experiment allows it to write data to the data server. The data output options there are a bit easier to use, focus on data output is advised in this step.
+5    | Upload your experiment, 'open' it and test again.                               | 'Opening' the experiment allows it to write data to the data server. Focus on data output is advised in this step.
 6    | Share the link to your experiment.                        | Test very well before doing this (nobody likes failing online experiments or unusable research data)!
 
 Step 4 and 5 will generally be alternated iteratively, until all is working well on _all_ aspects: 
