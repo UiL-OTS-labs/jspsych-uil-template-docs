@@ -95,7 +95,7 @@ template_download_main_folder\
 As a general rule, we design templates in such a way, that the main experiment's file (index.html) remains rather 'minimal'. That is: not too many lines of code in the main experiment's index.html, but bundle shared functionalities in separate files with functional, descriptive names.
                              
 # Context and scope of current developments
-The first templates were developed for the liguistics RMA course [Experimental Design and Data Analysis (EDDA)](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similarly to the  [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision) that are used in the UiL OTS labs for traditional, lab bound research. However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same.
+The first templates were developed for the liguistics RMA course [Experimental Design and Data Analysis ()](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similarly to the  [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision) that are used in the UiL OTS labs for traditional, lab bound research. However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same.
 
 # List of jsPsych-based template repositories 
 ###### (Developers: keep this list _updated_)
@@ -213,7 +213,7 @@ While you could -- in principle -- use jsPsych offline in the traditional lab co
 # From template to your own online experiment
 
 ## Prerequisites and scope limitation
-This documentation is primarily aimed at people _affiliated with the UiL OTS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_. While we are still developing, support is limited to students in the EDDA course only!
+This documentation is primarily aimed at people _affiliated with the UiL OTS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_.
 
 - People _affiliated with our lab__ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
