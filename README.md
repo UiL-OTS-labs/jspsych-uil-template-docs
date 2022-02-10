@@ -215,9 +215,9 @@ While you could -- in principle -- use jsPsych offline in the traditional lab co
 ## Prerequisites and scope limitation
 This documentation is primarily aimed at people _affiliated with the UiL OTS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_.
 
-- People _affiliated with our lab__ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
+- People _affiliated with our lab_ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
-- People _not affiliated with our lab_ can of course use the templates, but will have to do without (support for, access to) the UiL OTS Experiment Datastore (link, CODEBASE? TODO).
+- People _not affiliated with our lab_ can of course use the templates, but will have to do without (support for, access to) the [UiL OTS Experiment Datastore](https://experiment-datastore.lab.hum.uu.nl/experiments/).
 
 With the above scope limitations, the bigger picture overview is:
 
