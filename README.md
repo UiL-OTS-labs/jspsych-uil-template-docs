@@ -177,10 +177,10 @@ Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the U
 - Physically being bound to the lab.
 - Relatively small samples, optimised for "Wilhelm Wundt" style traditional research.
 
-The lab-based situation was limited due to the COVID-19 pandemic, which is why we've started working on web-based alternatives. Some general remarks about this:
+The lab-based situation was limited due to the COVID-19 pandemic, which is why we started working on web-based alternatives. Some general remarks about this:
 
 - 'The web' cannot offer the accuracy and precision needed for certain paradigms.
-- Variations in hardware, software, internet speed, random noise and distractions and many other aspects may cause variations at multiple levels.
+- Variations in hardware, software, internet speed, random noise and distractions and many other aspects may cause noise in the data at multiple levels.
 - Especially when sounds _and_ images need to be synced, be sure to define means to verify or falsify presentation syncing and test well.
 
 On the other hand:
