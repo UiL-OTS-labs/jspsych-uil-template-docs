@@ -203,7 +203,7 @@ There are multiple ways to test, run and configure jsPsych-based experiments:
 
 These two modes will likely confuse those who are not web developers, but the bottom line is: 
 
-- A locally developed experiment will _not guarantee that the same experiment will run in a server setup__, or vice versa! 
+- A locally developed experiment will _not guarantee that the same experiment will run in a server setup_, or vice versa! 
 
 Many browsers and versions have their own defaults for security like 'autoplay', allowing sounds, pop-ups and alerts, importing images from local sources, etc. It is impossible to know 100% sure if things will work in your browser in advance, so be prepared to deal with some confusion.
 
