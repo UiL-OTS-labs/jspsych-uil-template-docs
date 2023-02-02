@@ -213,7 +213,7 @@ step | Description                                                          | Co
 -----|----------------------------------------------------------------------|----------------------------------------------------------------------------
 1    | Choose a template to base your experiment on.                        | Read the template docs.
 2    | Edit the template to your needs and test it _locally_.               | First, focus on the general flow and look and feel.
-3    | Log in to the Experiment data store and _read the docs_.             | [Experiment data store](https://experiment-datastore.acc.lab.hum.uu.nl)
+3    | Log in to the Experiment data store and _read the docs_.             | [Experiment data store](https://experiment-datastore.lab.hum.uu.nl)
 4    | Make your experiment ready for _online_ (web server) usage.          | See the documentation [on our lab webiste](https://ils-labs.wp.hum.uu.nl/how-to/online-experimenting/)
 5    | Upload your experiment, 'open' it and test again.                               | 'Opening' the experiment allows it to write data to the data server. Focus on data output is advised in this step.
 6    | Share the link to your experiment.                        | Test very well before doing this (nobody likes failing online experiments or unusable research data)!
