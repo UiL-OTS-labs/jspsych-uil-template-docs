@@ -203,9 +203,9 @@ While you could -- in principle -- use jsPsych offline in the traditional lab co
 ## Prerequisites and scope limitation
 This documentation is primarily aimed at people _affiliated with the ILS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_.
 
-- People _affiliated with our lab_ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
+- People _affiliated with our lab_ can use the information [from our lab webiste](https://ils-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://ils-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
-- People _not affiliated with our lab_ can of course use the templates, but will have to do without (support for, access to) the [UiL OTS Experiment Datastore](https://experiment-datastore.lab.hum.uu.nl/experiments/).
+- People _not affiliated with our lab_ can of course use the templates, but will have to do without (support for, access to) the [ILS Experiment Datastore](https://experiment-datastore.lab.hum.uu.nl/experiments/).
 
 With the above scope limitations, the bigger picture overview is:
 
@@ -214,7 +214,7 @@ step | Description                                                          | Co
 1    | Choose a template to base your experiment on.                        | Read the template docs.
 2    | Edit the template to your needs and test it _locally_.               | First, focus on the general flow and look and feel.
 3    | Log in to the Experiment data store and _read the docs_.             | [Experiment data store](https://experiment-datastore.acc.lab.hum.uu.nl)
-4    | Make your experiment ready for _online_ (web server) usage.          | See the documentation [on our lab webiste](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/)
+4    | Make your experiment ready for _online_ (web server) usage.          | See the documentation [on our lab webiste](https://ils-labs.wp.hum.uu.nl/how-to/online-experimenting/)
 5    | Upload your experiment, 'open' it and test again.                               | 'Opening' the experiment allows it to write data to the data server. Focus on data output is advised in this step.
 6    | Share the link to your experiment.                        | Test very well before doing this (nobody likes failing online experiments or unusable research data)!
 
@@ -281,10 +281,10 @@ Let's have a look at one of the current templates, the Auditory Lexical Decsion 
 22.    <!-- Generic jspsych style sheet -->
 23.    <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
 24.
-25.    <!-- Uil OTS libraries -->
+25.    <!-- ILS libraries -->
 26.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
 27.
-28.    <!-- Uil OTS scripts -->
+28.    <!-- ILS scripts -->
 29.    <script src="stimuli.js"></script>
 30.    <script src="globals.js"></script>
 31.    <script src="instructions.js"></script>
