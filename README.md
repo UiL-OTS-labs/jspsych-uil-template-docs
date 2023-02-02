@@ -245,7 +245,7 @@ Javascript libraries --among other things-- are imported in the index.html's so-
 <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
 ```
 
-In the above case, the import is in fact an example using the custom [Experiment Datastore](https://experiment-datastore.acc.lab.hum.uu.nl) path as can be used with our current server path to the general jsPsych JavaScript library. If you should want to use your own, _relative path_ to a different version of jsPsych, it could look like this, for example:
+In the above case, the import is in fact an example using the custom [Experiment Datastore](https://experiment-datastore.lab.hum.uu.nl) path as can be used with our current server path to the general jsPsych JavaScript library. If you should want to use your own, _relative path_ to a different version of jsPsych, it could look like this, for example:
 
 ```html
 <script src="jspsych/6.1.2/jspsych.js"></script>
@@ -383,7 +383,7 @@ G             | The timeline, where the experiment's building blocks are added t
 H             | The _init_-block: with this part, the experiment starts -for real- by 'executing the timeline'.
 
 # 3. The experiment data store
-Most information should be availble once you have logged in to the [Experiment Data Store](https://experiment-datastore.acc.lab.hum.uu.nl). 
+Most information should be availble once you have logged in to the [Experiment Data Store](https://experiment-datastore.lab.hum.uu.nl). 
 
 # 4. Making the experiment ready for online testing
 Most generally, once you have requested/defined your experiment folder, you have to copy the _Access key_ for your experiment to be the new value for the ACCESS_KEY constant in _your version_ of the `globals.js` file. So, say you have been given the code `N278123456-%^&&8888*(*7777--090900!#$%1234`, implement it like this:
