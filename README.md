@@ -155,7 +155,7 @@ jsPsych was developed with scientists in mind, not developers. In essence, the j
 
 ### You need _at least_ a _plain text editor_
 - Windows users may want to download [Notepad++](https://notepad-plus-plus.org/), or try out the free Visual Studio Code IDE (todo)
-- Mac users can use TextEdit in plain text mode (preferences) or try out Visual Studio Code, use XCode, Sublime Text, etc.
+- Mac users can use BBedit, or TextEdit in plain text mode (preferences) or try out Visual Studio Code, use XCode, Sublime Text, etc.
 - (Linux users will usually find their way with this step.)
 
 ## 'The lab' vs 'The Web': limitations and opportunities
