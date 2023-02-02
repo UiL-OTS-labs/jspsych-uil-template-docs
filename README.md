@@ -1,9 +1,11 @@
+General note: ILS labs used to be called UiL OTS labs; that is why sometimes you'll see the name UiL or UiL OTS pop up in links and documentation. We are working to change all instances of UiL OTS to ILS, but that will take awhile!
+
 # jsPsych-uil-template-docs
-- This page provides generic background information on UiL OTS 'templates' (or 'boilerplates') for [jsPsych](https://www.jspsych.org) experiments (mostly linguistic experimental paradigms) and some additional tools that can be reused. 
-- Ideally, any new template links to this overview in its README.md, so that we can keep core documentation in one place.
+- This page provides generic background information on ILS 'templates' (or 'boilerplates') for [jsPsych](https://www.jspsych.org) experiments (mostly linguistic experimental paradigms) and some additional tools that can be reused. 
+- Any new template links to this overview in its README.md, so that we can keep core documentation in one place.
 
 # Background and Rationale
-This documentation provides information about using some templates that we developed at the UiL OTS labs for (time critical reaction time) paradigms and tools needed to make your own online experiment using [jsPsych](https://www.jspsych.org/). The aims for this repository are:
+This documentation provides information about using some templates that we developed at the ILS labs for (time critical reaction time) paradigms and tools needed to make your own online experiment using [jsPsych](https://www.jspsych.org/). The aims for this repository are:
 
 - Keep documentation on a selection of code bases in _one place_.
 - Separate _generic_ documentation from _template-specific_ documentation.
@@ -11,7 +13,7 @@ This documentation provides information about using some templates that we devel
 
 
 ## Standard components
-At this point, __every__ UiL OTS jsPsych template comes with the following 'default' components included: 
+At this point, __every__ ILS jsPsych template comes with the following 'default' components included: 
 
 ### 1. Consent
 A consent page placeholder is included before the experiment starts. It is up to the specifics of your own goals (and organisation) what information should be given. A consent page must always implement a combination of a consent statement, a checkbox that must be checked _and_ a _button_ that needs to be clicked to give consent. See `consent.js` for (placeholder) content.
@@ -19,7 +21,7 @@ A consent page placeholder is included before the experiment starts. It is up to
 ### 2. Survey questions
 You can adapt the survey questions to your own needs, but it is not as easy as it may seem. Please think well about what you want to accept as 'valid' in your survey. Read up about [input (data) validation](https://en.wikipedia.org/wiki/Data_validation). For instance, you may want an e-mail address to be in the form of `someone@somewebsite.com` and not allow people to fill out `whatever` in a survey field. Input validation is important for quality of online research. Also think about data management, and make sure to formulate your survey questions so that they will provide you with answers you can and will actually use (so, be very specific in your questions). See `survey.js`.
 
-### 3. Generic UiL utility library
+### 3. Generic ILS utility library
 This [utility library](https://github.com/UiL-OTS-labs/jspsych-uil-utils) was created to enable:
 
 - Mobile/Tablet detection (not the type of devices we want participants to use).
@@ -36,7 +38,7 @@ The Lexical Decision Templates use a custom keyboard setting procedure. See `key
 Some templates use _audio_, if they do, there is or will be a simple testing procedure.
 
 # Output (data)
-Specific information about the output (data) of each template experiment can be found in its README.md. In addition, there is a general primer describing jsPysch's way of "dealing with data" and some of the UiL OTS template's defaults for data output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
+Specific information about the output (data) of each template experiment can be found in its README.md. In addition, there is a general primer describing jsPysch's way of "dealing with data" and some of the ILS template's defaults for data output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
 
 In a nutshell a _reminder_ to summarize with regard to experiment data output:
 - jsPsych experiments _always return all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
@@ -53,7 +55,7 @@ The text within ```< >``` are 'placeholder text', the ones without them should b
 
 # Generic documentation
 Please read the [generic documentation](https://github.com/UiL-OTS-labs/jspsych-uil-template-docs) for some context and scope.
-UiL-OTS-affiliated students and researchers should follow [this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
+ILS-affiliated students and researchers should follow [this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
 # Paradigm-specific template related documentation
 <If there are clearly shared properties of templates (a general paradigm), like in the case of the Lexical Decision Paradigm, they may be referenced here.>
@@ -98,23 +100,9 @@ As a general rule, we design templates in such a way, that the main experiment's
 The first templates were developed for the liguistics RMA course [Experimental Design and Data Analysis ()](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similarly to the  [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision) that are used in the UiL OTS labs for traditional, lab bound research. However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same.
 
 # List of jsPsych-based template repositories 
-###### (Developers: keep this list _updated_)
+See the ILS labs website [here](https://ils-labs.wp.hum.uu.nl/experiments/overview/#custom-collapse-0-2).
 
-### Self-Paced Reading with Moving window Template
-- Word-by-word self-paced reading, moving window [jspsych-spr-mw](https://github.com/UiL-OTS-labs/jspsych-spr-mw)
-
-### Visual Lexical Decision Templates
-- Visual Lexical Decision basic version: [vislexdec](https://github.com/UiL-OTS-labs/jspsych-vislexdec)
-- Visual Lexical Decision with Visual Prime: [vislexdec-vp](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp)
-- Visual Lexical Decision with Visual Masked Prime: [vislexdec-vp-vm](https://github.com/UiL-OTS-labs/jspsych-vislexdec-vp-vm)
-
-### Auditory and/or Visual Lexical Decision Templates
-- Auditory Lexical Decision basic version: [audlexdec](https://github.com/UiL-OTS-labs/jspsych-audlexdec)
-- Auditory Lexical Decision with Visual Prime: [audlexdec-vp](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp)
-- Auditory Lexical Decision with Visual Masked Prime: [audlexdec-vp-vm](https://github.com/UiL-OTS-labs/jspsych-audlexdec-vp-vm)
-- Auditory Lexical Decision with Auditory Prime: [audlexdec-ap](https://github.com/UiL-OTS-labs/jspsych-audlexdec-ap)
-
-## Generic 'UiL' utility library (used in most templates)
+## Generic ILS utility library (used in most templates)
 A tool that may help with things like restrained randomisation, detecting mobile phone/tablets and other reusable functionality.
 - [jspsych-uil-utils](https://github.com/UiL-OTS-labs/jspsych-uil-utils)
 
