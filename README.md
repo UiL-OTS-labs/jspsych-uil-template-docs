@@ -97,7 +97,7 @@ template_download_main_folder\
 As a general rule, we design templates in such a way, that the main experiment's file (index.html) remains rather 'minimal'. That is: not too many lines of code in the main experiment's index.html, but bundle shared functionalities in separate files with functional, descriptive names.
                              
 # Context and scope of current developments
-The first templates were developed for the liguistics RMA course [Experimental Design and Data Analysis ()](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similarly to the  [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision) that are used in the UiL OTS labs for traditional, lab bound research. However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same.
+The first templates were developed for the liguistics RMA course [Experimental Design and Data Analysis in 2021](https://osiris.uu.nl/osiris_student_uuprd/OnderwijsCatalogusSelect.do?selectie=cursus&cursus=TLRMV16108&collegejaar=2020&taal=nl). Given this context, we've made the templates so that they behave quite similarly to the  [ZEP templates](https://www.beexy.nl/zep/wiki/doku.php?id=templates:lexical_decision) that are used in the ILS labs for traditional, lab bound research. However, although JavaScript and ZEP may share some features (like coding syntax, code organisation), they are of course not the same.
 
 # List of jsPsych-based template repositories 
 See the ILS labs website [here](https://ils-labs.wp.hum.uu.nl/experiments/overview/#custom-collapse-0-2).
@@ -159,7 +159,7 @@ jsPsych was developed with scientists in mind, not developers. In essence, the j
 - (Linux users will usually find their way with this step.)
 
 ## 'The lab' vs 'The Web': limitations and opportunities
-Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the UiL OTS labs for time critical experimentation and there are many templates to start with using ZEP. ZEP was designed in house and has been designed to accurately sync sound, visuals/text and/or other hardware (eye tracking, EEG, EMG, etc) in a 'traditional' research lab setup. By that we mean:
+Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the ILS labs for time critical experimentation and there are many templates to start with using ZEP. ZEP was designed in house and has been designed to accurately sync sound, visuals/text and/or other hardware (eye tracking, EEG, EMG, etc) in a 'traditional' research lab setup. By that we mean:
 
 - A quite controlled/controllable environment in terms of hardware, software and possible distractions for participants.
 - Physically being bound to the lab.
@@ -201,7 +201,7 @@ While you could -- in principle -- use jsPsych offline in the traditional lab co
 # From template to your own online experiment
 
 ## Prerequisites and scope limitation
-This documentation is primarily aimed at people _affiliated with the UiL OTS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_.
+This documentation is primarily aimed at people _affiliated with the ILS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_.
 
 - People _affiliated with our lab_ can use the information [from our lab webiste](https://uilots-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://uilots-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
@@ -343,14 +343,14 @@ Lines 16-20 deal with other plugins used by our templates, they are usually _all
 - Line 19 imports a html plugin for survey questions.
 - Line 20 imports a multiple choice plugin, also for survey purposes.
 
-We already mentioned the default css _link_ used by jsPsych (line 22). It's not a Javascript library or plugin, but a place where styling is defined. It's placed _below_ all _standard jsPsych_ plugins, but _before_ our custom template-related scripts. The comments should also make this clear. So, we continue with the 'UiL OTS custom template' imports:
+We already mentioned the default css _link_ used by jsPsych (line 22). It's not a Javascript library or plugin, but a place where styling is defined. It's placed _below_ all _standard jsPsych_ plugins, but _before_ our custom template-related scripts. The comments should also make this clear. So, we continue with the 'ILS custom template' imports:
 
 ```html
 ...
-25.    <!-- Uil OTS libraries -->
+25.    <!-- ILS libraries -->
 26.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
 27.
-28.    <!-- Uil OTS scripts -->
+28.    <!-- ILS scripts -->
 29.    <script src="stimuli.js"></script>
 30.    <script src="globals.js"></script>
 31.    <script src="instructions.js"></script>
@@ -359,7 +359,7 @@ We already mentioned the default css _link_ used by jsPsych (line 22). It's not 
 ...    </head>
 ```
 
-Line 26 imports the UiL OTS utility library.
+Line 26 imports the ILS utility library.
 Lines 29-31 import 'non-jsPsych' _default_ files, they import the aforementioned custom template-related javascript files. These _are_ __relative__ imports. To clarify: in case you would remove the stimuli.js file from your template experiment folder, this would result in errors if you do not also remove the import statement. 
 
 #### In _general_: import only what you really need
