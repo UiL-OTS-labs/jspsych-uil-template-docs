@@ -114,9 +114,6 @@ As mentioned before, please read the [primer on data output](https://github.com/
 ### Documentation on the concessions we have/had to make
 - [jspsych-concessions](https://github.com/UiL-OTS-labs/jspsych-concessions)
 
-### Tools to help with csv/json conversions
-- [jspsych-boilerplates](https://github.com/UiL-OTS-labs/jspsych-boilerplates)
-
 # General Overview
 
 ## jsPsych is _not_ a 'programming language'
@@ -141,15 +138,12 @@ How some concepts relate to each other:
 
 ### jsPsych
 - jspsych _uses_ Javascript code for a specific experimental purpose and the functions from this library need to be imported in the top of your html file before you can use them.
-- You _could_ run an experiment in your browser while being offline, if you only refer to local sources that are imported in the relative path.
-- If you would need or want to load scripts from an online location in your experiment, you _could_. 
-  - But then, do make sure that the locally run code *does* have a working internet connection!
 
 ## You will become a 'web developer' 
 jsPsych was developed with scientists in mind, not developers. In essence, the jsPsych library tries to let you focus on mainly writing a html file and (re-)use simple JavaScript-style code blocks for trials or trial parts. However, once you get started with jsPsych, you will become a bit of a 'web developer' anyway, in the sense that:
 
 - You will need _tools_ for editing html files, JavaScript code blocks and stylesheets (not Word, Pages, LibreOffice, but a plain text editor).
-- You will need to learn about _debugging_ and the debugging capabilities of (most) web-browsers.
+- You will need to learn about _debugging_ and the debugging capabilities of (most) web-browsers. (In Firefox, try F12).
 - You will be _confused_ when things 'don't work'.
 - You will need to _accept_ that you cannot _control everything_.
 
@@ -157,25 +151,6 @@ jsPsych was developed with scientists in mind, not developers. In essence, the j
 - Windows users may want to download [Notepad++](https://notepad-plus-plus.org/), or try out the free Visual Studio Code IDE (todo)
 - Mac users can use BBedit, or TextEdit in plain text mode (preferences) or try out Visual Studio Code, use XCode, Sublime Text, etc.
 - (Linux users will usually find their way with this step.)
-
-## 'The lab' vs 'The Web': limitations and opportunities
-Traditionally, we've used [ZEP](https://www.beexy.nl/zep/wiki/doku.php) in the ILS labs for time critical experimentation and there are many templates to start with using ZEP. ZEP was designed in house and has been designed to accurately sync sound, visuals/text and/or other hardware (eye tracking, EEG, EMG, etc) in a 'traditional' research lab setup. By that we mean:
-
-- A quite controlled/controllable environment in terms of hardware, software and possible distractions for participants.
-- Physically being bound to the lab.
-- Relatively small samples, optimised for "Wilhelm Wundt" style traditional research.
-
-The lab-based situation was limited due to the COVID-19 pandemic, which is why we started working on web-based alternatives. Some general remarks about this:
-
-- 'The web' cannot offer the accuracy and precision needed for certain paradigms.
-- Variations in hardware, software, internet speed, random noise and distractions and many other aspects may cause noise in the data at multiple levels.
-- Especially when sounds _and_ images need to be synced, be sure to define means to verify or falsify presentation syncing and test well.
-
-On the other hand:
-
-- The _principles_ of most paradigms can still be taught and learned.
-- You could potentially get a lot more data, which may to some extent compensate noise and little control.
-- You can find a lot of code snippets and examples online, there is a huge user base for jsPsych and many plugins for certain paradigms can be used or adapted to certain needs.
 
 ## General jsPsych info and tutorials
 Before you start editing one of these templates, reading up about jsPsych will usually be a good primer. We encourage anyone to get a gist of the 'simple' (but powerful!) way of doing things by following the recommendations given at jsPsych's [site](https://www.jspsych.org/) and to follow the first two tutorials. The basic things like how some `index.html` file imports from the jspsych library, where and how plugins can be used are very relevant to understand. 
@@ -203,204 +178,11 @@ While you could -- in principle -- use jsPsych offline in the traditional lab co
 ## Prerequisites and scope limitation
 This documentation is primarily aimed at people _affiliated with the ILS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_.
 
-- People _affiliated with our lab_ can use the information [from our lab webiste](https://ils-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://ils-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
+- Linguistics students and researchers _affiliated with the ILS labs_ can use the information [from our lab webiste](https://ils-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://ils-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
 - People _not affiliated with our lab_ can of course use the templates, but will have to do without (support for, access to) the [ILS Experiment Datastore](https://experiment-datastore.lab.hum.uu.nl/experiments/).
 
-With the above scope limitations, the bigger picture overview is:
 
-step | Description                                                          | Comment
------|----------------------------------------------------------------------|----------------------------------------------------------------------------
-1    | Choose a template to base your experiment on.                        | Read the template docs.
-2    | Edit the template to your needs and test it _locally_.               | First, focus on the general flow and look and feel.
-3    | Log in to the Experiment data store and _read the docs_.             | [Experiment data store](https://experiment-datastore.lab.hum.uu.nl)
-4    | Make your experiment ready for _online_ (web server) usage.          | See the documentation [on our lab webiste](https://ils-labs.wp.hum.uu.nl/how-to/online-experimenting/)
-5    | Upload your experiment, 'open' it and test again.                               | 'Opening' the experiment allows it to write data to the data server. Focus on data output is advised in this step.
-6    | Share the link to your experiment.                        | Test very well before doing this (nobody likes failing online experiments or unusable research data)!
-
-Step 4 and 5 will generally be alternated iteratively, until all is working well on _all_ aspects: 
-
-- Flow/look and feel, routing, timing, survey & consent.
-- Data output and usability. 
-- Online specifics for optimising audio presentation, keyboard setting, media and media preloading.
-
-In short: _everything(!)_ that you consider relevant to solving an actual problem with your experiment.
-
-Detailed descriptions:
-
-# 1. Choosing a template
-There are quite a few variations for the Lexical Decision Experiments, read the template's specific documentation `README.md` to make an informed decision.
-
-# 2. How and where to edit templates
-Editing templates is largely self-explanatory: stimuli are edited in `stimuli.js`, global settings in `globals.js`, and instructions in `instructions.js`. Some hints can be found in the comments in the files themselves (comments are preceded with two forward slashes `//`). When changing things, make sure to frequently run the experiment again to make sure it still works (and that you haven't messed up the syntax by accidentally deleting brackets, quotes and such). 
-
-_Some_ more details about this follow below.
-
-## 2.1 Imports in the head section 'index.html' 
-#### Imports the jsPsych library, some typically used jsPsych plugins, the jsPsych style sheet and also 'our' custom template libraries & files.
-
-Javascript libraries --among other things-- are imported in the index.html's so-called _head section_. Somewhere in between the ```<head>``` & ```</head>``` tags, you will find import lines that may look like this:
-
-```html
-<script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
-```
-
-In the above case, the import is in fact an example using the custom [Experiment Datastore](https://experiment-datastore.lab.hum.uu.nl) path as can be used with our current server path to the general jsPsych JavaScript library. If you should want to use your own, _relative path_ to a different version of jsPsych, it could look like this, for example:
-
-```html
-<script src="jspsych/6.1.2/jspsych.js"></script>
-```
-
-Configuring your own local paths to jsPsych's core scripts like in the latter examples is generally discouraged, because it may lead to difficult problems if you are not a web developer and things go wrong. If making an exception to this solves an actual problem, lab support may be able to help you out. For instance, maybe a newer version of jsPysch would add a crucial new feature that you want to use.
-
-#### A typical _head section_ import structure
-Let's have a look at one of the current templates, the Auditory Lexical Decsion with Visual Prime and what the very start of that file (just until the end of the head section) looks like and walk through that step by step:
-
-```html
-1.  <!DOCTYPE html>
-2.  <html>
-3.     <head>
-4.     <meta charset="UTF-8">
-5.    
-6.     <title>Auditory Lexical Decision Experiment with Visual Prime</title>
-7.
-8.     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
-9.     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
-10.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-button-response.js"></script>
-11.    
-12.    <!-- Audio playback &response libraries (audio) -->
-13.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-button-response.js"></script>
-14.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-keyboard-response.js"></script>
-15.    
-16.    <!-- Generic check/ask libraries (consent, instructions & surveys) -->
-17.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-external-html.js"></script>
-18.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
-19.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
-20.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
-21.    
-22.    <!-- Generic jspsych style sheet -->
-23.    <link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
-24.
-25.    <!-- ILS libraries -->
-26.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
-27.
-28.    <!-- ILS scripts -->
-29.    <script src="stimuli.js"></script>
-30.    <script src="globals.js"></script>
-31.    <script src="instructions.js"></script>
-32.    
-...   
-...    </head>
- ```
- 
-In order for your experiment to use _only_ jsPsych's core library, the import is on line 8 from the previous example:
-
-```html
-<script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/jspsych.js"></script>
-```
-
-Additionally, the default 'look and feel' for common jsPsych experiment layouts is bundled in a 'styling' file, a .css file. This file is imported on line 22 in the above line-numbered example. If you don't import it, things will not be layouted like jsPsych experiments usually 'work', so it should also always be there when you start with your own experiment: 
-
-```html
-<link href="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/css/jspsych.css" rel="stylesheet" type="text/css"/>
-```
-
-Let us have a look at some ```<script>```-```</script>``` imports in between lines 8 and 23 and reflect on what they do to make the jsPsych library actually do things like things that typically define (reaction time) experimental linguistics experiments: key-presses, questions, audio fragments and text presentations, amongst others.
-
-On line 9 and 10 we read:
-
-```html
-9.     <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-keyboard-response.js"></script>
-10.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-html-button-response.js"></script>
-```
-These are some of the most basic jspsych interaction _plugins_. The first one deals with a participant keyboard responses, the other one with mouse interactions with clickable buttons, found in most experiments.
-
-The ```jspsych-html-button-response``` button response plugin is generally _always_ recommended as a first 'participant interaction trial', since most browsers don't automatically allow the playing of sounds or videos with sound without such an interaction element at the start of your experiment. This type of interaction could also be part of a so-called 'instruction' plugin, so it depends on preference.
-
-From lines 12-14, we may gather:
-```html
-12.    <!-- Audio playback &response libraries (audio) -->
-13.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-button-response.js"></script>
-14.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-audio-keyboard-response.js"></script>
-```
-
-1. (line 12) Certain tags of the lines in "header" code can make it a comment, like ```<!--this is a comment -->```.
-2. (line 13) There is a __keyboard-based audio interaction__ jsPsych _plugin_ that is used in this template.
-3. (Line 14) There is also a __mouse button-based audio interaction__ jsPsych _plugin_ that is used in this template.
-
-Lines 16-20 deal with other plugins used by our templates, they are usually _all_ included:
-
-```html
-16.    <!-- Generic check/ask libraries (consent, instructions & surveys) -->
-17.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-external-html.js"></script>
-18.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-instructions.js"></script>
-19.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-html-form.js"></script>
-20.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/6.1.0/plugins/jspsych-survey-multi-choice.js"></script>
-```
-
-- Line 17 imports the `jspsych-external-html` plugin, which is used for the consent page (placeholder html).
-- Line 18 imports the `jspsych-instructions` plugin, specialised in (multi-page) clickable navigation instructions.
-- Line 19 imports a html plugin for survey questions.
-- Line 20 imports a multiple choice plugin, also for survey purposes.
-
-We already mentioned the default css _link_ used by jsPsych (line 22). It's not a Javascript library or plugin, but a place where styling is defined. It's placed _below_ all _standard jsPsych_ plugins, but _before_ our custom template-related scripts. The comments should also make this clear. So, we continue with the 'ILS custom template' imports:
-
-```html
-...
-25.    <!-- ILS libraries -->
-26.    <script src="https://web-experiments.lab.hum.uu.nl/jspsych/uil-utils/dev/jspsych-uil-utils.js"></script>
-27.
-28.    <!-- ILS scripts -->
-29.    <script src="stimuli.js"></script>
-30.    <script src="globals.js"></script>
-31.    <script src="instructions.js"></script>
-32.    
-...   
-...    </head>
-```
-
-Line 26 imports the ILS utility library.
-Lines 29-31 import 'non-jsPsych' _default_ files, they import the aforementioned custom template-related javascript files. These _are_ __relative__ imports. To clarify: in case you would remove the stimuli.js file from your template experiment folder, this would result in errors if you do not also remove the import statement. 
-
-#### In _general_: import only what you really need
-You may have noticed that a standard template already has quite a few lines for standard things. This is mainly because they were designed to be 'complete experiments'. If for instance, if you would _not_ want to include any survey questions, it's best to delete the imports related to them, and of course also the parts in the index.html that relate to the survey blocks. Read on to find out about the next important section of an index.html experiment file.
-
-## 2.2 The _script section_ of 'index.html'
-#### javaScript code blocks, (sub-)trial definitions, trial procedures and other code organisation in an index.html file
-After looking at what is imported in between the `<head>` tags, let's now look at what is in the next important section for using jsPsych: the part where all these files and libraries are actually used to _do_ things in the participants browser. Note, this will not be very in-depth at this point.
-
-Global structure of the script section:
-
-section/block | Description
---------------|-------------------------------------------------------------------------------------------------------
-A             | Stimuli loading, using stimuli.js function(s), media preloading routines.
-B             | Experiment logic_ variables (don't touch these, usually).
-C             | Custom (template-related) Javascript _functions_ (if necessary, like with the keyboard setting procedure).
-D             | Data preparation: _jsPsych-specific_ way of defining data that should be added to all trials.
-E             | Trials and trial elements:_jsPsych-specific_ definition for trials/trial phases and other functional block definitions (instructions, survey blocks, consent page).
-F             | Procedures: _jsPsych-specific_ _procedures_ typically use a combination of parts as defined in block E.
-G             | The timeline, where the experiment's building blocks are added to form your experiment flow.
-H             | The _init_-block: with this part, the experiment starts -for real- by 'executing the timeline'.
-
-# 3. The experiment data store
-Most information should be availble once you have logged in to the [Experiment Data Store](https://experiment-datastore.lab.hum.uu.nl). 
-
-# 4. Making the experiment ready for online testing
-Most generally, once you have requested/defined your experiment folder, you have to copy the _Access key_ for your experiment to be the new value for the ACCESS_KEY constant in _your version_ of the `globals.js` file. So, say you have been given the code `N278123456-%^&&8888*(*7777--090900!#$%1234`, implement it like this:
-```javascript
-// ACCESS_KEY needs to be used for server setup (data store)
-const ACCESS_KEY = 'zeeekretkeey'; 
-```
-And change it to:
-
-```javascript
-// ACCESS_KEY needs to be used for server setup (data store)
-const ACCESS_KEY = 'N278123456-%^&&8888*(*7777--090900!#$%1234'; 
-```
-Note the _quotes_!
-
-# 5. Sharing your experiment
-Running your experiment _locally_ on your own PC will usually _also_ still work after editing that value the `globals.js` file, but of course, the data is not saved like on the server, you will just get a bunch of output in your browser window. Please do make sure to keep track of your edits. Once you are sure everything works, you can invite your participants!
 
 # General best practices for jsPsych experiments 
 
