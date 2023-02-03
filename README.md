@@ -25,7 +25,7 @@ You can adapt the survey questions to your own needs, but it is not as easy as i
 This [utility library](https://github.com/UiL-OTS-labs/jspsych-uil-utils) was created to enable:
 
 - Mobile/Tablet detection (because those are not the type of devices we want participants to use).
-- Randomisation using criteria about how many stimuli of a certain type are allowed to follow each other.
+- Randomisation using criteria about how many stimuli of a certain type are allowed to follow each other. Make sure to discuss with your supervisor which criteria to use!
 
 ## Optional and or additional components
 Some templates have additional files and folders included, for example:
