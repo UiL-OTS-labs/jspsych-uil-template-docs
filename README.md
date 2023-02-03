@@ -172,7 +172,7 @@ While you could -- in principle -- use jsPsych offline in the traditional lab co
 
 # From template to your own online experiment
 
-Linguistics students and researchers _affiliated with the ILS labs_ can use the templates [from our lab webiste](https://ils-labs.wp.hum.uu.nl/experiments/overview/); expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://ils-labs.wp.hum.uu.nl/how-to/online-experimenting/) to get to your own experiment. 
+Linguistics students and researchers _affiliated with the ILS labs_ can use the templates [from our lab webiste](https://ils-labs.wp.hum.uu.nl/experiments/overview/); expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://ils-labs.wp.hum.uu.nl/how-to/online-experimenting/) to create your own experiment. 
 
-- This documentation is primarily aimed at people _affiliated with the ILS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_. People _not affiliated with our lab_ can of course use the templates, but will have to do without (support for, access to) the [ILS Experiment Datastore](https://experiment-datastore.lab.hum.uu.nl/experiments/).
+This documentation is aimed at people _affiliated with the ILS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_. People _not affiliated with our lab_ can of course use the templates, but will have to do without (support for, access to) the [ILS Experiment Datastore](https://experiment-datastore.lab.hum.uu.nl/experiments/).
 
