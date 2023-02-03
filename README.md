@@ -24,8 +24,8 @@ You can adapt the survey questions to your own needs, but it is not as easy as i
 ### 3. Generic ILS utility library
 This [utility library](https://github.com/UiL-OTS-labs/jspsych-uil-utils) was created to enable:
 
-- Mobile/Tablet detection (not the type of devices we want participants to use).
-- Restrained (or pseudo-) randomisation.
+- Mobile/Tablet detection (because those are not the type of devices we want participants to use).
+- Randomisation using criteria about how many stimuli of a certain type are allowed to follow each other.
 
 ## Optional and or additional components
 Some templates have additional files and folders included, for example:
@@ -38,7 +38,7 @@ The Lexical Decision Templates use a custom keyboard setting procedure. See `key
 Some templates use _audio_, if they do, there is or will be a simple testing procedure.
 
 # Output (data)
-Specific information about the output (data) of each template experiment can be found in its README.md. In addition, there is a general primer describing jsPysch's way of "dealing with data" and some of the ILS template's defaults for data output. Please read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
+Specific information about the output (data) of each template experiment can be found in its README.md. In addition, there is a general primer describing jsPysch's way of "dealing with data" and some of the ILS template's defaults for data output. Absolutely make sure that you read that [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output), especially if this is your first time using one of these templates!
 
 In a nutshell a _reminder_ to summarize with regard to experiment data output:
 - jsPsych experiments _always return all_ data for _each type_ of stimulus/trial/trial phase in 'trial' objects, that have _keys_ and _values_.
@@ -64,7 +64,7 @@ ILS-affiliated students and researchers should follow [this how-to](https://uilo
 <Optionally, some scope information about the paradigm or shared organisation, if relevant.>
 
 ### Short description
-<A short description of what _this specific template_ does and what output is given.>
+<A short description of what _this specific template_ does and what output is given on top of [the output all the templates give](https://github.com/UiL-OTS-labs/jspsych-output).>
 
 ### Longer Description
 <A longer description that reflects on, for instance a paradigm's variations.>
@@ -105,9 +105,6 @@ See the ILS labs website [here](https://ils-labs.wp.hum.uu.nl/experiments/overvi
 ## Generic ILS utility library (used in most templates)
 A tool that may help with things like restrained randomisation, detecting mobile phone/tablets and other reusable functionality.
 - [jspsych-uil-utils](https://github.com/UiL-OTS-labs/jspsych-uil-utils)
-
-## Output documentation
-As mentioned before, please read the [primer on data output](https://github.com/UiL-OTS-labs/jspsych-output)
 
 ## Miscallenous jspsych related repositories
 
@@ -175,10 +172,7 @@ While you could -- in principle -- use jsPsych offline in the traditional lab co
 
 # From template to your own online experiment
 
-## Prerequisites and scope limitation
-This documentation is primarily aimed at people _affiliated with the ILS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_.
-
 - Linguistics students and researchers _affiliated with the ILS labs_ can use the information [from our lab webiste](https://ils-labs.wp.hum.uu.nl/experiments/overview/) and expand the "Online experiments using jsPsych" section for details. Please [follow this how-to](https://ils-labs.wp.hum.uu.nl/how-to/online-experimenting/). 
 
-- People _not affiliated with our lab_ can of course use the templates, but will have to do without (support for, access to) the [ILS Experiment Datastore](https://experiment-datastore.lab.hum.uu.nl/experiments/).
+- This documentation is primarily aimed at people _affiliated with the ILS labs_ (Utrecht University: Linguistics students and researchers). The infrastructure and support for doing online experiments will be _only availble for those people_. People _not affiliated with our lab_ can of course use the templates, but will have to do without (support for, access to) the [ILS Experiment Datastore](https://experiment-datastore.lab.hum.uu.nl/experiments/).
 
