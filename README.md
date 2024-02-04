@@ -159,7 +159,7 @@ As always, the easy things tend to be easy to read (lines of code and examples) 
 There are multiple ways to test, run and configure jsPsych-based experiments:
 
 - Locally on your (or a participant's) PC, by double-clicking the `index.html` file.
-- Full web server implementation (getting a link to the experiment, served by ICT&Media).
+- Full web server implementation (getting a link to the experiment, served by DH-IT).
 
 These two modes will likely confuse those who are not web developers, but the bottom line is: 
 
