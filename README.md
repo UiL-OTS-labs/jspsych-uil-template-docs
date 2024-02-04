@@ -165,7 +165,7 @@ These two modes will likely confuse those who are not web developers, but the bo
 
 - A locally developed experiment will _not guarantee that the same experiment will run in a server setup_, or vice versa! 
 
-Many browsers and versions have their own defaults for security like 'autoplay', allowing sounds, pop-ups and alerts, importing images from local sources, etc. It is impossible to know 100% sure if things will work in your browser in advance, so be prepared to deal with some confusion.
+Many browsers and versions have their own defaults for security like 'autoplay', allowing sounds, pop-ups and alerts, importing images from local sources, etc. It is impossible to be sure 100% if things will work in your browser in advance, so be prepared to deal with some confusion.
 
 ## For 'real' online data collection, you will need a server-based setup
 While you could -- in principle -- use jsPsych offline in the traditional lab context, it will typically not make a lot of sense. Especially if you want to store your research data for an experiment in one place, a web-server setup is the way to go. 
